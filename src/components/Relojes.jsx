@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useLang } from '../lib/i18n.js';
+import { useEnVista, useReducedMotion } from '../lib/hooks.js';
 import Capitulo from './Capitulo.jsx';
 
 const MESES_POR = { mes: 1, trimestre: 3, semestre: 6 };
@@ -8,20 +9,20 @@ const MESES_POR = { mes: 1, trimestre: 3, semestre: 6 };
  * Reloj de un año: 12 marcas, una por mes. La cuña rellena es lo que abarca un solo
  * dato publicado (1, 3 o 6 meses). Mientras más grande, más se suavizan los picos.
  */
-function RelojAnual({ meses, titulo }) {
-  const r = 26;
-  const ang = (meses / 12) * Math.PI * 2;
-  const x = 32 + r * Math.sin(ang);
-  const y = 32 - r * Math.cos(ang);
-  const grande = meses > 6 ? 1 : 0;
+function RelojAnual({ meses, titulo, visto }) {
+  // Cuña dibujada como un círculo de trazo grueso: el trazo crece de 0 a su periodo al entrar en pantalla.
+  const r = 13;
+  const c = 2 * Math.PI * r;
+  const frac = visto ? meses / 12 : 0;
   return (
     <svg viewBox="0 0 64 64" width="56" height="56" role="img" aria-label={titulo} className="shrink-0">
       <circle cx="32" cy="32" r="30" fill="var(--color-bg)" stroke="var(--color-border-strong)" strokeWidth="2" />
-      <path d={`M32 32 L32 ${32 - r} A${r} ${r} 0 ${grande} 1 ${x.toFixed(2)} ${y.toFixed(2)} Z`} fill="var(--ink-d)" />
+      <circle className="reloj__cuna" cx="32" cy="32" r={r} fill="none" stroke="var(--ink-d)" strokeWidth={r * 2} strokeDasharray={`${(frac * c).toFixed(2)} ${c.toFixed(2)}`} transform="rotate(-90 32 32)" />
       {Array.from({ length: 12 }, (_, i) => {
         const a = (i / 12) * Math.PI * 2;
         return <line key={i} x1={32 + 27 * Math.sin(a)} y1={32 - 27 * Math.cos(a)} x2={32 + 30 * Math.sin(a)} y2={32 - 30 * Math.cos(a)} stroke="var(--color-fg)" strokeWidth={i % 3 === 0 ? 2 : 1} />;
       })}
+      <line className="reloj__aguja" x1="32" y1="32" x2="32" y2="8" stroke="var(--color-fg)" strokeWidth="2.5" strokeLinecap="round" style={{ transform: `rotate(${frac * 360}deg)` }} />
       <circle cx="32" cy="32" r="2.5" fill="var(--color-fg)" />
     </svg>
   );
@@ -29,6 +30,9 @@ function RelojAnual({ meses, titulo }) {
 
 export default function Relojes({ registros, unidades }) {
   const { t, lang } = useLang();
+  const reduce = useReducedMotion();
+  const [refLista, vistoLista] = useEnVista({ threshold: 0.25 });
+  const visto = reduce || vistoLista;
   const grupos = useMemo(() => {
     const m = new Map();
     for (const r of registros) {
@@ -72,10 +76,10 @@ export default function Relojes({ registros, unidades }) {
 
   return (
     <Capitulo id="capitulo-2" kicker={t.c2Kicker} titulo={t.c2Titulo} texto={t.c2Texto} className="bg-superficie">
-      <ul className="grid gap-3 md:grid-cols-2">
+      <ul ref={refLista} className="grid gap-3 md:grid-cols-2">
         {grupos.map(({ us, gran, def, citas, estado, tipo }) => (
           <li key={us[0].nombre} className="ja-card ja-card--raised !grid-cols-[auto_minmax(0,1fr)] items-start !gap-4">
-            <RelojAnual meses={MESES_POR[gran[0]]} titulo={tituloReloj(gran[0])} />
+            <RelojAnual meses={MESES_POR[gran[0]]} titulo={tituloReloj(gran[0])} visto={visto} />
             <div className="min-w-0">
               <p className="font-display text-lg font-black leading-tight">{nombreGrupo(us)}</p>
               <p className="text-sm text-texto-suave">{tipoGrupo(tipo, us.length)}</p>

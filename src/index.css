@@ -42,7 +42,7 @@
 }
 .turnero__btn:hover { background: #23272C; }
 .turnero__entra { animation: turno-entra var(--duration-slow) var(--ease-out); }
-@keyframes turno-entra { from { opacity: 0; transform: translateY(6px); } }
+@keyframes turno-entra { from { opacity: 0; } }
 
 /* Sillas de la fila */
 .silla { transition: fill var(--duration-slow) var(--ease-out), opacity var(--duration-slow) var(--ease-out); }
@@ -59,3 +59,80 @@
 
 /* Las tarjetas son grid: sin esto, un SVG ancho estira la columna y desborda en móvil. */
 .ja-card { grid-template-columns: minmax(0, 1fr); }
+
+/* ---- 3D: turnero por capas que sigue al puntero (solo CSS, sin WebGL) ---- */
+.escena { perspective: 1100px; }
+.turnero {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 250ms var(--ease-out);
+}
+@media (min-width: 1024px) {
+  .turnero { --rx-base: 5deg; --ry-base: -9deg; transform: rotateX(var(--rx, var(--rx-base))) rotateY(var(--ry, var(--ry-base))); }
+}
+.turnero::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(120% 80% at var(--gx, 30%) var(--gy, 0%), rgb(255 255 255 / 0.08), transparent 55%);
+}
+.capa { transform-style: preserve-3d; }
+.capa--1 { transform: translateZ(10px); }
+.capa--2 { transform: translateZ(26px); }
+.capa--3 { transform: translateZ(42px); }
+.turnero__btn--solido { background: #F2B705; color: #1A1D21; border-color: #F2B705; }
+.turnero__btn--solido:hover { background: #FFD54A; border-color: #FFD54A; }
+
+/* Dígitos tipo tablero de aeropuerto */
+.paleta { position: relative; display: inline-block; width: 2.9rem; height: 4rem; perspective: 300px; }
+@media (min-width: 640px) { .paleta { width: 3.4rem; height: 4.7rem; } }
+.paleta__carta { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 450ms cubic-bezier(.5, 0, .3, 1); }
+.paleta--gira .paleta__carta { transform: rotateX(-180deg); }
+.paleta__cara {
+  position: absolute; inset: 0; display: grid; place-items: center; backface-visibility: hidden;
+  background: #1A1D21; border-radius: 6px; overflow: hidden;
+  font: 700 3rem/1 var(--font-mono); color: var(--ja-d); text-shadow: 0 0 18px rgb(242 183 5 / 0.5);
+}
+@media (min-width: 640px) { .paleta__cara { font-size: 3.6rem; } }
+.paleta__cara::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; background: #0B0D10; }
+.paleta__cara--atras { transform: rotateX(180deg); }
+
+/* Sala isométrica */
+.sala { width: 100%; max-width: 26rem; aspect-ratio: 1.55; perspective: 1400px; display: grid; place-items: center; overflow: hidden; }
+.sala__piso {
+  width: 290px; height: 240px; transform-style: preserve-3d; transform: rotateX(58deg) rotateZ(-38deg);
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 13px; padding: 16px; border-radius: 14px;
+  background: repeating-linear-gradient(0deg, transparent 0 23px, color-mix(in srgb, var(--color-cota) 18%, transparent) 23px 24px), var(--color-surface-2);
+  box-shadow: 0 0 0 1px var(--color-border), var(--shadow-lg);
+}
+@media (max-width: 420px) { .sala { aspect-ratio: 1.7; } .sala__piso { transform: scale(.78) rotateX(58deg) rotateZ(-38deg); } }
+.sala__silla { position: relative; transform-style: preserve-3d; }
+.sala__asiento, .sala__espaldar { position: absolute; left: 0; right: 0; border-radius: 5px; background: var(--color-bg); box-shadow: 0 0 0 1.5px var(--color-border-strong); transition: background var(--duration-slow), transform 400ms cubic-bezier(.3, 1.6, .5, 1); }
+.sala__asiento { inset: 0; }
+.sala__espaldar { top: 0; height: 70%; transform-origin: top; transform: rotateX(90deg); }
+.sala__silla--on .sala__asiento { background: var(--ja-d); box-shadow: 0 0 0 1.5px #B07D00; transform: translateZ(6px); }
+.sala__silla--on .sala__espaldar { background: var(--ja-d); box-shadow: 0 0 0 1.5px #B07D00; }
+
+/* Píldora de turno fija */
+.pildora {
+  position: fixed; z-index: 30; top: 4.5rem; right: 1rem;
+  display: inline-flex; gap: .6rem; align-items: center; min-height: 2.75rem; padding: 0 1rem;
+  border-radius: var(--radius-pill); background: #0B0D10; color: #F2F3F5; box-shadow: var(--shadow-lg), inset 0 0 0 1px #2D3137;
+  font: 400 var(--text-sm)/1 var(--font-mono); text-decoration: none;
+  opacity: 0; transform: translateY(-8px); pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+.pildora--visible { opacity: 1; transform: none; pointer-events: auto; }
+.pildora:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+
+/* Relojes que barren al entrar en pantalla */
+.reloj__cuna { transition: stroke-dasharray 1200ms var(--ease-out); }
+.reloj__aguja { transition: transform 1200ms var(--ease-out); transform-origin: 32px 32px; }
+
+/* Termómetro de días */
+.termometro { position: relative; height: 8px; border-radius: 999px; background: var(--color-surface-2); box-shadow: inset 0 0 0 1px var(--color-border); }
+.termometro__rango { position: absolute; top: 0; bottom: 0; border-radius: 999px; background: var(--ink-d); min-width: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .turnero, .paleta__carta, .sala__asiento, .sala__espaldar, .pildora, .reloj__cuna, .reloj__aguja { transition: none; }
+  .turnero { transform: none; }
+}

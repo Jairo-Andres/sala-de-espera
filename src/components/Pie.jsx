@@ -32,10 +32,12 @@ export default function Pie({ estado, unidades }) {
             )}
           </p>
           <p>
-            <a href="https://github.com/Jairo-Andres/datos-abiertos-citas-api" target="_blank" rel="noreferrer">{t.codigo} (API + ETL)</a>
+            <a href="https://github.com/Jairo-Andres/sala-de-espera" target="_blank" rel="noreferrer">{t.codigo} (dashboard)</a>
+            {' · '}
+            <a href="https://github.com/Jairo-Andres/datos-abiertos-citas-api" target="_blank" rel="noreferrer">API + ETL</a>
           </p>
           <p className="flex items-center gap-2 border-t border-borde pt-4">
-            <span className="ja-bullet ja-bullet--d" aria-hidden="true">D</span>
+            <img src="/favicon.svg" alt="" width="36" height="36" className="rounded-[25%]" />
             <span>
               {t.hecho} ·{' '}
               <a href="https://www.linkedin.com/in/jairo-andres31-analyst" target="_blank" rel="noreferrer">{t.linkedin}</a>
