@@ -37,7 +37,7 @@ export default function Pie({ estado, unidades }) {
             <a href="https://github.com/Jairo-Andres/datos-abiertos-citas-api" target="_blank" rel="noreferrer">API + ETL</a>
           </p>
           <p className="flex items-center gap-2 border-t border-borde pt-4">
-            <img src="/favicon.svg" alt="" width="36" height="36" className="rounded-[25%]" />
+            <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="36" height="36" className="rounded-[25%]" />
             <span>
               {t.hecho} ·{' '}
               <a href="https://www.linkedin.com/in/jairo-andres31-analyst" target="_blank" rel="noreferrer">{t.linkedin}</a>
