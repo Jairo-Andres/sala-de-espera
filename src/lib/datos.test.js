@@ -5,6 +5,10 @@ import {
   coberturaEspecialidades,
   formatoDias,
   formatoPeriodo,
+  frenteANorma,
+  mayorAumento,
+  mayorBrecha,
+  promediosAnuales,
   indexarUnidades,
   matrizMensual,
   nombreCorto,
@@ -113,5 +117,39 @@ describe('formatos', () => {
     expect(formatoDias(23.44, 'es')).toBe('23,4');
     expect(formatoDias(23.44, 'en')).toBe('23.4');
     expect(formatoDias(null)).toBe('–');
+  });
+});
+
+describe('hallazgos', () => {
+  const trimestre = (h, e, anio, dias, citas = 100) => [1, 4, 7, 10].map((m) => r(h, e, `${anio}-${String(m).padStart(2, '0')}-01`, dias, { granularidad: 'trimestre', citas }));
+
+  it('promedia por año ponderando por citas y descarta años incompletos', () => {
+    const ps = [
+      r('H', 'X', '2024-01-01', 2, { granularidad: 'semestre', citas: 300 }),
+      r('H', 'X', '2024-07-01', 10, { granularidad: 'semestre', citas: 100 }),
+      r('H', 'X', '2025-01-01', 9, { granularidad: 'semestre' }),
+    ];
+    expect(promediosAnuales(ps)).toEqual([{ anio: 2024, valor: 4, ponderado: true, periodos: 2 }]);
+  });
+
+  it('encuentra la mayor brecha dentro de una misma unidad en su último año completo', () => {
+    const rows = [...trimestre('H', 'Psiquiatría', 2025, 40), ...trimestre('H', 'Odontología', 2025, 2), ...trimestre('H', 'Pediatría', 2025, 0.5), ...trimestre('Otro', 'Pediatría', 2025, 90)];
+    const b = mayorBrecha(rows);
+    expect(b.hospital).toBe('H');
+    expect(b.alta.especialidad).toBe('Psiquiatría');
+    expect(b.baja.especialidad).toBe('Odontología'); // Pediatría queda fuera por estar bajo 1 día
+    expect(b.razon).toBe(20);
+  });
+
+  it('mide el aumento solo en series con al menos 4 años de distancia', () => {
+    const rows = [...trimestre('H', 'A', 2020, 2), ...trimestre('H', 'A', 2024, 5), ...trimestre('H', 'B', 2023, 1), ...trimestre('H', 'B', 2024, 30)];
+    const a = mayorAumento(rows);
+    expect(a.especialidad).toBe('A');
+    expect(a.delta).toBe(3);
+  });
+
+  it('cuenta los últimos datos de medicina general y odontología dentro de 3 días', () => {
+    const rows = [r('H', 'Medicina general', '2026-01-01', 2), r('H', 'Odontología', '2026-01-01', 5), r('H', 'Pediatría', '2026-01-01', 1)];
+    expect(frenteANorma(rows)).toMatchObject({ debajo: 1, total: 2 });
   });
 });

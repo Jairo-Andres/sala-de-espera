@@ -5,6 +5,7 @@ import { indexarUnidades } from './lib/datos.js';
 import Cabecera from './components/Cabecera.jsx';
 import Cargando from './components/Cargando.jsx';
 import Turnero from './components/Turnero.jsx';
+import Hallazgos from './components/Hallazgos.jsx';
 import Unidades from './components/Unidades.jsx';
 import Relojes from './components/Relojes.jsx';
 import Fila from './components/Fila.jsx';
@@ -61,7 +62,7 @@ export default function App() {
               <h1 id="titulo" className="mt-4 text-display">{t.titulo}</h1>
               <p className="mt-5 max-w-xl text-md text-texto-suave">{t.subtitulo}</p>
               {datos && (
-                <a href="#capitulo-1" className="ja-btn ja-btn--secondary mt-7">{t.bajar} <span aria-hidden="true">↓</span></a>
+                <a href="#hallazgos" className="ja-btn ja-btn--secondary mt-7">{t.bajar} <span aria-hidden="true">↓</span></a>
               )}
             </div>
             <div>
@@ -75,6 +76,7 @@ export default function App() {
         </section>
         {datos && (
           <>
+            <Hallazgos registros={datos.registros} unidades={datos.unidades} />
             <Unidades registros={datos.registros} unidades={datos.unidades} />
             <Relojes registros={datos.registros} unidades={datos.unidades} />
             <Fila registros={datos.registros} unidades={datos.unidades} />

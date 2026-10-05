@@ -183,3 +183,85 @@ export function rangoPeriodos(rows) {
   }
   return [min, max];
 }
+
+// ---------------------------------------------------------------------------
+// Hallazgos: se calculan en vivo y solo comparan una unidad consigo misma
+// (misma definición y granularidad) o contra la norma, nunca unidades entre sí.
+
+const PERIODOS_POR_ANIO = { mes: 12, trimestre: 4, semestre: 2 };
+
+/** Promedio anual de una serie, ponderado por citas (simple si la fuente no publica citas). Solo años completos. */
+export function promediosAnuales(puntos) {
+  const porAnio = new Map();
+  for (const p of puntos) {
+    const a = Number(p.periodo.slice(0, 4));
+    if (!porAnio.has(a)) porAnio.set(a, []);
+    porAnio.get(a).push(p);
+  }
+  const out = [];
+  for (const [anio, ps] of porAnio) {
+    if (ps.length < PERIODOS_POR_ANIO[ps[0].granularidad]) continue;
+    const conCitas = ps.every((p) => p.citas);
+    const valor = conCitas
+      ? ps.reduce((s, p) => s + p.dias_espera * p.citas, 0) / ps.reduce((s, p) => s + p.citas, 0)
+      : ps.reduce((s, p) => s + p.dias_espera, 0) / ps.length;
+    out.push({ anio, valor, ponderado: conCitas, periodos: ps.length });
+  }
+  return out.sort((a, b) => a.anio - b.anio);
+}
+
+/**
+ * Brecha dentro de una misma unidad: en su último año completo, la especialidad con más
+ * espera contra la de menos (misma definición y granularidad). Devuelve la mayor brecha.
+ */
+export function mayorBrecha(rows, minimo = 1) {
+  const series = [...agruparSeries(rows).values()].filter((s) => s.especialidad !== 'Todas las especialidades');
+  const grupos = new Map();
+  for (const s of series) {
+    const k = `${s.hospital}|${s.definicion}|${s.granularidad}`;
+    if (!grupos.has(k)) grupos.set(k, []);
+    grupos.get(k).push(s);
+  }
+  let mejor = null;
+  for (const ss of grupos.values()) {
+    const anuales = ss.map((s) => ({ s, a: promediosAnuales(s.puntos) }));
+    const anio = Math.max(...anuales.flatMap((x) => x.a.map((y) => y.anio)));
+    const del = anuales
+      .map(({ s, a }) => ({ s, v: a.find((y) => y.anio === anio) }))
+      .filter((x) => x.v && x.v.valor >= minimo);
+    if (del.length < 2) continue;
+    del.sort((a, b) => b.v.valor - a.v.valor);
+    const alto = del[0];
+    const bajo = del[del.length - 1];
+    const razon = alto.v.valor / bajo.v.valor;
+    if (!mejor || razon > mejor.razon) {
+      mejor = { hospital: alto.s.hospital, anio, razon, alta: { especialidad: alto.s.especialidad, ...alto.v }, baja: { especialidad: bajo.s.especialidad, ...bajo.v } };
+    }
+  }
+  return mejor;
+}
+
+/** Serie con el mayor aumento en días entre su primer y su último año completo (al menos 4 años de distancia). */
+export function mayorAumento(rows, distanciaMinima = 4) {
+  let mejor = null;
+  for (const s of agruparSeries(rows).values()) {
+    const a = promediosAnuales(s.puntos);
+    if (a.length < 2) continue;
+    const ini = a[0];
+    const fin = a[a.length - 1];
+    if (fin.anio - ini.anio < distanciaMinima) continue;
+    const delta = fin.valor - ini.valor;
+    if (!mejor || delta > mejor.delta) mejor = { hospital: s.hospital, especialidad: s.especialidad, definicion: s.definicion, granularidad: s.granularidad, ini, fin, delta };
+  }
+  return mejor;
+}
+
+export const PLAZO_NORMA = 3; // Res. 1552 de 2013, art. 1, parágrafo 3: máximo 3 días hábiles
+export const ESPECIALIDADES_NORMA = ['Medicina general', 'Odontología'];
+
+/** Último dato de medicina general y odontología por unidad, para compararlo con el plazo de la norma. */
+export function frenteANorma(rows) {
+  const out = [];
+  for (const e of ESPECIALIDADES_NORMA) out.push(...ultimoPorUnidad(rows, e));
+  return { registros: out, debajo: out.filter((r) => r.dias_espera <= PLAZO_NORMA).length, total: out.length };
+}

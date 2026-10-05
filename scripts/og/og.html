@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Atkinson+Hyperlegible+Mono:wght@700&family=Overpass:wght@900&display=block">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; background: #121417; color: #F2F3F5; font-family: "Atkinson Hyperlegible", sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M0 12C60 2 180 22 240 12 M0 36C60 20 180 52 240 36 M0 60C60 38 180 82 240 60 M0 84C60 70 180 98 240 84 M0 108C60 100 180 116 240 108 M0 132C60 114 180 150 240 132 M0 156C60 132 180 180 240 156 M0 180C60 168 180 192 240 180 M0 204C60 184 180 224 240 204 M0 228C60 222 180 234 240 228' fill='none' stroke='%23D9A46B' stroke-opacity='.13' stroke-width='1.2'/%3E%3C/svg%3E");
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; padding: 64px 72px; border-top: 14px solid #F2B705; }
+  .ruta { display: flex; align-items: center; gap: 14px; font: 700 20px "Atkinson Hyperlegible Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #A2A9B1; }
+  .bullet { width: 44px; height: 44px; border-radius: 50%; background: #F2B705; color: #121417; display: grid; place-items: center; font: 900 24px Overpass, sans-serif; }
+  h1 { font: 900 76px/1 Overpass, sans-serif; letter-spacing: -.015em; margin-top: 26px; }
+  .en { font: 900 34px/1.1 Overpass, sans-serif; color: #A2A9B1; margin-top: 10px; }
+  p.q { font-size: 27px; line-height: 1.35; margin-top: 28px; color: #F2F3F5; }
+  .turnero { background: #0B0D10; border-radius: 18px; padding: 34px 36px; box-shadow: inset 0 0 0 2px #2D3137, 0 30px 60px -20px #000; }
+  .lab { font: 700 18px "Atkinson Hyperlegible Mono", monospace; letter-spacing: .08em; color: #A2A9B1; text-transform: uppercase; }
+  .num { font: 700 128px/1 "Atkinson Hyperlegible Mono", monospace; color: #F2B705; text-shadow: 0 0 26px rgb(242 183 5 / .4); margin-top: 8px; }
+  .dias { margin-top: 26px; background: #1A1D21; border-radius: 10px; padding: 18px 22px; display: flex; align-items: baseline; gap: 16px; }
+  .dias b { font: 700 64px/1 "Atkinson Hyperlegible Mono", monospace; color: #F2B705; }
+  .dias span { font: 900 30px Overpass, sans-serif; }
+  .pie { margin-top: 22px; font-size: 19px; color: #A2A9B1; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="ruta"><span class="bullet">D</span>Datos abiertos · Colombia</div>
+    <h1>La sala de espera</h1>
+    <div class="en">The waiting room</div>
+    <p class="q">¿Cuántos días espera un paciente por una cita médica? Lo que publican los propios hospitales públicos.</p>
+  </div>
+  <div class="turnero">
+    <div class="lab">Turno · Ticket</div>
+    <div class="num">001</div>
+    <div class="dias"><b>¿?</b><span>días · days</span></div>
+    <div class="pie">Hospitales públicos · datos.gov.co</div>
+  </div>
+</body>
+</html>

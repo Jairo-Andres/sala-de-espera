@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLang } from '../lib/i18n.js';
 import { oportunidadCompleta } from '../lib/api.js';
-import { formatoDias, formatoEntero, formatoPeriodo, resumenPorPeriodo } from '../lib/datos.js';
+import { PLAZO_NORMA, formatoDias, formatoEntero, formatoPeriodo, resumenPorPeriodo } from '../lib/datos.js';
 import Capitulo from './Capitulo.jsx';
 import Campo from './Campo.jsx';
 import { Lineas } from './Graficos.jsx';
@@ -65,7 +65,7 @@ export default function Clicsalud() {
           <div className="ja-card ja-card--raised">
             <p className="font-display text-xl font-black">{d} <span className="text-texto-suave">·</span> {esp(es)}</p>
             <p className="text-sm text-texto-suave">{t.clGranularidad}</p>
-            <Lineas series={series} titulo={`${t.diasEspera}: ${d}, ${esp(es)}`} />
+            <Lineas series={series} titulo={`${t.diasEspera}: ${d}, ${esp(es)}`} referencia={{ valor: PLAZO_NORMA, etiqueta: t.normaLinea }} />
             <div className="ja-table-wrap mt-4 max-h-80 overflow-y-auto" tabIndex={0} role="region" aria-label={`${d} · ${esp(es)}`}>
               <table className="ja-table">
                 <thead>

@@ -23,7 +23,7 @@ const fecha = (p) => new Date(`${p}T00:00:00`).getTime();
  * Gráfico de líneas. series: [{ id, etiqueta, puntos: [{periodo, granularidad, dias_espera}] }]
  * En pantallas anchas pone la etiqueta al final de cada línea; en móvil usa leyenda.
  */
-export function Lineas({ series, titulo }) {
+export function Lineas({ series, titulo, referencia = null }) {
   const { t, lang } = useLang();
   const [ref, ancho] = useAncho();
   const [hover, setHover] = useState(null);
@@ -38,7 +38,7 @@ export function Lineas({ series, titulo }) {
   const tiempos = todos.map((p) => fecha(p.periodo));
   const t0 = Math.min(...tiempos);
   const t1 = Math.max(...tiempos);
-  const { tope, marcas } = ejeY(Math.max(...todos.map((p) => p.dias_espera)));
+  const { tope, marcas } = ejeY(Math.max(...todos.map((p) => p.dias_espera), referencia ? referencia.valor * 1.15 : 0));
   const x = (p) => m.left + (t1 === t0 ? w / 2 : ((fecha(p) - t0) / (t1 - t0)) * w);
   const y = (v) => m.top + h - (v / tope) * h;
   const anios = [];
@@ -78,6 +78,12 @@ export function Lineas({ series, titulo }) {
           <text key={a} x={Math.max(m.left, x(`${a}-01-01`))} y={alto - 8} textAnchor="middle" fontSize="12" fill="var(--chart-axis)" className="font-mono">{a}</text>
         ))}
         <line x1={m.left} x2={m.left + w} y1={m.top + h} y2={m.top + h} stroke="var(--color-border-strong)" />
+        {referencia && (
+          <g>
+            <line x1={m.left} x2={m.left + w} y1={y(referencia.valor)} y2={y(referencia.valor)} stroke="var(--status-bad)" strokeWidth="2" strokeDasharray="6 4" />
+            <text x={m.left + 6} y={y(referencia.valor) - 6} fontSize="12" fontWeight="700" fill="var(--status-bad)">{referencia.etiqueta}</text>
+          </g>
+        )}
         {hover && <line x1={x(hover)} x2={x(hover)} y1={m.top} y2={m.top + h} stroke="var(--color-border-strong)" strokeDasharray="3 3" />}
         {series.map((s, i) => (
           <g key={s.id}>
@@ -123,13 +129,20 @@ export function Lineas({ series, titulo }) {
 }
 
 /** Barras horizontales: una por unidad (útil en móvil, las etiquetas no se cortan). */
-export function Barras({ filas, titulo }) {
+export function Barras({ filas, titulo, referencia = null }) {
   const { t, lang } = useLang();
   const [ref, ancho] = useAncho();
   if (!filas.length) return <p className="text-texto-suave">{t.sinDatos}</p>;
-  const { tope } = ejeY(Math.max(...filas.map((f) => f.valor)));
+  const { tope } = ejeY(Math.max(...filas.map((f) => f.valor), referencia ? referencia.valor * 1.15 : 0));
+  const xr = referencia ? (referencia.valor / tope) * ancho : null;
   return (
     <div ref={ref} className="w-full min-w-0">
+      {referencia && (
+        <p className="mb-3 flex items-center gap-2 text-sm font-bold text-estado-malo">
+          <svg width="24" height="14" aria-hidden="true"><line x1="12" x2="12" y1="0" y2="14" stroke="var(--status-bad)" strokeWidth="2" strokeDasharray="4 3" /></svg>
+          {referencia.etiquetaLarga ?? referencia.etiqueta}
+        </p>
+      )}
       <ul className="grid gap-4" aria-label={titulo}>
         {filas.map((f) => (
           <li key={f.id} className="grid gap-1">
@@ -140,6 +153,7 @@ export function Barras({ filas, titulo }) {
             <svg width={ancho} height="14" aria-hidden="true" className="block">
               <rect x="0" y="0" width={ancho} height="14" rx="3" fill="var(--color-surface-2)" />
               <rect x="0" y="0" width={Math.max(3, (f.valor / tope) * ancho)} height="14" rx="3" fill="var(--ink-d)" />
+              {xr != null && <line x1={xr} x2={xr} y1="-2" y2="16" stroke="var(--status-bad)" strokeWidth="2" strokeDasharray="4 3" />}
             </svg>
             {f.nota && <span className="text-xs text-texto-suave">{f.nota}</span>}
           </li>

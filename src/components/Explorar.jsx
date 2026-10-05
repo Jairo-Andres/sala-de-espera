@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { useLang } from '../lib/i18n.js';
-import { agruparSeries, coberturaEspecialidades, formatoPeriodo, matrizMensual, ultimoPorUnidad } from '../lib/datos.js';
+import { ESPECIALIDADES_NORMA, PLAZO_NORMA, agruparSeries, coberturaEspecialidades, formatoPeriodo, matrizMensual, ultimoPorUnidad } from '../lib/datos.js';
 import Capitulo from './Capitulo.jsx';
 import Campo from './Campo.jsx';
 import { Barras, Lineas, MapaMensual, TablaDatos, colorSerie } from './Graficos.jsx';
@@ -79,7 +79,7 @@ function Evolucion({ registros, unidades }) {
         </fieldset>
       )}
       <div className="mt-6">
-        <Lineas series={graf} titulo={titulo} />
+        <Lineas series={graf} titulo={titulo} referencia={graf.some((g) => ESPECIALIDADES_NORMA.includes(g.id)) ? { valor: PLAZO_NORMA, etiqueta: t.normaLinea } : null} />
       </div>
       <p className="mt-3 text-sm text-texto-suave">
         {u?.nombre} · {t.estadoDef[u?.estadoDefinicion ?? 'asumida']}
@@ -109,7 +109,7 @@ function PorEspecialidad({ registros, unidades }) {
       <Campo className="max-w-sm" etiqueta={t.especialidad} value={especialidad} onChange={setEspecialidad} opciones={opciones.map((o) => ({ value: o.especialidad, label: `${esp(o.especialidad)} (${o.unidades})` }))} />
       <p className="mt-4 text-sm text-texto-suave">{t.porEspTexto}</p>
       <div className="mt-5">
-        <Barras filas={filas} titulo={`${t.diasEspera}: ${esp(especialidad)}`} />
+        <Barras filas={filas} titulo={`${t.diasEspera}: ${esp(especialidad)}`} referencia={ESPECIALIDADES_NORMA.includes(especialidad) ? { valor: PLAZO_NORMA, etiqueta: t.normaLinea, etiquetaLarga: t.normaLineaLarga } : null} />
       </div>
     </div>
   );

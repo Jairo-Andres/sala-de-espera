@@ -28,6 +28,8 @@ async function recorrer(page) {
 }
 
 async function axe(page, nombre) {
+  // Espera a que terminen las animaciones (p. ej. el turno que entra con fundido) para no medir un estado intermedio.
+  await page.evaluate(() => Promise.all(document.getAnimations().filter((a) => a.effect?.getTiming().iterations !== Infinity).map((a) => a.finished.catch(() => {}))));
   const r = await new AxeBuilder({ page }).withTags(TAGS).analyze();
   const v = r.violations.map((x) => ({ id: x.id, impacto: x.impact, nodos: x.nodes.length, ejemplo: x.nodes[0]?.target?.join(' '), resumen: x.nodes[0]?.failureSummary }));
   resumen.push({ vista: nombre, incumplimientos: v.length, nodos: v.reduce((s, x) => s + x.nodos, 0), detalle: v });
@@ -49,10 +51,12 @@ for (const esquema of ESQUEMAS) {
       await recorrer(page);
       await page.screenshot({ path: path.join(salida, `${nombre}-completa.png`), fullPage: true });
       await axe(page, `${nombre} (inicio)`);
+      await page.locator('#hallazgos').screenshot({ path: path.join(salida, `${nombre}-hallazgos.png`) });
       if (lang === 'es') {
         for (const tab of ['especialidad', 'mes']) {
           await page.click(`#tab-${tab}`);
           await page.waitForTimeout(400);
+          if (tab === 'especialidad') await page.selectOption('#panel-especialidad select', 'Medicina general');
           await page.locator('#explorar').screenshot({ path: path.join(salida, `${nombre}-tab-${tab}.png`) });
           await axe(page, `${nombre} (pestaña ${tab})`);
         }

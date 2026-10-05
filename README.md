@@ -8,11 +8,12 @@
 datos.gov.co y portal de Bogotá → ETL (pandas) → API FastAPI (Render) → este dashboard (React + Vite + Tailwind, Vercel)
 ```
 
-- **Demo:** pendiente de desplegar en Vercel.
+- **Demo:** https://sala-de-espera-bice.vercel.app
 - **API:** https://datos-abiertos-citas-api.onrender.com ([docs](https://datos-abiertos-citas-api.onrender.com/docs))
 
 ## Qué muestra
 
+1. **Hallazgos ("Lo que sí dicen los datos"):** 4 tarjetas calculadas en vivo que solo comparan una unidad consigo misma o con la norma: la mayor brecha entre especialidades del mismo hospital, el mayor aumento de una misma serie, cuántos datos de medicina general y odontología están dentro del plazo de 3 días hábiles de la Resolución 1552 de 2013 y cuántas unidades publican. Promedios anuales ponderados por citas, solo años completos.
 1. **Turnero:** cada turno es un dato real (el último promedio publicado por una unidad para una especialidad), con su periodo y enlace a la fuente.
 2. **Capítulo 1:** las unidades incluidas (hospitales, red y subredes), su periodo cubierto y su fuente.
 3. **Capítulo 2, "Cada reloj marca distinto":** cómo mide cada unidad (mes, trimestre o semestre; desde la solicitud o desde la fecha deseada; si la definición es explícita o asumida).
@@ -21,6 +22,8 @@ datos.gov.co y portal de Bogotá → ETL (pandas) → API FastAPI (Render) → e
 6. **Archivo Clicsalud (2016–2021):** resumen por departamento de lo que reportaron las IPS (promedio ponderado por citas y mediana), separado del resto porque es otra fuente y es histórica.
 
 Diseño "La sala de espera" con la identidad visual común del portafolio ("Rutas + Cota", ruta **D** Datos). Mobile-first, bilingüe (ES/EN), modo claro y oscuro según el sistema, y respeta `prefers-reduced-motion`.
+
+La imagen para compartir (`public/og.png`) se regenera con `node scripts/og/generar.mjs`.
 
 ## Correrlo en local
 
@@ -70,11 +73,12 @@ Código bajo licencia MIT. Los datos son de cada entidad vía datos.gov.co (CC B
 
 How many days does a patient wait for a medical appointment in Colombia? Some public hospitals publish it as open data, each in its own way. This dashboard shows what that data says, unified by the [open-data API](https://github.com/Jairo-Andres/datos-abiertos-citas-api), without drawing conclusions the data can't support.
 
-- **Demo:** not deployed to Vercel yet.
+- **Demo:** https://sala-de-espera-bice.vercel.app
 - **API:** https://datos-abiertos-citas-api.onrender.com ([docs](https://datos-abiertos-citas-api.onrender.com/docs))
 
 ### What it shows
 
+1. **Findings ("What the data does show"):** 4 live cards that only compare a unit with itself or with the regulation: the largest gap between specialties in the same hospital, the largest increase in one series, how many general medicine and dentistry values are within the 3-business-day limit of Resolution 1552 of 2013, and how many units publish. Yearly averages weighted by appointments, complete years only.
 1. **Queue display:** every ticket is real data (the latest average a unit published for a specialty), with its period and a link to the source.
 2. **Chapter 1:** the units included (hospitals, a network and sub-networks), their period and source.
 3. **Chapter 2, "Every clock ticks differently":** how each unit measures (month, quarter or half-year; from the request or from the desired date; explicit or assumed definition).
