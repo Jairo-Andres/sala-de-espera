@@ -1,0 +1,61 @@
+@import "./styles/tokens.css";
+@import "./styles/components.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { min-height: 100vh; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 900; letter-spacing: var(--tracking-display); text-wrap: balance; }
+  a { color: var(--ink-b); text-decoration: underline; text-underline-offset: 3px; }
+}
+
+/* ---- Turnero (pantalla de turnos) ----
+   Pantalla siempre oscura, como un turnero real; los colores salen de la marca fija
+   y del estado en modo oscuro (contraste verificado en guia.html). */
+.turnero {
+  --t-bg: #0B0D10;
+  --t-fg: #F2F3F5;
+  --t-muted: #A2A9B1;
+  background: var(--t-bg);
+  color: var(--t-fg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), inset 0 0 0 1px #2D3137;
+}
+.turnero__digito {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--ja-d);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 18px rgb(242 183 5 / 0.35);
+  line-height: 1;
+}
+.turnero__muted { color: var(--t-muted); }
+.turnero a { color: #7FA8FF; }
+.turnero :focus-visible { outline-color: #7FA8FF; }
+.turnero__btn {
+  color: var(--t-fg);
+  border: 2px solid #6E767F;
+  background: transparent;
+}
+.turnero__btn:hover { background: #23272C; }
+.turnero__entra { animation: turno-entra var(--duration-slow) var(--ease-out); }
+@keyframes turno-entra { from { opacity: 0; transform: translateY(6px); } }
+
+/* Sillas de la fila */
+.silla { transition: fill var(--duration-slow) var(--ease-out), opacity var(--duration-slow) var(--ease-out); }
+
+/* Aparición al hacer scroll (solo si no hay reduced motion) */
+.revela { opacity: 1; transform: none; transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
+.revela--oculto { opacity: 0; transform: translateY(16px); }
+@media (prefers-reduced-motion: reduce) {
+  .revela, .revela--oculto { opacity: 1; transform: none; transition: none; }
+  .turnero__entra { animation: none; }
+}
+
+.sr-only-focusable:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Las tarjetas son grid: sin esto, un SVG ancho estira la columna y desborda en móvil. */
+.ja-card { grid-template-columns: minmax(0, 1fr); }
