@@ -116,6 +116,18 @@ function TurneroEps({ turnos, tx }) {
   );
 }
 
+/** "Nueva EPS: agosto de 2026; Salud Total y EPS Sura: septiembre de 2026" (sin repetir regímenes ni meses). */
+function resumenMeses(items, t, lang) {
+  const porMes = new Map();
+  for (const x of items) {
+    if (!porMes.has(x.ym)) porMes.set(x.ym, []);
+    const nombre = EPS[x.eps];
+    if (!porMes.get(x.ym).includes(nombre)) porMes.get(x.ym).push(nombre);
+  }
+  const y = lang === 'es' ? ' y ' : ' and ';
+  return [...porMes.entries()].sort().map(([ym, n]) => `${n.length > 1 ? `${n.slice(0, -1).join(', ')}${y}${n.at(-1)}` : n[0]}: ${mesLargo(ym, lang)}`).join('; ');
+}
+
 /* ---------- Capítulo 2: frente a la referencia ---------- */
 
 function Referencia({ turnos, tx }) {
@@ -125,6 +137,7 @@ function Referencia({ turnos, tx }) {
   const pct = (v) => `${Math.min(100, (v / tope) * 100)}%`;
   return (
     <>
+      <p className="mb-2 text-sm">{t.refMeses(resumenMeses(turnos, t, lang))}</p>
       <p className="mb-4 flex flex-wrap gap-4 text-sm text-texto-suave">
         <span><span className="mr-1 inline-block h-3 w-6 rounded-sm bg-texto-suave align-middle" aria-hidden="true" />{t.refLeyendaBarra}</span>
         <span><span className="mr-1 inline-block h-4 w-0.5 bg-[var(--status-bad)] align-middle" aria-hidden="true" />{t.refLeyendaLinea}</span>
@@ -142,23 +155,24 @@ function Referencia({ turnos, tx }) {
               {filas.map((x) => (
                 <div key={x.key} className="grid gap-1">
                   <div className="flex justify-between gap-2 text-sm">
-                    <span>{nombreGrupo(t, x.eps, x.regimen)} <span className="text-texto-suave">· {mesLargo(x.ym, lang)}</span></span>
-                    <b className="font-mono">{x.req == null ? t.sinDato : `${formatoDias(x.req, lang)} ${t.dias}`}</b>
+                    <span>{nombreGrupo(t, x.eps, x.regimen)}</span>
+                    <span className="text-right">
+                      <b className="font-mono">{x.req == null ? t.sinDato : `${formatoDias(x.req, lang)} ${t.dias}`}</b>
+                      {x.des != null && <span className="ml-2 text-xs text-texto-suave">({t.deseadaCorta} {formatoDias(x.des, lang)})</span>}
+                    </span>
                   </div>
                   <div className="relative h-3 rounded-sm bg-superficie-2" aria-hidden="true">
                     {x.req != null && <div className="h-3 rounded-sm" style={{ width: pct(x.req), background: COLOR[grupo(x.eps, x.regimen)] }} />}
                     {ref != null && <div className="absolute -top-1 h-5 w-0.5 bg-[var(--status-bad)]" style={{ left: pct(ref) }} />}
                   </div>
-                  <p className="text-xs text-texto-suave">
-                    {x.des != null ? `${t.desdeDeseada}: ${formatoDias(x.des, lang)}` : t.deseadaNoConfiable}
-                  </p>
                 </div>
               ))}
             </figure>
           );
         })}
       </div>
-      <p className="mt-4 text-sm text-texto-suave">{t.refNota}</p>
+      <p className="mt-4 text-sm text-texto-suave">{t.refNotaDeseada}</p>
+      <p className="mt-2 text-sm text-texto-suave">{t.refNota}</p>
       <details className="mt-4">
         <summary className="cursor-pointer font-bold">{t.refTabla}</summary>
         <div className="mt-3 overflow-x-auto" role="region" aria-label={t.refTitulo} tabIndex={0}>
@@ -379,9 +393,9 @@ function Calidad({ datos, tx }) {
             {!s.ok && <p>{s.error === 'SIMULACION' ? t.errorFuente : s.error} {s.failing_since && <>· {t.fallaDesde} {fecha(s.failing_since)}</>}</p>}
             <p className="text-texto-suave">{t.revisado}: {fecha(s.checked_at)}</p>
             <p>{t.cubre}: {Object.entries(s.first_month ?? {}).map(([r, ym]) => `${r === 'unico' ? '' : `${t.regimenCorto[r]}: `}${ym} → ${s.last_month[r]}`).join(' · ')}</p>
-            <p>{t.mesesFaltan}: {Object.values(s.missing_months ?? {}).flat().join(', ') || t.ninguno}</p>
-            {s.unsupported_files > 0 && <p>{t.formatoAntiguo(s.unsupported_files)}</p>}
-            <p>{t.archivosFallidos}: {s.files_failed.length ? s.files_failed.map((f) => <span key={f.url}><a href={f.url} target="_blank" rel="noreferrer">{f.period}</a> ({f.status}) </span>) : t.ninguno}</p>
+            <p>{t.mesesFaltan}: {[...new Set(Object.values(s.missing_months ?? {}).flat())].sort().join(', ') || t.ninguno}</p>
+            {s.unsupported_files > 0 && <p>{t.formatoOtro(s.unsupported_files)}</p>}
+            <p>{t.archivosFallidos}: {s.files_failed.length ? s.files_failed.map((f) => <span key={f.url}><a href={f.url} target="_blank" rel="noreferrer">{f.period}</a> ({t.estadoArchivo[f.status] ?? f.status}) </span>) : t.ninguno}</p>
             <p><a href={s.source} target="_blank" rel="noreferrer">{t.verFuente.replace(' (PDF)', '')}</a></p>
           </article>
         ))}
@@ -390,13 +404,14 @@ function Calidad({ datos, tx }) {
       <p className="mt-1 text-sm text-texto-suave">{t.banderasTexto}</p>
       <div className="mt-3 overflow-x-auto" role="region" aria-label={t.banderasTitulo} tabIndex={0}>
         <table className="ja-table w-full text-sm">
-          <thead><tr><th>{t.sinDatoPor}</th><th>{lang === 'es' ? 'Tipo' : 'Type'}</th><th>{EPS.nueva_eps}</th><th>{EPS.sura}</th></tr></thead>
+          <thead><tr><th>{t.sinDatoPor}</th><th>{lang === 'es' ? 'Tipo' : 'Type'}</th><th>{EPS.nueva_eps}</th><th>{EPS.salud_total}</th><th>{EPS.sura}</th></tr></thead>
           <tbody>
             {filas.map((f) => (
               <tr key={`${f.code}${f.severity}`}>
                 <td>{b[f.code] ?? f.code}</td>
                 <td><span className={`ja-status ${f.severity === 'bloqueante' ? 'ja-status--bad' : f.severity === 'advertencia' ? 'ja-status--warn' : ''}`}>{t.severidad[f.severity]}</span></td>
                 <td className="font-mono">{formatoEntero(f.eps.nueva_eps ?? 0, lang)}</td>
+                <td className="font-mono">{formatoEntero(f.eps.salud_total ?? 0, lang)}</td>
                 <td className="font-mono">{formatoEntero(f.eps.sura ?? 0, lang)}</td>
               </tr>
             ))}
@@ -431,7 +446,7 @@ export default function SalaEps({ lang }) {
   }, [intento]);
 
   const turnos = useMemo(() => (datos ? ordenarTurnos(datos.turnos) : []), [datos]);
-  const frescura = datos ? ultimoMes(datos.quality).map((u) => `${u.regimen ? `${EPS[u.eps]} (${t.regimenCorto[u.regimen]})` : EPS[u.eps]}: ${mesLargo(u.ym, lang)}`).join('; ') : '';
+  const frescura = datos ? resumenMeses(ultimoMes(datos.quality), t, lang) : '';
 
   return (
     <>
