@@ -64,15 +64,25 @@ export default function Cabecera({ onIdioma, sala = 'hospitales' }) {
     const id = setTimeout(conectar, 1500);
     return () => { io?.disconnect(); mo.disconnect(); clearTimeout(id); };
   }, [sala, chips]);
+  // Centra el atajo activo moviendo solo la fila de atajos: scrollIntoView movería también la
+  // página y cortaría el desplazamiento suave hacia la sección elegida.
   useEffect(() => {
-    nav.current?.querySelector('[aria-current="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+    const fila = nav.current;
+    const chip = fila?.querySelector('[aria-current="true"]');
+    if (!fila || !chip) return;
+    const objetivo = chip.offsetLeft - (fila.clientWidth - chip.offsetWidth) / 2;
+    fila.scrollTo({ left: Math.max(0, objetivo), behavior: 'auto' });
   }, [actual]);
 
   const ir = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    // Salto directo: el desplazamiento suave por miles de píxeles se corta con facilidad (gráficos
+    // que se redimensionan, secciones que aparecen) y dejaba la página a medio camino.
+    el.scrollIntoView({ behavior: 'instant', block: 'start' });
+    setActual(id);
+    el.querySelector('h2, h1')?.setAttribute('tabindex', '-1');
+    el.querySelector('h2, h1')?.focus({ preventScroll: true });
   };
 
   return (

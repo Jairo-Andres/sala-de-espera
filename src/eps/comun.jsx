@@ -12,7 +12,7 @@ export const COLOR = {
 };
 export const grupo = (eps, regimen) => `${eps}|${regimen ?? ''}`;
 export const ASTERISCO = ['ginecologia', 'cirugia_general'];
-export const irA = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+export const irA = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' });
 
 export function useTextos(lang) {
   return useMemo(() => ({ t: T[lang], b: BANDERA[lang], esp: ESPECIALIDAD[lang], lang }), [lang]);

@@ -91,7 +91,7 @@ export default function Hallazgos({ registros, unidades }) {
           <p>{t.hVacio}</p>
         </Tarjeta>
       </ul>
-      <button type="button" className="v-btn mt-6" onClick={() => document.getElementById('explorar')?.scrollIntoView({ block: 'start' })}>{t.verGraficos} <span aria-hidden="true">↓</span></button>
+      <button type="button" className="v-btn mt-6" onClick={() => document.getElementById('explorar')?.scrollIntoView({ behavior: 'instant', block: 'start' })}>{t.verGraficos} <span aria-hidden="true">↓</span></button>
     </Capitulo>
   );
 }

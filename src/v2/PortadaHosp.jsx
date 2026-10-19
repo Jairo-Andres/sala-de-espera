@@ -8,7 +8,7 @@ import TurneroV2 from './TurneroV2.jsx';
 import Estimador from './Estimador.jsx';
 import { V2 } from './textos.js';
 
-const irA = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+const irA = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' });
 
 /** Portada v2 de la sala de hospitales: texto, sala 3D, turnero inclinado y franja de cifras. */
 export default function PortadaHosp({ datos, turnos, iTurno, setITurno, etapa, error, onReintentar }) {
