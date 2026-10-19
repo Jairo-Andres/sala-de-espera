@@ -63,6 +63,29 @@ Toma capturas a 390 px y 1280 px (claro, oscuro, ES y EN) y pasa axe-core con la
 | El archivo Clicsalud no muestra un departamento | El nombre cambió en la API | Actualiza la lista `DEPARTAMENTOS` en `src/components/Clicsalud.jsx` |
 | Las fuentes tipográficas se ven distintas | Google Fonts bloqueado | El sitio usa la fuente de respaldo; no afecta los datos |
 
+## La sala de las EPS (`#eps`)
+
+Segunda sala: los días que **Nueva EPS** y **EPS Sura** reportan cada mes para asignar citas (Resolución 1552 de 2013), comparados con los estándares de referencia de la Circular Externa 038 de 2025. La interfaz solo lee `public/data/eps/sala-eps.json`; nunca descarga nada de las EPS en vivo.
+
+```
+página índice de Nueva EPS + PDF acumulado de Sura → pipeline/eps (Python) → data/eps (CSV por EPS y año + estado de fuentes) → public/data/eps/sala-eps.json → sala
+```
+
+- **Pipeline:** `pip install -r pipeline/requirements.txt` (y Poppler para `pdftotext`), luego `python -m pipeline.eps.run`. Opciones: `--dry-run`, `--offline` (solo caché), `--incremental` (reutiliza los meses ya publicados de Nueva EPS).
+- **Validación:** promedios recalculados desde las sumas y contrastados con el PDF (tolerancia 0,05 días o el redondeo de la fuente), días negativos, cero citas, filas incompletas o repetidas, departamentos y especialidades no reconocidos, meses fuera de secuencia, saltos mes a mes y contraste con el total nacional. Lo bloqueante se publica como "sin dato" con su motivo; nada se corrige en silencio.
+- **Pruebas:** `python -m pytest pipeline/eps/tests` (PDF reales como fixtures, que no se versionan: `python -m pipeline.eps.tests.bajar_fixtures`) y `npm test`.
+- **Automatización:** `.github/workflows/eps-datos.yml` corre los días 12 y 20 de cada mes. Es *dry-run* hasta que la variable del repositorio `EPS_PUBLICAR` sea `true`.
+- **Uso de las fuentes:** robots.txt de ambos sitios permite el acceso. Solo se publican cifras agregadas que la norma obliga a hacer públicas, con enlace a cada PDF; los PDF no se vuelven a publicar. User-Agent identificable y pausas entre peticiones.
+- **Vista previa y accesibilidad:** `node scripts/auditar-eps.mjs capturas/eps` (capturas 1440/390, ES/EN, estados especiales y axe-core).
+
+### Qué revisar si algo se cae (sala EPS)
+
+| Síntoma | Causa probable | Qué hacer |
+|---|---|---|
+| El workflow falla con "cambió de formato" | Una EPS cambió las columnas del PDF | Revisa `data/eps/estado_fuentes.json` y ajusta el parser; la sala sigue con lo último validado |
+| "Falló la última revisión" en Salud de las fuentes | La página no respondió o bloqueó el acceso | Espera al reintento del día 20; si sigue, revisa la URL en `pipeline/eps/config.py` |
+| Aparece un mes con "sin dato" | No pasó una regla bloqueante | Es intencional; el motivo está en la bandera del registro |
+
 ## Licencia
 
 Código bajo licencia MIT. Los datos son de cada entidad vía datos.gov.co (CC BY-SA 4.0) y el portal de datos abiertos de Bogotá (CC BY 4.0).
@@ -112,6 +135,10 @@ Import the repo in Vercel (Vite is detected: `npm run build`, output `dist`), op
 | "We couldn't load the data" | The API didn't wake up in time, or Supabase paused the database | Press *Try again*; then check the API's `/health` and README |
 | CORS error in the console | The API stopped sending `Access-Control-Allow-Origin` | Check the API's CORS settings |
 | A department doesn't load in the Clicsalud archive | Its name changed in the API | Update `DEPARTAMENTOS` in `src/components/Clicsalud.jsx` |
+
+### The insurers’ room (`#eps`)
+
+A second room with the monthly waiting days that **Nueva EPS** and **EPS Sura** report (Resolution 1552 of 2013), compared with the reference standards of External Circular 038 of 2025. A Python pipeline (`pipeline/eps`) discovers, downloads, parses and validates the PDFs; anything that fails a blocking rule is published as "no data" with its reason. Run it with `python -m pipeline.eps.run` (`--dry-run`, `--offline`, `--incremental`), test it with `python -m pytest pipeline/eps/tests`. The monthly GitHub Actions workflow stays in dry-run until the repository variable `EPS_PUBLICAR` is `true`. Only aggregate figures are published, linking to each original PDF.
 
 ### License
 

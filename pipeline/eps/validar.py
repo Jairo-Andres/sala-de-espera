@@ -11,6 +11,7 @@ from . import config, texto
 BLOQUEANTES = {
     "negative_days",
     "zero_appointments_nonzero_avg",
+    "no_appointments",
     "avg_mismatch",
     "column_count",
     "column_order_unresolved",
@@ -115,6 +116,8 @@ def validar_registro(r):
         if any((r.get(c) or 0) != 0 for c in ("avg_request_reported", "avg_desired_reported",
                                                "sum_days_request", "sum_days_desired")):
             _agregar(r, "zero_appointments_nonzero_avg")
+        else:
+            _agregar(r, "no_appointments")  # sin citas no hay promedio: "sin dato" con su motivo
         _anular(r, TODOS)
         return
 

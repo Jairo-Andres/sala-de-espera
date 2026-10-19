@@ -17,6 +17,7 @@ jobs:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: pipeline/requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils  # pdftotext
       - run: pip install -r pipeline/requirements.txt
       # Los PDF de prueba no se versionan (son contenido de cada EPS). Se guardan en caché un mes
       # para no pedirlos a las EPS en cada push.

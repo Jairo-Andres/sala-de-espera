@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-19T01:09:39Z",
+  "generated_at": "2026-10-19T01:16:15Z",
   "parser_version": "1.0.0",
   "eps": {
     "nueva_eps": {
       "name": "Nueva EPS",
       "index_url": "https://www.nuevaeps.com.co/oportunidad-citas",
-      "checked_at": "2026-10-19T01:09:15Z",
+      "checked_at": "2026-10-19T01:15:53Z",
       "responded": true,
       "error": null,
       "files": [
@@ -2171,7 +2171,7 @@
     "sura": {
       "name": "EPS Sura",
       "pdf_url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
-      "checked_at": "2026-10-19T01:09:34Z",
+      "checked_at": "2026-10-19T01:16:10Z",
       "responded": true,
       "error": null,
       "files": [
@@ -2179,7 +2179,7 @@
           "period": "acumulado",
           "url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
           "sha256": "d8176d98e2c06938b1e17f478bc22864503fde64e8ddaa33223ac1029fcedbf5",
-          "retrieved_at": "2026-10-19T01:09:38Z",
+          "retrieved_at": "2026-10-19T01:16:14Z",
           "status": "ok"
         }
       ],
@@ -2215,6 +2215,7 @@
     "jump_vs_prev_month": 2906,
     "national_sum_mismatch": 218,
     "negative_days": 181,
+    "no_appointments": 74,
     "regional_outlier": 2026,
     "small_sample": 5068,
     "total_row_mismatch": 290,

@@ -14,6 +14,9 @@ import Fila from './components/Fila.jsx';
 import Explorar from './components/Explorar.jsx';
 import Clicsalud from './components/Clicsalud.jsx';
 import Pie from './components/Pie.jsx';
+import SalaEps from './eps/SalaEps.jsx';
+
+const salaDeHash = () => (window.location.hash.startsWith('#eps') ? 'eps' : 'hospitales');
 
 function idiomaInicial() {
   try {
@@ -27,6 +30,18 @@ function idiomaInicial() {
 
 export default function App() {
   const [lang, setLang] = useState(idiomaInicial);
+  const [sala, setSala] = useState(salaDeHash);
+  useEffect(() => {
+    const on = () => {
+      const nueva = salaDeHash();
+      setSala((antes) => {
+        if (antes !== nueva) window.scrollTo(0, 0);
+        return nueva;
+      });
+    };
+    window.addEventListener('hashchange', on);
+    return () => window.removeEventListener('hashchange', on);
+  }, []);
   const [etapa, setEtapa] = useState(0);
   const [error, setError] = useState(null);
   const [datos, setDatos] = useState(null);
@@ -34,9 +49,11 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    document.title = lang === 'es' ? 'La sala de espera · Oportunidad de citas en Colombia' : 'The waiting room · Medical appointment waits in Colombia';
+    document.title = sala === 'eps'
+      ? (lang === 'es' ? 'La sala de las EPS · La sala de espera' : 'The insurers’ waiting room · The waiting room')
+      : (lang === 'es' ? 'La sala de espera · Oportunidad de citas en Colombia' : 'The waiting room · Medical appointment waits in Colombia');
     try { localStorage.setItem('sala-lang', lang); } catch { /* sin almacenamiento */ }
-  }, [lang]);
+  }, [lang, sala]);
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -59,7 +76,10 @@ export default function App() {
   return (
     <LangContext.Provider value={ctx}>
       <a href="#contenido" className="ja-btn ja-btn--primary sr-only-focusable fixed left-4 top-4 z-50">{t.saltar}</a>
-      <Cabecera onIdioma={() => setLang(lang === 'es' ? 'en' : 'es')} />
+      <Cabecera sala={sala} onIdioma={() => setLang(lang === 'es' ? 'en' : 'es')} />
+      {sala === 'eps' ? (
+        <main id="contenido"><SalaEps lang={lang} /></main>
+      ) : (
       <main id="contenido">
         <section id="portada" className="ja-topo border-b border-borde" aria-labelledby="titulo">
           <div className="mx-auto grid max-w-contenido gap-10 px-4 py-10 sm:px-6 md:py-16 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -95,8 +115,13 @@ export default function App() {
           </>
         )}
       </main>
-      <Pie estado={datos?.estado} unidades={datos?.unidades} />
-      <Pildora turno={turno} total={turnos.length} objetivo="portada" />
+      )}
+      {sala === 'eps' ? <Pie /> : (
+        <>
+          <Pie estado={datos?.estado} unidades={datos?.unidades} />
+          <Pildora turno={turno} total={turnos.length} objetivo="portada" />
+        </>
+      )}
     </LangContext.Provider>
   );
 }
