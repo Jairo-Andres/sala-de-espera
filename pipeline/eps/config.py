@@ -45,6 +45,9 @@ ESPECIALIDADES = {
     "pediatria": "pediatria",
 }
 
+# Especialidades que algunos PDF traen de más y que la Resolución 1552 no pide: se ignoran.
+ESPECIALIDADES_FUERA = ["ortopedia", "psiquiatria", "urologia"]
+
 # Departamentos (y distritos que algunas EPS reportan aparte) -> clave normalizada.
 DEPARTAMENTOS = {
     "amazonas": "amazonas",

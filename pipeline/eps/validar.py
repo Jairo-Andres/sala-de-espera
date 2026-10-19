@@ -35,6 +35,7 @@ ADVERTENCIAS = {
     "national_sum_mismatch",
     "total_row_mismatch",
     "desired_unreliable_source",
+    "fractional_appointments",
 }
 NOTAS = {"context"}
 
@@ -132,6 +133,8 @@ def validar_registro(r):
         v = r.get(campo)
         if v is not None and v > config.UMBRAL_PROMEDIO_ALTO:
             _agregar(r, f"avg_over_60:{campo}")
+    if n is not None and n != int(n):
+        _agregar(r, "fractional_appointments")
     if n is not None and n < config.UMBRAL_MUESTRA_PEQUENA:
         _agregar(r, "small_sample")
 
@@ -153,10 +156,12 @@ def validar_conjunto(registros):
             if not consecutivo:
                 continue
             a, b = prev.get("avg_request_calc"), cur.get("avg_request_calc")
-            if a and b and (b / a > config.FACTOR_SALTO or a / b > config.FACTOR_SALTO):
+            pocos = min(prev.get("appointments_total") or 0, cur.get("appointments_total") or 0) < config.UMBRAL_MUESTRA_PEQUENA
+            if a and b and not pocos and (b / a > config.FACTOR_SALTO or a / b > config.FACTOR_SALTO):
                 _agregar(cur, "jump_vs_prev_month:request")
             a, b = prev.get("appointments_total"), cur.get("appointments_total")
-            if a and b and (b / a > config.FACTOR_SALTO or a / b > config.FACTOR_SALTO):
+            if (a and b and min(a, b) >= config.UMBRAL_MUESTRA_PEQUENA
+                    and (b / a > config.FACTOR_SALTO or a / b > config.FACTOR_SALTO)):
                 _agregar(cur, "volume_jump")
 
     # Departamento frente al nacional del mismo mes, y suma de citas departamentales.
@@ -179,7 +184,7 @@ def validar_conjunto(registros):
         if all(d["appointments_total"] is not None for d in ds) and nat["appointments_total"] is not None:
             suma = sum(d["appointments_total"] for d in ds)
             if suma != nat["appointments_total"]:
-                _agregar(nat, f"national_sum_mismatch:{suma}")
+                _agregar(nat, f"national_sum_mismatch:{suma:g}")
 
     # Contexto: los meses de confinamiento por la pandemia (se anota, no se elimina).
     for r in registros:

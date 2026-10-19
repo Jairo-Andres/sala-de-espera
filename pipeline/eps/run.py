@@ -31,14 +31,25 @@ def ahora():
 
 # --- CSV ------------------------------------------------------------------------------
 
-ENTEROS = {"year", "month", "appointments_total", "sum_days_request", "sum_days_desired"}
-REALES = {"avg_request_calc", "avg_desired_calc", "avg_request_reported", "avg_desired_reported",
+ENTEROS = {"year", "month"}
+REALES = {"appointments_total", "sum_days_request", "sum_days_desired", "avg_request_calc", "avg_desired_calc", "avg_request_reported", "avg_desired_reported",
           "avg_of_max_request", "avg_of_min_request", "avg_of_max_desired", "avg_of_min_desired",
           "specialist_hours"}
 
 
-def escribir_csv(registros, ruta: Path):
-    ruta.parent.mkdir(parents=True, exist_ok=True)
+def escribir_csv(registros, carpeta: Path):
+    """Un CSV por EPS y año (registros/<eps>_<año>.csv): cada carga mensual solo toca un archivo."""
+    carpeta.mkdir(parents=True, exist_ok=True)
+    grupos = defaultdict(list)
+    for r in registros:
+        grupos[(r["eps"], r["year"])].append(r)
+    for viejo in carpeta.glob("*.csv"):
+        viejo.unlink()
+    for (eps, anio), regs in grupos.items():
+        _escribir_un_csv(regs, carpeta / f"{eps}_{anio}.csv")
+
+
+def _escribir_un_csv(registros, ruta: Path):
     with ruta.open("w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=construir.CAMPOS)
         w.writeheader()
@@ -52,9 +63,14 @@ def escribir_csv(registros, ruta: Path):
             w.writerow(fila)
 
 
-def leer_csv(ruta: Path):
-    if not ruta.exists():
-        return []
+def leer_csv(carpeta: Path):
+    regs = []
+    for ruta in sorted(carpeta.glob("*.csv")) if carpeta.exists() else []:
+        regs += _leer_un_csv(ruta)
+    return regs
+
+
+def _leer_un_csv(ruta: Path):
     regs = []
     with ruta.open(encoding="utf-8") as fh:
         for fila in csv.DictReader(fh):
@@ -222,7 +238,7 @@ def main(argv=None):
     a = ap.parse_args(argv)
 
     destino = a.salida or (Path(tempfile.mkdtemp(prefix="eps-dry-")) if a.dry_run else config.DATA_DIR)
-    previos = leer_csv(config.DATA_DIR / "registros.csv")
+    previos = leer_csv(config.DATA_DIR / "registros")
     estado_previo = {}
     if (config.DATA_DIR / "estado_fuentes.json").exists():
         estado_previo = json.loads((config.DATA_DIR / "estado_fuentes.json").read_text(encoding="utf-8"))
@@ -270,7 +286,7 @@ def main(argv=None):
         print("ERROR: no se obtuvo ningún registro.", file=sys.stderr)
         return 1
 
-    escribir_csv(registros, destino / "registros.csv")
+    escribir_csv(registros, destino / "registros")
     (destino / "estado_fuentes.json").write_text(json.dumps(estado, ensure_ascii=False, indent=2), encoding="utf-8")
     sala = publicar.sala(registros, estado)
     publico = destino / "sala-eps.json" if a.dry_run or a.salida else config.PUBLIC_DIR / "sala-eps.json"

@@ -46,10 +46,11 @@ class ResultadoPdf:
 def _valores(toks: list[str]) -> tuple[dict, dict]:
     ent = texto.entero
     dec = lambda t: texto.decimal(t, punto_solo_es_miles=True)  # noqa: E731
+    # Las sumas de días a veces traen decimales (366986,06 en 2015): se leen como decimales.
     v = {
-        "appointments_total": ent(toks[0]),
-        "sum_days_request": ent(toks[1]),
-        "sum_days_desired": ent(toks[2]),
+        "appointments_total": dec(toks[0]),  # 2020 trae citas con decimales (420613,91)
+        "sum_days_request": dec(toks[1]),
+        "sum_days_desired": dec(toks[2]),
         "avg_request_reported": dec(toks[3]),
         "avg_desired_reported": dec(toks[4]),
         "avg_of_max_request": dec(toks[5]),
@@ -67,6 +68,8 @@ def _valores(toks: list[str]) -> tuple[dict, dict]:
 
 def _separar_especialidad(prefijo: list[str]):
     """'MEDICINA GENERAL VALLE DEL CAUCA' -> ('medicina_general', 'MEDICINA GENERAL', 'VALLE DEL CAUCA')."""
+    if prefijo and re.match(r"^\d+\.$", prefijo[0]):
+        prefijo = prefijo[1:]  # 2016: "6. OBSTETRICIA"
     for n in (3, 2, 1):
         if len(prefijo) >= n:
             esp = texto.especialidad(" ".join(prefijo[:n]))
@@ -88,13 +91,19 @@ def parsear(lineas: list[str]) -> ResultadoPdf:
             res.regimenes_en_texto.add(r.lower())
 
     malas = []
+    esp_actual = None  # 2016: la especialidad va en su propia línea y debajo las filas por departamento
     i = 0
     en_resumen = True  # las filas nacionales sin departamento antes del primer departamento
     while i < len(lineas):
         toks = lineas[i].split()
         i += 1
         n = cola_numerica(toks)
-        if n == 0 or n == len(toks):
+        if n == 0:
+            sola = texto.especialidad(re.sub(r"^\d+\.\s*", "", lineas[i - 1]))
+            if sola:
+                esp_actual = sola
+            continue
+        if n == len(toks):
             continue
         prefijo = toks[:-n]
         es_total = prefijo[0].lower() == "total"
@@ -103,7 +112,13 @@ def parsear(lineas: list[str]) -> ResultadoPdf:
         resto = texto.normalizar(" ".join(prefijo))
         if "en blanco" in resto or (es_total and resto == "general"):
             continue  # restos de la tabla dinámica: filas vacías y el total de todas las especialidades
+        if texto.fuera_de_alcance(" ".join(prefijo)):
+            continue
         esp, esp_raw, dep_raw = _separar_especialidad(prefijo)
+        if esp is None and not es_total and esp_actual and texto.departamento(" ".join(prefijo)):
+            esp, esp_raw, dep_raw = esp_actual, "", " ".join(prefijo)
+        if esp:
+            esp_actual = esp
         if esp is None and not (es_total or n >= N_COLUMNAS):
             continue  # encabezados y texto suelto
         nums = toks[-n:]
@@ -138,11 +153,10 @@ def parsear(lineas: list[str]) -> ResultadoPdf:
         ))
     if not res.filas:
         raise FormatoInesperado("No se encontró ninguna fila de datos")
-    # Unas pocas filas con celdas vacías se marcan "sin dato"; si son muchas, o si falla una fila
-    # nacional, lo más probable es que cambió el formato y no se publica nada de este archivo.
-    nacionales_malas = [f for f in res.filas if f.incompleta and f.geo_level == "national"]
-    if nacionales_malas or len(malas) > max(3, 0.1 * len(res.filas)):
+    # Filas con celdas vacías (pasa en varios meses históricos) quedan "sin dato" una por una.
+    # Si son la mayoría, lo más probable es que cambió el formato: no se publica nada del archivo.
+    if len(malas) > 0.5 * len(res.filas):
         raise FormatoInesperado(
-            f"{len(malas)} filas no tienen las {N_COLUMNAS} columnas esperadas: " + "; ".join(malas[:5])
+            f"{len(malas)} de {len(res.filas)} filas no tienen las {N_COLUMNAS} columnas esperadas: " + "; ".join(malas[:5])
         )
     return res

@@ -20,8 +20,18 @@ def especialidad(nombre: str):
     return config.ESPECIALIDADES.get(n)
 
 
+_SIN_ESPACIOS = {k.replace(" ", ""): v for k, v in config.DEPARTAMENTOS.items()}
+
+
 def departamento(nombre: str):
-    return config.DEPARTAMENTOS.get(normalizar(nombre))
+    n = normalizar(nombre)
+    # Algunos PDF pegan las palabras ("VALLEDEL CAUCA", "NORTEDESANTANDER").
+    return config.DEPARTAMENTOS.get(n) or _SIN_ESPACIOS.get(n.replace(" ", ""))
+
+
+def fuera_de_alcance(nombre: str) -> bool:
+    n = normalizar(re.sub(r"(?i)^consulta\s+", "", nombre))
+    return any(n == e or n.startswith(e + " ") for e in config.ESPECIALIDADES_FUERA)
 
 
 NUMERO = re.compile(r"^-?(\d+([.,]\d+)*)$")

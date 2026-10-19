@@ -1,0 +1,2226 @@
+{
+  "generated_at": "2026-10-19T01:09:39Z",
+  "parser_version": "1.0.0",
+  "eps": {
+    "nueva_eps": {
+      "name": "Nueva EPS",
+      "index_url": "https://www.nuevaeps.com.co/oportunidad-citas",
+      "checked_at": "2026-10-19T01:09:15Z",
+      "responded": true,
+      "error": null,
+      "files": [
+        {
+          "regimen": "contributivo",
+          "period": "2026-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-02/Enero_2026_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "21c9c31deafa8dec156b64c507ef25936e4739b74ca1410bb19921b877c8176f",
+          "retrieved_at": "2026-10-19T00:43:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-03/Febrero_2026_contributivo.pdf",
+          "status": "ok",
+          "sha256": "b8fa231b8e72df847cff64c3ce2dd9676dc6d216e6bd1ba5fa420281f7ab766f",
+          "retrieved_at": "2026-10-19T00:43:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-03",
+          "url": "https://nuevaeps.com.co/sites/default/files/2026-04/Marzo_2026_contributivo_0.pdf",
+          "status": "ok",
+          "sha256": "8873a41bffc791f248ec0967e5862c4297767e57aa2664ee519ef2e06a366198",
+          "retrieved_at": "2026-10-19T00:43:39Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-05/Abril_2026_contributivo.pdf",
+          "status": "ok",
+          "sha256": "e41abf8d986c3be224686671c2289e2d29b3e29957ff806e320af14b2970331e",
+          "retrieved_at": "2026-10-19T00:43:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-06/Mayo_2026_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "dcb05af3934afcf7c57524ee243ccf60654db98480ef681bbff084d536c59a5a",
+          "retrieved_at": "2026-10-19T00:43:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-07/Junio_2026_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "8db8ceaa852a083f6352fbf9e7d1515729d414bfa4d0a5ac5efc4f053bac2a49",
+          "retrieved_at": "2026-10-19T00:43:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-08/Julio_2026_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "541c81b8016463fc462ba08cc3d5f58ace42e4f8256880f029f9abcebbc1135e",
+          "retrieved_at": "2026-10-19T00:43:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2026-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-09/Agosto_2026_contributivo.pdf",
+          "status": "ok",
+          "sha256": "8d9ba8f529f207e1b9657688bba7987a63efdd53705c561f097377c3d2afc63f",
+          "retrieved_at": "2026-10-19T00:43:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-03/Enero_2025_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "d62bb92460be7f3641a2f9af153c9f9a167232cc042f9aac6053ac8d709f1ecb",
+          "retrieved_at": "2026-10-19T00:44:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-03/Febrero_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "f414349dce0c21e329bea433df3659fa6f5e2adaf603c1d81f476a6564b8e71b",
+          "retrieved_at": "2026-10-19T00:44:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-04/Marzo_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "aa242ec4854316b0b724d1136c90b7d5626b983bed903b9e3db91c0d4547b69e",
+          "retrieved_at": "2026-10-19T00:44:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-05/Abril_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "afaaa5280add2e468a041356da3498f3a94d39ac08fb88f40e9947b5aa3544d2",
+          "retrieved_at": "2026-10-19T00:44:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-06/Mayo_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "dfec2b17f4d347fd64329dad0e0b4692bb681bcb33a267c18dec946f3e1a20b3",
+          "retrieved_at": "2026-10-19T00:44:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-07/Junio_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "db313186b6343b33922f914934720e6d8b821b1bdfd67ac516bc5cdc5c62c8d9",
+          "retrieved_at": "2026-10-19T00:44:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-08/Julio_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "37f87881a519b6ebf6adf20f416df86aea7efc77d538a6a60853a15efb229466",
+          "retrieved_at": "2026-10-19T00:44:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-09/Agosto_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "27a4a3c3a2628bb91e182d9314100a336245d3fe5a0324f41c9dfab13838f8c6",
+          "retrieved_at": "2026-10-19T00:44:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-10/Septiembre_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "88b617658b6916a950e1e281eda0c156dbd0e9d10be21b29b32f71290b6d9908",
+          "retrieved_at": "2026-10-19T00:44:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-11/Octubre_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "79a9e269407786bcd6549bb93b9a3f831968d3c47a0d52f3072a3921ca9f89ac",
+          "retrieved_at": "2026-10-19T00:44:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-12/Noviembre_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "1454dd48cf6f6feef41d52b69cdb802ea1cca33a128e9fac2d4ba91ce0a0c1b3",
+          "retrieved_at": "2026-10-19T00:44:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2025-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-01/Diciembre_2025_contributivo.pdf",
+          "status": "ok",
+          "sha256": "e508f9a4420f525c5147415e573a954b7532e467be3e517a9914591683636c06",
+          "retrieved_at": "2026-10-19T00:44:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_ENERO_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "7b28aa03f3ba25c8cda86b7e76c0b53e90d76130dea39a3131dab1db2c2b1048",
+          "retrieved_at": "2026-10-19T00:44:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_FEBRERO_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "d342b04b4ad98d65d6b0ab4e8a40221fc39f50620606cd2704651513cbb3bcbc",
+          "retrieved_at": "2026-10-19T00:44:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_MARZO_CONTRIBUTIVO%20(3).pdf",
+          "status": "ok",
+          "sha256": "a37cc6db4e40902558dae1cda097b4f15b9dd961bf2d8d185a7f2ae64858ea8d",
+          "retrieved_at": "2026-10-19T00:44:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_ABRIL_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "00d1f20e0a920dc1b20d4d409b47a493c0932e13546c6349e928832db4dedef4",
+          "retrieved_at": "2026-10-19T00:45:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_MAYO2024_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "f6ff0cb86ebd3024aece66fa3703363a0e2b0634b40f2dc0ef01dac443c37663",
+          "retrieved_at": "2026-10-19T00:45:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_JUNIO_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "8f53e664e263c518a7be4086437a2fb49416b83dae8a9293ee3bccb7c819531a",
+          "retrieved_at": "2026-10-19T00:45:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_JULIO_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "2d5173c2a8f7070389ba48942cb6128bf02eebee8ba70e5b9478cf0c4e7b2160",
+          "retrieved_at": "2026-10-19T00:45:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_AGOSTO_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "206ed4d1311fd9660f5aae93afda2d9b113b16f9facf94b74f5bb77250b627b5",
+          "retrieved_at": "2026-10-19T00:45:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_SEPTIEMBRE_CONTRIBUTIVO%20(1).pdf",
+          "status": "ok",
+          "sha256": "1f15e7fe30e45a3bfa216a54d7ae9a42e27249c997f234ee60840b53c2210957",
+          "retrieved_at": "2026-10-19T00:45:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_OCTUBRE_CONTRIBUTIVO_0.pdf",
+          "status": "ok",
+          "sha256": "d6a6586ae40579f7a96aa7741a8bdda810e71fa337e0d61ca0b230ab4083524c",
+          "retrieved_at": "2026-10-19T00:45:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_NOVIEMBRE_CONTRIBUTIVO%20(1).pdf",
+          "status": "ok",
+          "sha256": "065d4d00655a2ede5fd6521cd926cee9161cba585c59b6d9af0e36af2ef31098",
+          "retrieved_at": "2026-10-19T00:45:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2024-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-03/Diciembre_2024_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "87e2c49e042d712d71fe9bdfd9aceb634064c6999d7aebc0bb58d89a85706883",
+          "retrieved_at": "2026-10-19T00:45:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Enero_2023_Contributivo_v.pdf",
+          "status": "ok",
+          "sha256": "95572d24230fe6a2404dff10c2eef986bc9f49b4d1a7c5a8d1390fec12d12842",
+          "retrieved_at": "2026-10-19T00:45:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Febrero_2023_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "63f40e12010e7712514a16392b4bc6a6754fdafae81c80eadb5410c4c048585b",
+          "retrieved_at": "2026-10-19T00:45:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2023-04/IND_1552_MARZO_2023_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "43b78d24bf489cdd09d6f41ad6bfecf483ecebb4be14cd35c1101f877ce54d0d",
+          "retrieved_at": "2026-10-19T00:45:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2023-05/IND_1552_ABRIL_2023_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "0ae93994e07166e81113e249dfcb52c159ba641a6ce55ccdac015e7e33895510",
+          "retrieved_at": "2026-10-19T00:45:49Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2023-06/IND_1552_MAYO_2023_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "06cb32d87e7d289ef680d53ad4d162df6dfc882b165525e8f88ce33036e45b1e",
+          "retrieved_at": "2026-10-19T00:45:53Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/IND_1552_JUNIO_2023_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "90707f173c9f00755dc2f2034a85e09397b756776b9527d6efd53c939312f292",
+          "retrieved_at": "2026-10-19T00:45:57Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/IND_1552_JULIO_2023_contributivo.pdf",
+          "status": "ok",
+          "sha256": "699e036228461fc06262671a836a8b343c7bfa4205e3a0c57a3019ccd52d57e6",
+          "retrieved_at": "2026-10-19T00:46:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_AGOSTO_CONTRIBUTIVO.PDF",
+          "status": "ok",
+          "sha256": "70adec46d63b41419e9d8d2097b32cb21af154d55ec38b95439c900adc080db9",
+          "retrieved_at": "2026-10-19T00:46:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_SEPTIEMBRE_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "7da831600ed2b552df882666d40a03e52f83ecee15ba509a4386d8f364b34b91",
+          "retrieved_at": "2026-10-19T00:46:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_OCTUBRE_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "dd6e70b911153b18f99a22e3f0d501f4bb1da505ecd0304b168ed58b40cbd99a",
+          "retrieved_at": "2026-10-19T00:46:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_NOVIEMBRE_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "f137d09aca4b0431b8e2f54122245fd40c2b45016846de0dd24ce5c179116dfd",
+          "retrieved_at": "2026-10-19T00:46:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2023-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_DICIEMBRE_CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "9ecf364b4dad84e7505d5dc4208aa8bb33fb443e7b2c1eae4766cbefba530e7b",
+          "retrieved_at": "2026-10-19T00:46:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_FEBRERO_2022%20CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "a83e7212dee89624456845efd71faf997713b7ca30f15603bcf1221408b548dd",
+          "retrieved_at": "2026-10-19T00:46:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_MARZO_2022%20CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "656c45605fae6011ebd8e3b77d9a22cfde43e4f4913e6452f52c005954c9b62b",
+          "retrieved_at": "2026-10-19T00:46:33Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_ABRIL_2022%20CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "6c1ce5fd26a67f11a216c4dc982960e2d8be57b59a9fdabac20680c4fa1d6418",
+          "retrieved_at": "2026-10-19T00:46:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_mayo_2022%20Contributivo.pdf",
+          "status": "ok",
+          "sha256": "892be6d546cb3305d4b6a4b62bdba6bc685fa593eb29424c615a75cf8fb73bc0",
+          "retrieved_at": "2026-10-19T00:46:41Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Junio_2022_contributivo.pdf",
+          "status": "ok",
+          "sha256": "32dc5595c530d0b4a2227a1701a06c6e3c4302224f487dd48e4f473ca4411d76",
+          "retrieved_at": "2026-10-19T00:46:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_JuLio_2022%20Contributivo.pdf",
+          "status": "ok",
+          "sha256": "fa479522cddd79f88849b9cb41cea04060cefa9995e2de7797400144c0d9446e",
+          "retrieved_at": "2026-10-19T00:46:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/CONTRIBUTIVO%20--IND_1552_AGOSTO_2022%20v2.pdf",
+          "status": "ok",
+          "sha256": "ceeae9f5daf0647c1a9ad88a45524fb3b32bfb2a77b547d7776f4e8eed91110d",
+          "retrieved_at": "2026-10-19T00:46:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Septiembre_2022_contributivo.pdf",
+          "status": "ok",
+          "sha256": "997b6e5c9ab2e294595e5a16c758b9992cf07ff2eb45dcfdd625ec206d5c016e",
+          "retrieved_at": "2026-10-19T00:46:57Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Octubre_2022_contributivo.pdf",
+          "status": "ok",
+          "sha256": "7dbd43580b1e088ae59a024374f31751986b8f2bcd954fb57be40830fd3d7ae0",
+          "retrieved_at": "2026-10-19T00:47:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/C%C3%B3digos%20de%20buen%20gobierno%20y%20%C3%A9tica/Noviembre%20contributivo.pdf",
+          "status": "ok",
+          "sha256": "07e38fc5a02d18c7b215d126a7bb659427fd68d7fdbe516abb906f672e0d6dfe",
+          "retrieved_at": "2026-10-19T00:47:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2022-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Diciembre_2022_contributivo.pdf",
+          "status": "ok",
+          "sha256": "734960b6d23e6a150aa065b9196e932fef3c12e5a44c77151fed7d7646b7b52d",
+          "retrieved_at": "2026-10-19T00:47:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Enero2021_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "10a9d798239c4b833abc793add753225900e9df519ad4cd7d163bf78be33fba5",
+          "retrieved_at": "2026-10-19T00:47:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552-Contributivo%20Febrero%202021.pdf",
+          "status": "ok",
+          "sha256": "aaf7654ad43ccf615f0cfae7a220d668e4d97d9eac8f7689351493df71cd598a",
+          "retrieved_at": "2026-10-19T00:47:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_MARZO_2021-CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "cded2887140082be981046a5cc5732e04fe1a780589e9566a093f2e28ba08107",
+          "retrieved_at": "2026-10-19T00:47:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_ABRIL_2021-CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "d8e61d2174e680a92f1a0b5cbcde944e0ea6f634dce1fa608aae890b0cedd580",
+          "retrieved_at": "2026-10-19T00:47:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_MAYO_2021-CONTRIBUTIVO.pdf",
+          "status": "ok",
+          "sha256": "eb115433d392e259bd8044bb95410548d3e43eecf6306f8aa760f19f9e0c8187",
+          "retrieved_at": "2026-10-19T00:47:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552-%20contributivo%20Junio%202021.pdf",
+          "status": "ok",
+          "sha256": "32d36fc50a0ddb22a4b53d68fc6c62305287e01aa61036abe14a57e4f721b500",
+          "retrieved_at": "2026-10-19T00:47:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552-%20contributivo%20Julio%202021.pdf",
+          "status": "ok",
+          "sha256": "836decc2a23985b3eba76c91a3e703597275aa6b95b721e26f8579b55d0aa70e",
+          "retrieved_at": "2026-10-19T00:47:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_CONTRIBUTIVO_AGOSTO_2021.pdf",
+          "status": "ok",
+          "sha256": "5afb331805d4d21b491685c209f0021e4f15387cfb37497aad03fc1c578a9ee1",
+          "retrieved_at": "2026-10-19T00:47:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_CONTRIBUTIVO_SEPTIEMBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "1ca5563160758698119b1f13eaabbdf65e53a41af5d17991205aa0d308fcf858",
+          "retrieved_at": "2026-10-19T00:47:45Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_CONTRIBUTIVO_OCTUBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "b6fc450e4969d94e7d9d624f42bfc122d77ea815487f95a2639c31f3731b6946",
+          "retrieved_at": "2026-10-19T00:47:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/1552_CONTRIBUTIVO_NOVIEMBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "6e2cbf44e0e4719cf3dae8918dfb398b085874c4acfceafb33aa9e04620fd6a7",
+          "retrieved_at": "2026-10-19T00:47:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2021-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_CONTRIBUTIVO_DICIEMBRE_2021_0.pdf",
+          "status": "ok",
+          "sha256": "f34b3d898aa465fafaad2df7544f78d482fd2318dba79eb6bc2c9046866ed393",
+          "retrieved_at": "2026-10-19T00:47:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Enero%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "46c5d238f4dcfca8b26510e1ba1aced2408291a39e40c636249ef205c9fbbaed",
+          "retrieved_at": "2026-10-19T00:48:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Febrero%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "526eed57b9cd9ba17f86dc04e5cc9ad62ef368312214ff6a837ec2deafc2af13",
+          "retrieved_at": "2026-10-19T00:48:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Marzo%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "b09d85e101064a5747801a60b69e720b27ce0830755fa0f38f45b705e9e52ef5",
+          "retrieved_at": "2026-10-19T00:48:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Abril%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "76a2c9fa111c0286181d9e0e396cd18ab7c2e834b919f76c7c5f96e7a1fd142f",
+          "retrieved_at": "2026-10-19T00:48:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Mayo%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "cd773c4f3b1d3760468fe07a070fbb40629d2ab4109ab3f0463484608147d2eb",
+          "retrieved_at": "2026-10-19T00:48:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Junio%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "ae8b22588e9689a0d7dd530b87bcdf7f1fd7d12cdeac7fb1435165915365c7bf",
+          "retrieved_at": "2026-10-19T00:48:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Julio%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "fce4660a0e2ce494379682d206e76cf0031abb4550047292d83de633d8be09dd",
+          "retrieved_at": "2026-10-19T00:48:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1.%201552%20Contributivo%20Agosto%202020.pdf",
+          "status": "ok",
+          "sha256": "b8b911a65b03c8883740d02161943aa56309b6fd3accfe712430282be2add7b7",
+          "retrieved_at": "2026-10-19T00:48:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_CONTRIBUTIVO_septiembre.pdf",
+          "status": "ok",
+          "sha256": "451830fc650cac1b2b4880933ee5a26aea188831b30ac9dccfce6d057641710e",
+          "retrieved_at": "2026-10-19T00:48:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Octubre%202020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "798a31c7895083e58184b8325a9e78adef0ec1f1c38c4adc0ceec076d8acb503",
+          "retrieved_at": "2026-10-19T00:48:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Noviembre2020_cONTRIBUTIVO.PDF",
+          "status": "ok",
+          "sha256": "0304858ec4b73841520fbf207f7daf26111dca98deae4bbd75565d709526e1ac",
+          "retrieved_at": "2026-10-19T00:48:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2020-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Diciembre2020_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "6b07925d4b2f607ab5b133c32539d27e0505e55ac7e62506ad49b066f29d37a1",
+          "retrieved_at": "2026-10-19T00:48:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-enero-2019.pdf",
+          "status": "ok",
+          "sha256": "173f6f7259ed0c80590ad52cbe6b4fda714cb8cba1de62964086ef9fb91f0d0b",
+          "retrieved_at": "2026-10-19T00:48:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-febrero-2019.pdf",
+          "status": "ok",
+          "sha256": "c6b1eb15406da0861b95fccaac26ed0cd359056530fb815c6843eb698d3e6983",
+          "retrieved_at": "2026-10-19T00:48:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-marzo-2019.pdf",
+          "status": "ok",
+          "sha256": "bbd1dbacdecca38c599511bdb5cfbc18fc3e40c07bb951aab0c51279670a62cf",
+          "retrieved_at": "2026-10-19T00:48:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-abril-2019.pdf",
+          "status": "ok",
+          "sha256": "9cbb8043e3aae016887648bf3376541d286216d8ae2959c53dceb55863a17f79",
+          "retrieved_at": "2026-10-19T00:49:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-mayo-2019.pdf",
+          "status": "ok",
+          "sha256": "3d5426b77b6754604f6990a32b4eacd2dde9e28f4395179a1a4fb86c8793f69b",
+          "retrieved_at": "2026-10-19T00:49:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-decitas-regimen-contributivo-jun2019-nuevaeps.pdf",
+          "status": "ok",
+          "sha256": "085d69d3a86f042d0fb622d1c23ccb74d57dbb458fb7efa51b4820d0d5348003",
+          "retrieved_at": "2026-10-19T00:49:09Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-citas-julio-contributivo.pdf",
+          "status": "ok",
+          "sha256": "ea09f3990de14771132a0daf1dab5e6b2b649be384a6e692d1794e85ae3098d7",
+          "retrieved_at": "2026-10-19T00:49:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/contributivo-agosto.pdf",
+          "status": "ok",
+          "sha256": "43b8fa535f2a181e620163b1e77e4b3b8fed9507e4ea27812788756a322f669d",
+          "retrieved_at": "2026-10-19T00:49:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Septiembre_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "1136e6ae6955fb1557498a9615e341e4f9095feaab851a78314514db5ea46ba1",
+          "retrieved_at": "2026-10-19T00:49:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND1552OctubreContributivo.pdf",
+          "status": "ok",
+          "sha256": "5630e7b5094ec4079e64cc732df852a1b6fb0c6475dede75afc83cac21adf987",
+          "retrieved_at": "2026-10-19T00:49:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Noviembre_Contributivo.pdf",
+          "status": "ok",
+          "sha256": "1908445b9783e06524c639c8b26f8e656cd3a9a6a32febce50c5ad6247a35973",
+          "retrieved_at": "2026-10-19T00:49:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2019-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Diciembre_Contributivo_1.pdf",
+          "status": "ok",
+          "sha256": "d459777999c8189a83417792c44a57d3bbcff8a0d73e048d26302993bfbd8b01",
+          "retrieved_at": "2026-10-19T00:49:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-enero-2018.pdf",
+          "status": "ok",
+          "sha256": "3b3fcf08d35b92c084d48df584bec471b8fef2fbf720be7773cc5d57f77507cc",
+          "retrieved_at": "2026-10-19T00:49:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-febrero-2018.pdf",
+          "status": "ok",
+          "sha256": "f8f86792e9cb02f09a2732d58fc0d2572a061de58b9576e77576d13e412abe8b",
+          "retrieved_at": "2026-10-19T00:49:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-marzo-2018.pdf",
+          "status": "ok",
+          "sha256": "06650ee2d992daaf434315d2c9b017c2e57644bfe9251ce30a09958862dd9583",
+          "retrieved_at": "2026-10-19T00:49:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-abril-2018.pdf",
+          "status": "ok",
+          "sha256": "5dcc3c9fd2f6da2b64df033100f0a48e5e9f021b4f76368934230b8ac6cfeddb",
+          "retrieved_at": "2026-10-19T00:49:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-mayo-2018.pdf",
+          "status": "ok",
+          "sha256": "f711788872e74dba9b19c91b575ad089909e6cfe6fa48ad5f908d2cef66ff441",
+          "retrieved_at": "2026-10-19T00:49:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-junio-2018.pdf",
+          "status": "ok",
+          "sha256": "de4d3d156ee929eea9f7f0f4c4da51cc7f7ba88e78f0112495d04f88bd48f3f7",
+          "retrieved_at": "2026-10-19T00:49:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-julio-2018.pdf",
+          "status": "ok",
+          "sha256": "aba15eb0e43c540b500e35d56468e30887c775152be3900f069ebf161bfcedc3",
+          "retrieved_at": "2026-10-19T00:50:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-agosto-2018.pdf",
+          "status": "ok",
+          "sha256": "f30d7cd4827e5e83986a57beb19d918d4f1bfa7a84ac99690778a86473c83a8f",
+          "retrieved_at": "2026-10-19T00:50:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-septiembre-2018.pdf",
+          "status": "ok",
+          "sha256": "07f8617ae33bbb347691ea2b4a27aebd95f4049b54e5df838186d40e94761ae4",
+          "retrieved_at": "2026-10-19T00:50:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-octubre-2018.pdf",
+          "status": "ok",
+          "sha256": "c6a98a77f96af224e5e92432aeffb20e0bf784d0c4b7e52499c70bd4395d72f8",
+          "retrieved_at": "2026-10-19T00:50:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-noviembre-2018.pdf",
+          "status": "ok",
+          "sha256": "7e9c56abcb7acdeee4e47e8a3cee056adbae746d54e42069925bf780ce8d2c41",
+          "retrieved_at": "2026-10-19T00:50:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2018-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-diciembre-2018.pdf",
+          "status": "ok",
+          "sha256": "265c263854e17d88da2fc11bb7c16aecfb040a33736d12d5d5918b6ac66ed8f0",
+          "retrieved_at": "2026-10-19T00:50:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-enero-2017.pdf",
+          "status": "ok",
+          "sha256": "e03f5018bde08a58713341d4d1bf27cbb49134c05b802c3f77ecbefc591b6220",
+          "retrieved_at": "2026-10-19T00:50:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-febrero-2017.pdf",
+          "status": "ok",
+          "sha256": "93ece0114f6d6e9c8e92e5fdad7d5191cddee3a065adf0be6710a0b41a53f6a0",
+          "retrieved_at": "2026-10-19T00:50:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-marzo-2017.pdf",
+          "status": "ok",
+          "sha256": "a485c56d117d449dffd0025001acc382100ebdaa63213b601149ad77a2e0d3ba",
+          "retrieved_at": "2026-10-19T00:50:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-abril-2017.pdf",
+          "status": "ok",
+          "sha256": "70e6cf33d1c46e570e079b79c0012edef66cf7a472a22d68f8981c96f15b1493",
+          "retrieved_at": "2026-10-19T00:50:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-mayo-2017.pdf",
+          "status": "ok",
+          "sha256": "4c3f9dd64be4e31c79bbf64a9487381e0a27641f52da85ab5eaaa3febd7f859f",
+          "retrieved_at": "2026-10-19T00:50:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-junio-2017.pdf",
+          "status": "ok",
+          "sha256": "7bff3b2d3f98ed5531fa20a2239f5d61d4df2712fcaf0b7cbf6d71240b9ce394",
+          "retrieved_at": "2026-10-19T00:50:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-julio-2017.pdf",
+          "status": "ok",
+          "sha256": "37b1a3d4ad02908ca11f6b7d584b4afc2282f7cd552a355a703af2d5adaa4269",
+          "retrieved_at": "2026-10-19T00:50:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-agosto-2017.pdf",
+          "status": "ok",
+          "sha256": "a9d8c2f60afa85904b7010f6bdef43bfbdec91a0c9f3345c11d95507bd67bb1f",
+          "retrieved_at": "2026-10-19T00:50:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-septiembre-2017.pdf",
+          "status": "ok",
+          "sha256": "6816dc365d1cc1980747c348c711ee064e9ba0a3a5a245f3afa32ae30da9fd6e",
+          "retrieved_at": "2026-10-19T00:50:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-octubre-2017_0.pdf",
+          "status": "ok",
+          "sha256": "f23f724a2920f00877bdbc5207f4f579e5a6de5c07b5d3d5f12cd9711cca457f",
+          "retrieved_at": "2026-10-19T00:51:02Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-noviembre-2017.pdf",
+          "status": "ok",
+          "sha256": "4c0f2329964947bab213d0d0797a0f426cf06d15034e9ea08d6c7cb2bb5e8fa3",
+          "retrieved_at": "2026-10-19T00:51:06Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2017-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-diciembre-2017.pdf",
+          "status": "ok",
+          "sha256": "4334f0bd46c876b7d13e391fa8202ebbf9801fd7db5fefb33d8e519f6c9d31f6",
+          "retrieved_at": "2026-10-19T00:51:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-enero-2016.pdf",
+          "status": "ok",
+          "sha256": "ee761aaae51e6682e1c72ef735463fc6b3dfbc96c27a5a2c3c001b4400d2fe00",
+          "retrieved_at": "2026-10-19T00:51:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-febrero-2016.pdf",
+          "status": "ok",
+          "sha256": "6a3952bdbf2ce84720dae088526405b71f0a1b9dfd11306275b1c1f4f06fea5d",
+          "retrieved_at": "2026-10-19T00:51:18Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-marzo-2016.pdf",
+          "status": "ok",
+          "sha256": "d20d3f0d920d4ae15ea45e09c719c2a59a7ce964d349cae0452c080de95e5f8c",
+          "retrieved_at": "2026-10-19T00:51:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-abril-2016.pdf",
+          "status": "ok",
+          "sha256": "2f71089d35801607c9d2438d4bfff4142d5aa7668228f28e0c3451f12830e9fe",
+          "retrieved_at": "2026-10-19T00:51:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-mayo-2016.pdf",
+          "status": "ok",
+          "sha256": "01f00a0eaa1340e0595a974e132333d8ce9b5819bf1568b92bf7067bc38b25bc",
+          "retrieved_at": "2026-10-19T00:51:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-junio-2016.pdf",
+          "status": "ok",
+          "sha256": "6b9b3be0253a375967d7ece2ce73a5a7785f1a4269038311f3ef4055c0a406f6",
+          "retrieved_at": "2026-10-19T00:51:33Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-julio-2016.pdf",
+          "status": "ok",
+          "sha256": "491325be20a1f4a98eca62bd57c7fb1d2ee9f74d8d85ff2cbc717c1f64bb07f2",
+          "retrieved_at": "2026-10-19T00:51:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-agosto-2016.pdf",
+          "status": "ok",
+          "sha256": "621c007ac0c8b9f235b28dd61a39646c5ec11eb2dcc29772841579b35a157255",
+          "retrieved_at": "2026-10-19T00:51:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-septiembre-2016.pdf",
+          "status": "ok",
+          "sha256": "8e6427ed3fa79f2e8d8240b091fae0d60c6d2a9bef2ae79d92799c6b5ef38819",
+          "retrieved_at": "2026-10-19T00:51:46Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-octubre-2016.pdf",
+          "status": "ok",
+          "sha256": "ca08c82fb0498bad067c2ea9d46377da23825b8b92ee867bb02f0ad354a74be3",
+          "retrieved_at": "2026-10-19T00:51:50Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-noviembre-2016.pdf",
+          "status": "ok",
+          "sha256": "417d02db55647ff46b8e56381acdf8b4e21067fce75cd7e571da471ad49c44d0",
+          "retrieved_at": "2026-10-19T00:51:54Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2016-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-diciembre-2016.pdf",
+          "status": "ok",
+          "sha256": "a407de8b2b5ed52eca51cca0d40028e8adb443e46261e5dd2fd7129637608287",
+          "retrieved_at": "2026-10-19T00:51:58Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-enero-2015.pdf",
+          "status": "ok",
+          "sha256": "acad4328d890937f8e98088250b87c8808f008b059a4fd176e876100e6ad7dc4",
+          "retrieved_at": "2026-10-19T00:52:01Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-febrero-2015.pdf",
+          "status": "ok",
+          "sha256": "39f9acf83b33cc6407888f436f91748a79e2103c26f7e2dcf81d604e0545c933",
+          "retrieved_at": "2026-10-19T00:52:05Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-marzo-2015.pdf",
+          "status": "ok",
+          "sha256": "322c1e3a690a998f23fe7bebf82a0957835389f5dd8ee930257dcef94fb6a9ac",
+          "retrieved_at": "2026-10-19T00:52:10Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-abril-2015.pdf",
+          "status": "ok",
+          "sha256": "90dde47a20e7415e7f24ffa2570515ef53ec616012214abbebd4d9f37c416b5f",
+          "retrieved_at": "2026-10-19T00:52:14Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-mayo-2015.pdf",
+          "status": "ok",
+          "sha256": "5f0635397a3405c2cbb88783f52e8d98499fb73fdd03e3209c3b207e63fec746",
+          "retrieved_at": "2026-10-19T00:52:17Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-junio-2015.pdf",
+          "status": "ok",
+          "sha256": "140760ef7348e65f00a92c1126ed2b4c94702347f0636f9823da5fbf6b1a1360",
+          "retrieved_at": "2026-10-19T00:52:22Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-julio-2015.pdf",
+          "status": "ok",
+          "sha256": "cd140f33218b4670a8ea0d8fffe19ba8251219f8cbdc01e7b554b89f3d51b7cb",
+          "retrieved_at": "2026-10-19T00:52:26Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-agosto-2015.pdf",
+          "status": "ok",
+          "sha256": "1e80d71b382347b6912d90a9ba1ec9dbc3aa8a797c37cf6e1de3f594c8281115",
+          "retrieved_at": "2026-10-19T00:52:30Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-septiembre-2015.pdf",
+          "status": "ok",
+          "sha256": "2e0c5eb54d6f4966f165c737c6214963d0fac65b360934afb2da0e44922b090c",
+          "retrieved_at": "2026-10-19T00:52:34Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-octubre-2015.pdf",
+          "status": "ok",
+          "sha256": "1f72545ea359a5e63adc2870622c7bf3b54c1053409e4efa0ffc51370c58f06c",
+          "retrieved_at": "2026-10-19T00:52:38Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-noviembre-2015.pdf",
+          "status": "ok",
+          "sha256": "8dcc1f87ad6be865d5f4fa3ce7da588015dbdf1bca81d4229f84480a571649c3",
+          "retrieved_at": "2026-10-19T00:52:42Z"
+        },
+        {
+          "regimen": "contributivo",
+          "period": "2015-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-contributivo-resolucion-1552-diciembre-2015.pdf",
+          "status": "ok",
+          "sha256": "397c815afb28ac608907a9100949cff9315420db4c82183cab0fc15b51f7927c",
+          "retrieved_at": "2026-10-19T00:52:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-02/Enero_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "8d098502075c91c7971863ffc1c13ae1789500dd34de08c82ce7104d72c6c3ce",
+          "retrieved_at": "2026-10-19T00:52:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-03/Febrero_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "41a05886f7c49791487fa85ea324330907998fb651645aaf2377d6dd0d686121",
+          "retrieved_at": "2026-10-19T00:52:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-03",
+          "url": "https://nuevaeps.com.co/sites/default/files/2026-04/Marzo_2026_subsidiado_0.pdf",
+          "status": "ok",
+          "sha256": "3442945393232533215d846375819d4b2fb72c1f7a8ebcb556d83df44dafccd0",
+          "retrieved_at": "2026-10-19T00:52:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-05/Abril_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "0d8da6d65cd795edcf794634f9fd4cdca87d415cd322467cc096708b7d96b5c4",
+          "retrieved_at": "2026-10-19T00:52:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-06/Mayo_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "29cc3e92a13477c64147b5cef1eb4735be6491a9dd20b415590bcea1f719268c",
+          "retrieved_at": "2026-10-19T00:53:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-07/Junio_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "0068d8ca7e9d15d7c980851bdc436a2a6457e36e9377a4d832415ee8f5a9e362",
+          "retrieved_at": "2026-10-19T00:53:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-08/Julio_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "8868f1d49525cbaf43071393db136c327b62f52a332af05c9dab5cec86cb3a59",
+          "retrieved_at": "2026-10-19T00:53:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2026-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-09/Agosto_2026_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "b52609993ce68956b203d38c350861d204f18e823aa41688a205cf78e3727dde",
+          "retrieved_at": "2026-10-19T00:53:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-03/Enero_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "b8d6c2e4138966f7e4613afabd36633a97ec6665551fde7d5ccf239c626b62ae",
+          "retrieved_at": "2026-10-19T00:53:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-03/Febrero_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "62f0d1077b681c92ae3d2e5f8332574f5c9d053e3186ae7228cd52e1873f8049",
+          "retrieved_at": "2026-10-19T00:53:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-04/Marzo_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "92096e2e436a07f049ddb3b0ce153426e7050b6347a32f1e2523d6ad50d68714",
+          "retrieved_at": "2026-10-19T00:53:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-05/Abril_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "5025534c18912fd7ba1a87a46e2254f7f5f910470902f7249f7ebb34e577262f",
+          "retrieved_at": "2026-10-19T00:53:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-06/Mayo_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "17de2c8e5ed54ec751a5edaf2350162c434414397525731f88e985d2d472626b",
+          "retrieved_at": "2026-10-19T00:53:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-07/Junio_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "7a9e6aa8240ed235c53f90e02be5871fc926af89fdf4454e503ec5c57d9ba7e7",
+          "retrieved_at": "2026-10-19T00:53:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-08/Julio_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "636b88028ab3a536473379b1f49ca9fb40be9673af64f94490a94cbf82345892",
+          "retrieved_at": "2026-10-19T00:53:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-09/Agosto_2025_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "ff379ac0c8dd2d1517f1138a7ab6c10717be125b3f3a121effa02f4b6b2e7760",
+          "retrieved_at": "2026-10-19T00:53:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-10/Septiembre_2025_subsidiado.pdf",
+          "status": "ok",
+          "sha256": "2bcbe0db091085509ba3bf0a78761b11989473cb046deeb19dd651757f162b97",
+          "retrieved_at": "2026-10-19T00:53:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-11/Octubre_2025_subsidiado.pdf",
+          "status": "ok",
+          "sha256": "7a20757614cac9985827e7cca13c63579d2b3006f130f1c7fc47a4f52b566a09",
+          "retrieved_at": "2026-10-19T00:53:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-12/Noviembre_2025_subsidiado.pdf",
+          "status": "ok",
+          "sha256": "41d2d6ce23553cd90685bd97c07e13a29f36e322bd8ff103a1a8fce9b9c6acfb",
+          "retrieved_at": "2026-10-19T00:53:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2025-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2026-01/Diciembre_2025_subsidiado.pdf",
+          "status": "ok",
+          "sha256": "c8dec0758dd1a76b980954958b20e418d487d08db2f8780eed74aa9ae009b3b1",
+          "retrieved_at": "2026-10-19T00:54:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_ENERO_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "cca5f58907f95d299beb2598f31b14bfa0536f8ec7bbf680e611560235094bee",
+          "retrieved_at": "2026-10-19T00:54:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_FEBRERO_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "ce8047cae9297d73a38d0127e646d91c954409eb2a90596bde93edcb37565852",
+          "retrieved_at": "2026-10-19T00:54:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_MARZO_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "d135b9a1289fbec5ab3a7f8ef74ce325c2e65a7f838abf3c8ea2d0e9c0d08797",
+          "retrieved_at": "2026-10-19T00:54:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_ABRIL%20_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "5befbb077c3d44f94d900ff676a8afd625f77dcef848ca04a85f390c59e55780",
+          "retrieved_at": "2026-10-19T00:54:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_MAYO2024_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "b4ed33e836445db480162de0571be78168e8fdf2d08b92ecb554660a043df7a7",
+          "retrieved_at": "2026-10-19T00:54:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_JUNIO_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "2db2ce2d7f52ae9a816cf921570c382cdaf10dd3f809c157d22bd562e1d96e9f",
+          "retrieved_at": "2026-10-19T00:54:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_JULIO_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "c27405bf2b81dace1e06654f932f782a990d8ab2220a025821e24f5f6fab8291",
+          "retrieved_at": "2026-10-19T00:54:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_AGOSTO_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "cbe72223b975cae146632dbab8cf6be7d036e6abfc213288c9be1785170b1983",
+          "retrieved_at": "2026-10-19T00:54:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_SEPTIEMBRE_SUBSIDIADO%20(1).pdf",
+          "status": "ok",
+          "sha256": "920c668abdbe2a16b3d641469125992cfdc16608dca9991b82874a228cd334ef",
+          "retrieved_at": "2026-10-19T00:54:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_OCTUBRE_SUBSIDIADO_0.pdf",
+          "status": "ok",
+          "sha256": "4cbd35f3e54f24306fc878d622089345b550443ef9f30a19e339a9ddd0d2b0c7",
+          "retrieved_at": "2026-10-19T00:54:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_NOVIEMBRE_SUBSIDIADO%20(1).pdf",
+          "status": "ok",
+          "sha256": "4ce6b50fc05f1493ab0d756296957490c8ef0936f97f6acdd79b8b660abc978d",
+          "retrieved_at": "2026-10-19T00:54:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2024-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2025-03/Diciembre_2024_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "bcaced8663c59c345f7e980b76312567a26b49edc7d910210fddc6a575bf26dd",
+          "retrieved_at": "2026-10-19T00:54:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Enero_2023_subsidiado_v.pdf",
+          "status": "ok",
+          "sha256": "75b10795ba90f08763aa72e0031d57d66bc6a7357ed86f2d85bccb35127534d0",
+          "retrieved_at": "2026-10-19T00:54:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Febrero_2023_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "c18dd59ff2f048b0c8e120a1ff9b1a48510a41c02c5b79f84ede2eea422848a6",
+          "retrieved_at": "2026-10-19T00:54:57Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2023-04/IND_1552_MARZO_2023_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "6e86cb8ce1730350e49baa6007d24b2854fc11472dc35a9ce543e86c609f552c",
+          "retrieved_at": "2026-10-19T00:55:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2023-05/IND_1552_ABRIL_2023_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "1c738e0b6c521fea0efbb92f03a1f1aa5f314f208b7be3aefa9ce39bf3f1d40f",
+          "retrieved_at": "2026-10-19T00:55:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/2023-06/IND_1552_MAYO_2023_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "fe87e12b0e7e746684af4ee13661a5e6168bded5ed6197c62072ae3a6280234c",
+          "retrieved_at": "2026-10-19T00:55:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/IND_1552_JUNIO_2023_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "e28c940201fbdce46a326344ac1217814b9fd677ab70ec8f49da4c7ce9f86b40",
+          "retrieved_at": "2026-10-19T00:55:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/IND_1552_JULIO_2023_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "95040f778f4b8f773c005444091ba47b2bfe5a1b07fd7cf57dd5225a392302d7",
+          "retrieved_at": "2026-10-19T00:55:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_AGOSTO_SUBSIDIADO.PDF",
+          "status": "ok",
+          "sha256": "83dddd061cf48b2be032a183b99d0f5eb976dcc467e05ac8dc3771f842a1ee16",
+          "retrieved_at": "2026-10-19T00:55:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_SEPTIEMBRE_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "992c318b27fc6cac67975af7700ce50388a5fec787b05ef61241f9a2db3300d8",
+          "retrieved_at": "2026-10-19T00:55:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_OCTUBRE_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "f5552f2888d5984095b4919e90a7ed4f45daf6b6d589c3573f2c188b1e57687b",
+          "retrieved_at": "2026-10-19T00:55:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_NOVIEMBRE_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "913b29829874c5397ac54b489ce517b9523ab41ed261b6b1259f2ce400e4a81e",
+          "retrieved_at": "2026-10-19T00:55:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2023-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/OportunidadCitas/R_1552_DICIEMBRE_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "74f898745f3849f978efa024c18af1f6c56bcf4a984c2d5c1812c971eae269eb",
+          "retrieved_at": "2026-10-19T00:55:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_SUBSIDIADO_ENERO_2022%20V2.pdf",
+          "status": "ok",
+          "sha256": "dd251eb2b43d62ff2216173260e86cf165c473beba3494f51affef9161d43b08",
+          "retrieved_at": "2026-10-19T00:55:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_FEBRERO_2022%20SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "a89c9f7a95d51f5757b4e0357cd936cbcce5378f49290d815dc108f7ab2240de",
+          "retrieved_at": "2026-10-19T00:55:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_MARZO_2022%20_SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "edb676cb97c9bc2c72719f7b3e7234451c39621fe36cc2fa97177150c24d77c0",
+          "retrieved_at": "2026-10-19T00:55:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_ABRIL_2022%20SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "96cde03ada2467abecfe02ee03cbc969ac4a3a5058b155c2c2614207e558153a",
+          "retrieved_at": "2026-10-19T00:55:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_mayo_2022%20subsidiado.pdf",
+          "status": "ok",
+          "sha256": "b360ff1e4750b8ddeb4b7bde746341deef98c0a4859f3fbcfaefa58265444cf3",
+          "retrieved_at": "2026-10-19T00:55:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Junio_2022%20subsidiado.pdf",
+          "status": "ok",
+          "sha256": "ee6f6ec6e7ac5372bf18c4064ce8308f6545dbedf00060bd27af2aca0a9d02e9",
+          "retrieved_at": "2026-10-19T00:56:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_JuLio_2022%20Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "5f0b489f7a452758bab8933c2a1df7a53359ec5c9c10bd2bc811159b5c5d6886",
+          "retrieved_at": "2026-10-19T00:56:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/SUBSIDIADO%20-%20IND_1552_AGOSTO_2022%20v2.pdf",
+          "status": "ok",
+          "sha256": "cd0c25e3508c6a175536008203d34915d43a1385c90a914c1cfb08e7030aab7f",
+          "retrieved_at": "2026-10-19T00:56:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Septiembre_2022_subsidiado.pdf",
+          "status": "ok",
+          "sha256": "710d88e2113be372bc6db34cfaa4e10e8fc86b171aeca891784dd42195e0a9de",
+          "retrieved_at": "2026-10-19T00:56:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Octubre_2022_subsidiado_1.pdf",
+          "status": "ok",
+          "sha256": "723f9d721fb91cc3b1298f0ba33aae042a0bd67a69aac1aa184d173a99e41984",
+          "retrieved_at": "2026-10-19T00:56:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2022-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/IND_1552_Diciembre_2022_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "1a09e79faf0c3bd595080f3d03715b21e681053f7c2bf1f700f4b47cb404f020",
+          "retrieved_at": "2026-10-19T00:56:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Enero2021_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "fbbadff44019e0438a699ba7ecc2f1cb97f5f402e1607d6695f65f2fef1e0e22",
+          "retrieved_at": "2026-10-19T00:56:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552-Subsidiado%20Febrero%202021.pdf",
+          "status": "ok",
+          "sha256": "c0675bab27cf8c0a3f97dfc6f385917d14a111b5aa8af8e623825157710abe03",
+          "retrieved_at": "2026-10-19T00:56:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_MARZO_2021-SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "34a2b0de17fe6a010a6064b6c78ab190083b8e2c682cf412c8d3ffe0a14d0e97",
+          "retrieved_at": "2026-10-19T00:56:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_ABRIL_2021-SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "8f2efff7dbcf6f72c91344c67995a27ff29e2231c2e4e76429a64bdd5704a808",
+          "retrieved_at": "2026-10-19T00:56:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_MAYO_2021-SUBSIDIADO.pdf",
+          "status": "ok",
+          "sha256": "929b6996087046c10b88d8d1664a5cf71dde7558bfd32cd2561d5076a5609a4c",
+          "retrieved_at": "2026-10-19T00:56:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552-%20Subsidiado%20Junio%202021.pdf",
+          "status": "ok",
+          "sha256": "106c796a489269c761b7f0529ae8e11a7a614755d11a93928ced385340f956a9",
+          "retrieved_at": "2026-10-19T00:56:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552-%20Subsidiado%20Julio%20_2021.pdf",
+          "status": "ok",
+          "sha256": "d4a96ea469e8d7e7fe5393b2db11325e87e347e8bfb6f286ea134e1b0642b78e",
+          "retrieved_at": "2026-10-19T00:56:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_SUBSIDIADO_AGOSTO_2021.pdf",
+          "status": "ok",
+          "sha256": "84b790f073582bca1bd26b6beafb603ad9d30a6f047c5645bb1954cb5b6d452d",
+          "retrieved_at": "2026-10-19T00:56:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_SUBSIDIADO_SEPTIEMBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "d6f69ee3afa399dd2bced30c870f1aa14cea4b75f113e602a8ae66d358674e09",
+          "retrieved_at": "2026-10-19T00:56:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_SUBSIDIADO_OCTUBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "d2b7aa112d461e6248d64bfa50fda2047191432500977d6757e23a4996fc4985",
+          "retrieved_at": "2026-10-19T00:57:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/1552_SUBSIDIADO_NOVIEMBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "45e767e3244eb3ce0fe78104465e5b52d0994c98fdd0ea83cd28405a4207ea15",
+          "retrieved_at": "2026-10-19T00:57:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2021-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_SUBSIDIADO_DICIEMBRE_2021.pdf",
+          "status": "ok",
+          "sha256": "a1293b2197829c3251f92a66fde260c8dcb81bc472dddf5ac1dc030bb0956231",
+          "retrieved_at": "2026-10-19T00:57:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Enero%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "49308b796a331d5625ab65933c0dc034bc3024668a6512d49d16fdefa25044ee",
+          "retrieved_at": "2026-10-19T00:57:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Febrero%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "bf258d3ea49dd92570cebbff4b356c966a83b6650e7f2e408963beb15f446e8a",
+          "retrieved_at": "2026-10-19T00:57:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Marzo%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "9b18b77594cb266656cc55e083b1ac619b382e8372b9c63914afa2ea18751554",
+          "retrieved_at": "2026-10-19T00:57:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Abril%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "e5254a139040221f07ac5b2000c203e681a1b7e31a799cda22c5a35e93a27cde",
+          "retrieved_at": "2026-10-19T00:57:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Mayo%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "f9ecd36bbb25a76775935fa1a5acc3c1cfd0b7220953015b3658ba04a5d71485",
+          "retrieved_at": "2026-10-19T00:57:31Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Junio%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "5f2a63bd9139efe3e337fd3bfbc66368e51650418e0ee8c81c436a2e613c6989",
+          "retrieved_at": "2026-10-19T00:57:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Julio%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "fbe9565a0d710fd33db013d95213b03854502b0fe31dc62999ca06cbe05a4e78",
+          "retrieved_at": "2026-10-19T00:57:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/2.%201552%20Subsidiado%20Agosto%202020.pdf",
+          "status": "ok",
+          "sha256": "5a6db8d77b2340a99a32a6e996930b9f34f55752ca790ab48f59f2262610fbc2",
+          "retrieved_at": "2026-10-19T00:57:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_SUBSIDIADO_septiembre.pdf",
+          "status": "ok",
+          "sha256": "b6736bfe41b98c9c3c8bf66bc719925ea6885d9cb92ec9ef515bfde3f3508495",
+          "retrieved_at": "2026-10-19T00:57:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Octubre%202020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "a36cac197bcbb9a62188775caf2d3dfd81373a758e1873b254e159f7d4a0bfbf",
+          "retrieved_at": "2026-10-19T00:57:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Noviembre2020_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "1465104ee98fc3af9444a5e26270005d2559a1d14465c896bc847400eda36327",
+          "retrieved_at": "2026-10-19T00:57:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2020-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Diciembre2020_Subdidiado.pdf",
+          "status": "ok",
+          "sha256": "2de305769c406119b175defe9122e1e506c18f44aaea6d0cdd10ae32e67632e6",
+          "retrieved_at": "2026-10-19T00:57:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-enero-2019.pdf",
+          "status": "ok",
+          "sha256": "cd1e162d3d97843ca28df113df70eb3640b3b89541f6a24291aabc1ba06eb7fa",
+          "retrieved_at": "2026-10-19T00:58:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-febrero-2019.pdf",
+          "status": "ok",
+          "sha256": "8da6c1121603572062209db0743e26533b55400138d54ebfe27ef9d7add96bfc",
+          "retrieved_at": "2026-10-19T00:58:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-marzo-2019.pdf",
+          "status": "ok",
+          "sha256": "939ee1ac7b94ae29490ef270024e535c216ff1b3a43429f7417aef73e39d21dc",
+          "retrieved_at": "2026-10-19T00:58:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-abril-2019_1.pdf",
+          "status": "ok",
+          "sha256": "95c648a93424769b20c965e647a5ff8de692f84c06fb80660992d178e1014394",
+          "retrieved_at": "2026-10-19T00:58:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-mayo-2019.pdf",
+          "status": "ok",
+          "sha256": "71fd102a4d3b82d6d6edcff4f4178cd62871994818eb6c37c86a209fe3c15e0a",
+          "retrieved_at": "2026-10-19T00:58:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-decitas-regimen-subsidiado-jun2019-nuevaeps.pdf",
+          "status": "ok",
+          "sha256": "9f1dad74800c13067383b32e1fe85058a12fb2b08e453c61e4567c061f0c6eed",
+          "retrieved_at": "2026-10-19T00:58:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-citas-julio-subsidiado.pdf",
+          "status": "ok",
+          "sha256": "eed76414624d6160edbdd18f3929cbc0770ffc1bda44167df1f54ecfc1ea5d5b",
+          "retrieved_at": "2026-10-19T00:58:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/subsidiado-agosto.pdf",
+          "status": "ok",
+          "sha256": "a9ea8e6490f172f8e163592f3f466f14e1c1aefed6865d0b06e1e75ebfb83862",
+          "retrieved_at": "2026-10-19T00:58:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Septiembre_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "1cbd3b8716d9f43ac7f0e1c1ad8aaf7bb56e642443f7111bbdee48d5a62d988c",
+          "retrieved_at": "2026-10-19T00:58:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND1552OctubreSubsidiado.pdf",
+          "status": "ok",
+          "sha256": "3e712a5671423194e931e025e192ebad1b45e536b58183bd45d5e888cd39a648",
+          "retrieved_at": "2026-10-19T00:58:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Noviembre_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "d7ebbc0aaefbcd365be9c11c17f47fe87f93b81ec987655c2a02ba8587e7fc0d",
+          "retrieved_at": "2026-10-19T00:58:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2019-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/IND_1552_Diciembre_Subsidiado.pdf",
+          "status": "ok",
+          "sha256": "f0b723ea8316eee802936d800c10a254056b921bef177c0ce9fbc782aaf74308",
+          "retrieved_at": "2026-10-19T00:58:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-citas-regimen-subsidiado-enero2018.pdf",
+          "status": "ok",
+          "sha256": "605f9f6a89c4877e1a73a858423d8188bbd88dcd3be3528a2734f1d140435b3a",
+          "retrieved_at": "2026-10-19T00:58:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-citas-regimen-subsidiado-febrero2018.pdf",
+          "status": "ok",
+          "sha256": "00cd8110b575abfd231a278b4b562c2b669b2e9950af26ccb56dbec5bdeafa47",
+          "retrieved_at": "2026-10-19T00:58:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-citas-regimen-subsidiado-marzo2018.pdf",
+          "status": "ok",
+          "sha256": "68620a3d9fcfe02837d59d8088f110cc185c6405ed8f89b64296d86eb80cf683",
+          "retrieved_at": "2026-10-19T00:58:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/oportunidad-citas-regimen-subsidiado-abril2018.pdf",
+          "status": "ok",
+          "sha256": "4d24cc21ca1d3dd7a21f2424d19819b5d28cdaae76cb2ee473924b5c0d32a7de",
+          "retrieved_at": "2026-10-19T00:59:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-mayo-2018.pdf",
+          "status": "ok",
+          "sha256": "084634cd05aab6f1c175be588831ea3e1b812ce13f6b0edf2260bc7081f04d56",
+          "retrieved_at": "2026-10-19T00:59:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-junio-2018.pdf",
+          "status": "ok",
+          "sha256": "5cc3db3b673da03ad993dec988338712f57cf98a7c3555e5fc8ff7bfe3ddaf36",
+          "retrieved_at": "2026-10-19T00:59:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-julio-2018.pdf",
+          "status": "ok",
+          "sha256": "ee7060c82c7fb28c3e940353804b99679b5c492c244a49640293349685eb5e0b",
+          "retrieved_at": "2026-10-19T00:59:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-agosto-2018.pdf",
+          "status": "ok",
+          "sha256": "1cbf373fcdab527088f83e522abf65ba4de4ee19ab6b55db7b70c882c4cc2cc1",
+          "retrieved_at": "2026-10-19T00:59:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-septiembre-2018.pdf",
+          "status": "ok",
+          "sha256": "811053b403df7087716659b609ff0ebabe253fd0e3250adab749de6e5809d9e9",
+          "retrieved_at": "2026-10-19T00:59:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-octubre-2018.pdf",
+          "status": "ok",
+          "sha256": "ea7f0bd017ba52e86da9dc80b2318ea6a4b90d6f1e3e87f2a6692e3bf9407b51",
+          "retrieved_at": "2026-10-19T00:59:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-noviembre-2018.pdf",
+          "status": "ok",
+          "sha256": "e064147f4e537e19ecda86d5e876c46f59f131d7c81c60ec5e9ef50e9bb4d15f",
+          "retrieved_at": "2026-10-19T00:59:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2018-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-diciembre-2018.pdf",
+          "status": "ok",
+          "sha256": "57f37ae50e5151ed92a4caa7666eb5c0d242eb2920711168e7c4f874b074cced",
+          "retrieved_at": "2026-10-19T00:59:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-enero-2017.pdf",
+          "status": "ok",
+          "sha256": "edcc506aac422744cbae98047eea512266680e72117a4839d058599b33fdc232",
+          "retrieved_at": "2026-10-19T00:59:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-febrero-2017.pdf",
+          "status": "ok",
+          "sha256": "9dfe45885922e37008896d0f8954ada8c5351abce753aad49e3a33a3ed46f1b7",
+          "retrieved_at": "2026-10-19T00:59:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-marzo-2017.pdf",
+          "status": "ok",
+          "sha256": "6746f6354bf89381e5a0b5a2c538d4ff0516408f0644fde07f09dc044419b480",
+          "retrieved_at": "2026-10-19T00:59:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-abril-2017.pdf",
+          "status": "ok",
+          "sha256": "232db433aa6e434f2b4daebae1a0ded8a5a52c5509fb204247941ad5ed2e208a",
+          "retrieved_at": "2026-10-19T00:59:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-mayo-2017.pdf",
+          "status": "ok",
+          "sha256": "fb13cda14f1eb477eba38a33b5656cba2c8675e22c40f1a9684aa379021d4edb",
+          "retrieved_at": "2026-10-19T00:59:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-junio-2017.pdf",
+          "status": "ok",
+          "sha256": "ed81d9a5e7aae33ea463ae13b38f1eb938d297b8b3e13ab6152c78ab129187da",
+          "retrieved_at": "2026-10-19T00:59:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-julio-2017.pdf",
+          "status": "ok",
+          "sha256": "d418e7335e0402abc52d836920ff99fdc94d38d1e1d9c18e1449d50154b6aef7",
+          "retrieved_at": "2026-10-19T01:00:02Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-agosto-2017.pdf",
+          "status": "ok",
+          "sha256": "7deba861aff27120c5743237b479b2943de85ce03dd9d6ac10afb0cae80dfa17",
+          "retrieved_at": "2026-10-19T01:00:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-septiembre-2017.pdf",
+          "status": "ok",
+          "sha256": "db218e4c34dad1706a29b412360566addd36d577091d277106282f80fe78c4e5",
+          "retrieved_at": "2026-10-19T01:00:10Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-octubre-2017.pdf",
+          "status": "ok",
+          "sha256": "df81599126c1e06542eea12e3cb7a2b83fd55e778bf5d7856dbeb7f379cc9dd4",
+          "retrieved_at": "2026-10-19T01:00:14Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-noviembre-2017.pdf",
+          "status": "ok",
+          "sha256": "3b16608670057d517ab9e200a91c385f2bb4d4ef828d1bfead0c34241226c4ac",
+          "retrieved_at": "2026-10-19T01:00:18Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2017-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-diciembre-2017.pdf",
+          "status": "ok",
+          "sha256": "62ea5b45486a802c5b0ea76deac680b826e44743a08ab6e2da6e14a287c56a49",
+          "retrieved_at": "2026-10-19T01:00:22Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-enero-2016.pdf",
+          "status": "ok",
+          "sha256": "cef8ee3ee92bc143cff1c30b852e5ee6c24e95ca4c1e93ee2fa2cf8cf39148aa",
+          "retrieved_at": "2026-10-19T01:00:26Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-02",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-febrero-2016.pdf",
+          "status": "ok",
+          "sha256": "38cfce0ebcf2430824feb56eec73ce14a5cb6c25b8113a5633e61fc8ed26940a",
+          "retrieved_at": "2026-10-19T01:00:30Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-03",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-marzo-2016.pdf",
+          "status": "ok",
+          "sha256": "a92df33367f57337e4388ce160b7af7468db39737004c50fa94081b38e8c2818",
+          "retrieved_at": "2026-10-19T01:00:34Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-04",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-abril-2016.pdf",
+          "status": "ok",
+          "sha256": "0ad7af494a80d90d3746be6e1f1a64e8249d3e2a4f71ba1b8c3afca61e903721",
+          "retrieved_at": "2026-10-19T01:00:38Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-05",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-mayo-2016.pdf",
+          "status": "ok",
+          "sha256": "2ddd8854003d3d50f01434adc00116787114e7a206dec492a531f57616c029a7",
+          "retrieved_at": "2026-10-19T01:00:42Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-06",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-junio-2016.pdf",
+          "status": "ok",
+          "sha256": "c073b9cea06a0a763223da129e4c3aa97073fe85d7653301378515d4d5329e0f",
+          "retrieved_at": "2026-10-19T01:00:46Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-07",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-julio-2016.pdf",
+          "status": "ok",
+          "sha256": "86041be1ef65dec98f34cd440979e10701125a7851cb654829967ec9872dde89",
+          "retrieved_at": "2026-10-19T01:00:50Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-08",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-agosto-2016.pdf",
+          "status": "ok",
+          "sha256": "9c1a4b24850601c6f5b4d3f0aa19d744d7266c5020b029d15f8585ecf40171dc",
+          "retrieved_at": "2026-10-19T01:00:54Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-09",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-septiembre-2016.pdf",
+          "status": "ok",
+          "sha256": "279a52a8219bcec2316a7fea5f4f2e0e54dee4b0387371422d09fd4b634843a1",
+          "retrieved_at": "2026-10-19T01:00:58Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-10",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-octubre-2016.pdf",
+          "status": "ok",
+          "sha256": "d35411a3bacc8d5a4e560ebb367c1f9ee81692de9d40fc174a7f8ae7c3a0f48f",
+          "retrieved_at": "2026-10-19T01:01:03Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-11",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-noviembre-2016.pdf",
+          "status": "ok",
+          "sha256": "77c04b453d79d3618b45e8612e10ade82723708011afc5be58156db0d6f224f4",
+          "retrieved_at": "2026-10-19T01:01:06Z"
+        },
+        {
+          "regimen": "subsidiado",
+          "period": "2016-12",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/indicadores-subsidiado-resolucion-1552-diciembre-2016.pdf",
+          "status": "ok",
+          "sha256": "4a64e496357730747a553d2fe20a56231872774dbb34d8be7c44fbbb77f50091",
+          "retrieved_at": "2026-10-19T01:01:10Z"
+        }
+      ],
+      "index_warnings": [],
+      "last_month": {
+        "contributivo": "2026-08",
+        "subsidiado": "2026-08"
+      },
+      "first_month": {
+        "contributivo": "2015-01",
+        "subsidiado": "2016-01"
+      },
+      "missing_months": {
+        "contributivo": [
+          "2022-01"
+        ],
+        "subsidiado": [
+          "2022-11"
+        ]
+      },
+      "files_total": 267,
+      "files_failed": [
+        {
+          "regimen": "contributivo",
+          "period": "2022-01",
+          "url": "https://www.nuevaeps.com.co/sites/default/files/inline-files/1552_CONTRIBUTIVO_ENERO_2022%20V2.pdf",
+          "status": "download_error",
+          "error": "<HTTPError 404: 'Not Found'>"
+        }
+      ],
+      "ok": true,
+      "failing_since": null
+    },
+    "sura": {
+      "name": "EPS Sura",
+      "pdf_url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
+      "checked_at": "2026-10-19T01:09:34Z",
+      "responded": true,
+      "error": null,
+      "files": [
+        {
+          "period": "acumulado",
+          "url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
+          "sha256": "d8176d98e2c06938b1e17f478bc22864503fde64e8ddaa33223ac1029fcedbf5",
+          "retrieved_at": "2026-10-19T01:09:38Z",
+          "status": "ok"
+        }
+      ],
+      "parser_notes": [
+        "Bloque 'MARZO' repetido de forma idéntica en el PDF; se usa una sola vez",
+        "Bloque 'ABRIL' repetido de forma idéntica en el PDF; se usa una sola vez",
+        "Bloque 'MAYO' repetido de forma idéntica en el PDF; se usa una sola vez"
+      ],
+      "last_month": {
+        "unico": "2026-09"
+      },
+      "first_month": {
+        "unico": "2013-01"
+      },
+      "missing_months": {
+        "unico": []
+      },
+      "files_total": 1,
+      "files_failed": [],
+      "ok": true,
+      "failing_since": null,
+      "revisions_vs_previous": []
+    }
+  },
+  "flags_summary": {
+    "avg_mismatch": 6516,
+    "avg_over_60": 1143,
+    "column_count": 670,
+    "context": 1575,
+    "desired_unreliable_source": 903,
+    "duplicate_row_conflict": 164,
+    "fractional_appointments": 71,
+    "jump_vs_prev_month": 2906,
+    "national_sum_mismatch": 218,
+    "negative_days": 181,
+    "regional_outlier": 2026,
+    "small_sample": 5068,
+    "total_row_mismatch": 290,
+    "unknown_department": 227,
+    "volume_jump": 6693,
+    "zero_appointments_nonzero_avg": 13
+  },
+  "records": 52422
+}
