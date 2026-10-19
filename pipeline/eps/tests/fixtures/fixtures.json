@@ -1,0 +1,18 @@
+{
+  "_nota": "PDF reales usados como fixtures. No se versionan (son contenido de cada EPS): se descargan con `python -m pipeline.eps.tests.bajar_fixtures` y se verifica su hash. Observados el 2026-10-18. Si el hash cambia, la fuente pudo reemitir el archivo: las pruebas lo dirán.",
+  "archivos": {
+    "nueva_eps_2026_08_contributivo.pdf": {
+      "url": "https://www.nuevaeps.com.co/sites/default/files/2026-09/Agosto_2026_contributivo.pdf",
+      "sha256": "8d9ba8f529f207e1b9657688bba7987a63efdd53705c561f097377c3d2afc63f"
+    },
+    "nueva_eps_2026_08_subsidiado.pdf": {
+      "url": "https://www.nuevaeps.com.co/sites/default/files/2026-09/Agosto_2026_Subsidiado.pdf",
+      "sha256": "b52609993ce68956b203d38c350861d204f18e823aa41688a205cf78e3727dde"
+    },
+    "sura_acumulado.pdf": {
+      "url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
+      "sha256": "d8176d98e2c06938b1e17f478bc22864503fde64e8ddaa33223ac1029fcedbf5",
+      "se_sobrescribe": true
+    }
+  }
+}

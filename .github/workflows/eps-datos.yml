@@ -1,0 +1,84 @@
+# Carga mensual de la sala de las EPS (Resolución 1552 de 2013).
+# Las EPS publican dentro de los diez primeros días hábiles de cada mes: se corre el día 12
+# y se reintenta el día 20 por si el mes nuevo aún no estaba. Cada corrida es idempotente.
+#
+# Mientras la variable del repositorio EPS_PUBLICAR no sea "true", las corridas programadas
+# son dry-run: descargan, validan e informan, pero no hacen commit (y por tanto no despliegan).
+name: Datos EPS (mensual)
+
+on:
+  schedule:
+    - cron: "0 13 12 * *"
+    - cron: "0 13 20 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Solo informar, sin commit"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eps-datos
+  cancel-in-progress: false
+
+jobs:
+  cargar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - run: pip install -r pipeline/requirements.txt
+
+      - name: Decidir modo
+        id: modo
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            dry="${{ inputs.dry_run }}"
+          elif [ "${{ vars.EPS_PUBLICAR }}" = "true" ]; then
+            dry="false"
+          else
+            dry="true"
+          fi
+          echo "dry=$dry" >> "$GITHUB_OUTPUT"
+          echo "Dry-run: $dry"
+
+      - name: Pruebas del pipeline (sin red)
+        run: python -m pytest pipeline/eps/tests/test_unidad.py -q
+
+      - name: Descargar, parsear y validar
+        run: |
+          if [ "${{ steps.modo.outputs.dry }}" = "true" ]; then
+            python -m pipeline.eps.run --incremental --dry-run --salida "$RUNNER_TEMP/eps"
+          else
+            python -m pipeline.eps.run --incremental
+          fi
+
+      - name: Resumen del estado de fuentes
+        if: always()
+        run: |
+          f="data/eps/estado_fuentes.json"
+          [ "${{ steps.modo.outputs.dry }}" = "true" ] && f="$RUNNER_TEMP/eps/estado_fuentes.json"
+          [ -f "$f" ] && python -c "import json,sys; e=json.load(open(sys.argv[1])); print(json.dumps({k:{'ok':v['ok'],'last_month':v.get('last_month'),'failed':len(v['files_failed'])} for k,v in e['eps'].items()}, indent=2))" "$f" | tee -a "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Guardar los datos nuevos
+        if: steps.modo.outputs.dry == 'false'
+        run: |
+          git add data/eps public/data/eps
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+            exit 0
+          fi
+          git config user.name "sala-de-espera-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Datos EPS: carga mensual $(date -u +%Y-%m-%d)"
+          git push
