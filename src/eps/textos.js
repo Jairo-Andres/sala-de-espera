@@ -118,7 +118,7 @@ export const T = {
     tenKicker: 'Capítulo 3',
     tenTitulo: 'Mes a mes',
     tenTexto:
-      'Días desde la solicitud, según cada EPS. EPS Sura publica desde enero de 2013, Nueva EPS desde 2015 (contributivo) y 2016 (subsidiado), y Salud Total con su formato actual desde 2025. Los huecos son meses sin dato o que no superaron las validaciones.',
+      'Días desde la solicitud, según cada EPS. EPS Sura publica desde enero de 2013, Nueva EPS desde 2015 (contributivo) y 2016 (subsidiado), y Salud Total con su formato actual desde octubre de 2024. Los huecos son meses sin dato o que no superaron las validaciones.',
     especialidad: 'Especialidad',
     pandemia: 'Pandemia',
     ultimos: 'Periodo',
@@ -237,7 +237,7 @@ export const T = {
     tenKicker: 'Chapter 3',
     tenTitulo: 'Month by month',
     tenTexto:
-      'Days from the request, as reported by each insurer. EPS Sura publishes from January 2013, Nueva EPS from 2015 (contributory) and 2016 (subsidized), and Salud Total in its current format from 2025. Gaps are months with no data or that failed validation.',
+      'Days from the request, as reported by each insurer. EPS Sura publishes from January 2013, Nueva EPS from 2015 (contributory) and 2016 (subsidized), and Salud Total in its current format from October 2024. Gaps are months with no data or that failed validation.',
     especialidad: 'Specialty',
     pandemia: 'Pandemic',
     ultimos: 'Period',
