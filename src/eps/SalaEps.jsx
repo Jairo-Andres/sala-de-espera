@@ -11,7 +11,10 @@ import {
 import { BANDERA, DEPARTAMENTO, EPS, ESPECIALIDAD, mesLargo, T } from './textos.js';
 
 const INTERVALO = 6000;
-const COLOR = { 'sura|': 'var(--chart-1)', 'nueva_eps|contributivo': 'var(--chart-2)', 'nueva_eps|subsidiado': 'var(--chart-3)' };
+const COLOR = {
+  'sura|': 'var(--chart-1)', 'nueva_eps|contributivo': 'var(--chart-2)', 'nueva_eps|subsidiado': 'var(--chart-3)',
+  'salud_total|contributivo': 'var(--chart-4)', 'salud_total|subsidiado': 'var(--chart-5)',
+};
 const grupo = (eps, regimen) => `${eps}|${regimen ?? ''}`;
 
 function useTextos(lang) {
@@ -95,7 +98,7 @@ function TurneroEps({ turnos, tx }) {
               {turno.standard != null ? `${t.referencia(turno.standard)}${turno.standard && ['ginecologia', 'cirugia_general'].includes(turno.specialty) ? '*' : ''}` : t.sinReferencia}
               {pos && <> · <b>{t.frente[pos]}</b></>}
             </p>
-            <p><a href={turno.src} target="_blank" rel="noreferrer">{t.verFuente}<span className="sr-only"> ({EPS[turno.eps]}, {mesLargo(turno.ym, lang)})</span></a></p>
+            <p><a href={turno.src.split(' | ')[0]} target="_blank" rel="noreferrer">{t.verFuente}<span className="sr-only"> ({EPS[turno.eps]}, {mesLargo(turno.ym, lang)})</span></a></p>
           </div>
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
@@ -302,19 +305,21 @@ function Tendencia({ datos, tx }) {
 
 function Departamentos({ datos, tx }) {
   const { t, lang, esp, b } = tx;
+  const [eps, setEps] = useState('nueva_eps');
   const [regimen, setRegimen] = useState('contributivo');
   const [e, setE] = useState('cirugia_general');
-  const porMes = datos.departments[`nueva_eps|${regimen}|${e}`] ?? {};
+  const porMes = datos.departments[`${eps}|${regimen}|${e}`] ?? {};
   const meses = Object.keys(porMes).sort();
   const [ym, setYm] = useState(meses[meses.length - 1]);
   const mes = porMes[ym] ? ym : meses[meses.length - 1];
   const filas = filasDepartamento(porMes, mes);
-  const nacional = (datos.series[`nueva_eps|${regimen}|${e}`] ?? []).find((p) => p.ym === mes);
+  const nacional = (datos.series[`${eps}|${regimen}|${e}`] ?? []).find((p) => p.ym === mes);
   const tope = ejeY(Math.max(...filas.map((f) => f.req ?? 0), nacional?.req ?? 0, datos.standards[e] ?? 0)).tope;
   const ref = datos.standards[e];
   return (
     <>
       <div className="mb-5 flex flex-wrap gap-4">
+        <Campo etiqueta={t.epsLabel} value={eps} onChange={setEps} opciones={['nueva_eps', 'salud_total'].map((k) => ({ value: k, label: EPS[k] }))} />
         <Campo etiqueta={t.regimenLabel} value={regimen} onChange={setRegimen} opciones={['contributivo', 'subsidiado'].map((k) => ({ value: k, label: t.regimen[k] }))} />
         <Campo etiqueta={t.especialidad} value={e} onChange={setE} opciones={ORDEN_ESPECIALIDADES.map((k) => ({ value: k, label: esp[k] }))} />
         <Campo etiqueta={t.mes} value={mes} onChange={setYm} opciones={[...meses].reverse().map((k) => ({ value: k, label: mesLargo(k, lang) }))} />
@@ -330,7 +335,7 @@ function Departamentos({ datos, tx }) {
             <li key={f.dept ?? `x${f.n}`} className="grid gap-1 sm:grid-cols-[11rem_1fr_6rem] sm:items-center sm:gap-3">
               <span className="text-sm font-bold">{DEPARTAMENTO[f.dept] ?? f.dept ?? '—'}</span>
               <span className="relative h-3 rounded-sm bg-superficie-2" aria-hidden="true">
-                {f.req != null && <span className="block h-3 rounded-sm" style={{ width: `${Math.min(100, (f.req / tope) * 100)}%`, background: 'var(--chart-2)' }} />}
+                {f.req != null && <span className="block h-3 rounded-sm" style={{ width: `${Math.min(100, (f.req / tope) * 100)}%`, background: COLOR[grupo(eps, regimen)] }} />}
                 {ref != null && <span className="absolute -top-1 h-5 w-0.5 bg-[var(--status-bad)]" style={{ left: `${(ref / tope) * 100}%` }} />}
               </span>
               <span className="font-mono text-sm sm:text-right">{f.req == null ? t.sinDatoFila : formatoDias(f.req, lang)}</span>
@@ -375,6 +380,7 @@ function Calidad({ datos, tx }) {
             <p className="text-texto-suave">{t.revisado}: {fecha(s.checked_at)}</p>
             <p>{t.cubre}: {Object.entries(s.first_month ?? {}).map(([r, ym]) => `${r === 'unico' ? '' : `${t.regimenCorto[r]}: `}${ym} → ${s.last_month[r]}`).join(' · ')}</p>
             <p>{t.mesesFaltan}: {Object.values(s.missing_months ?? {}).flat().join(', ') || t.ninguno}</p>
+            {s.unsupported_files > 0 && <p>{t.formatoAntiguo(s.unsupported_files)}</p>}
             <p>{t.archivosFallidos}: {s.files_failed.length ? s.files_failed.map((f) => <span key={f.url}><a href={f.url} target="_blank" rel="noreferrer">{f.period}</a> ({f.status}) </span>) : t.ninguno}</p>
             <p><a href={s.source} target="_blank" rel="noreferrer">{t.verFuente.replace(' (PDF)', '')}</a></p>
           </article>

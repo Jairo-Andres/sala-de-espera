@@ -4,7 +4,7 @@
 export const ORDEN_ESPECIALIDADES = [
   'medicina_general', 'odontologia', 'pediatria', 'obstetricia', 'ginecologia', 'cirugia_general', 'medicina_interna',
 ];
-export const GRUPOS = ['sura|', 'nueva_eps|contributivo', 'nueva_eps|subsidiado'];
+export const GRUPOS = ['sura|', 'nueva_eps|contributivo', 'nueva_eps|subsidiado', 'salud_total|contributivo', 'salud_total|subsidiado'];
 
 export function urlDatos() {
   return `${import.meta.env.BASE_URL}data/eps/sala-eps.json`;

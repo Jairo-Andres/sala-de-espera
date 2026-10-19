@@ -25,8 +25,11 @@ BLOQUEANTES = {
     "period_mismatch",
     "regimen_mismatch",
     "duplicate_source_file",
+    "no_valid_rows",
 }
 ADVERTENCIAS = {
+    "avg_outside_min_max",
+    "partial_aggregate",
     "avg_over_60",
     "small_sample",
     "jump_vs_prev_month",
@@ -45,7 +48,8 @@ DE_PARSEO = {
     "column_count", "column_order_unresolved", "column_order_mixed", "unreadable_number",
     "unknown_specialty", "unknown_department", "month_sequence", "period_mismatch",
     "regimen_mismatch", "duplicate_source_file", "duplicate_row", "duplicate_row_conflict",
-    "total_row_mismatch", "desired_unreliable_source",
+    "total_row_mismatch", "desired_unreliable_source", "avg_outside_min_max", "partial_aggregate",
+    "no_valid_rows",
 }
 
 # Qué valores calculados anula cada bandera bloqueante.
@@ -143,7 +147,7 @@ def validar_registro(r):
 
 
 def _clave_serie(r):
-    return (r["eps"], r["regimen"], r["specialty"], r["geo_level"], r["department"])
+    return (r["eps"], r["regimen"], r["specialty"], r["geo_level"], r["department"], r.get("ips_nit"), r.get("city"))
 
 
 def validar_conjunto(registros):

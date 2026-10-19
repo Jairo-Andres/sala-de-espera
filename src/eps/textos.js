@@ -31,7 +31,7 @@ export const DEPARTAMENTO = {
   santander: 'Santander', sucre: 'Sucre', tolima: 'Tolima', valle_del_cauca: 'Valle del Cauca', vaupes: 'Vaupés', vichada: 'Vichada',
 };
 
-export const EPS = { nueva_eps: 'Nueva EPS', sura: 'EPS Sura' };
+export const EPS = { nueva_eps: 'Nueva EPS', salud_total: 'Salud Total', sura: 'EPS Sura' };
 
 export const T = {
   es: {
@@ -41,7 +41,7 @@ export const T = {
     kicker: 'Ruta D · Datos · Segunda sala',
     titulo: 'La sala de las EPS',
     subtitulo:
-      'Cada mes, las EPS deben publicar cuántos días tardan en asignar una cita con especialista (Resolución 1552 de 2013). Esto es lo que reportan Nueva EPS y EPS Sura, mes a mes y por especialidad.',
+      'Cada mes, las EPS deben publicar cuántos días tardan en asignar una cita con especialista (Resolución 1552 de 2013). Esto es lo que reportan Nueva EPS, Salud Total y EPS Sura, mes a mes y por especialidad.',
     frescura: (lista) => `Esta sala es mensual y llega a ${lista}. La sala de hospitales es semestral (último dato: 2024-S2).`,
     actualizado: 'Última actualización de los datos',
     cargando: 'Cargando los datos de las EPS…',
@@ -78,7 +78,7 @@ export const T = {
     avisos: [
       'Datos reportados por cada EPS según la Resolución 1552 de 2013; pueden contener errores o diferir entre EPS en definiciones y cobertura.',
       'No es una recomendación para elegir EPS ni asesoría de ningún tipo.',
-      'Esta sala no hace un ranking de EPS: sus redes, regiones y formas de medir son distintas. Si se mira más de una, que sea por especialidad.',
+      'Esta sala no hace un ranking de EPS (hoy cubre 3 EPS de las que existen): sus redes, regiones y formas de medir son distintas. Si se mira más de una, que sea por especialidad.',
       'Todo valor que no pasa las validaciones se muestra como "sin dato" con su motivo. Nada se corrige en silencio.',
     ],
     // Dos relojes
@@ -93,7 +93,7 @@ export const T = {
     relojesEjemplo:
       'Por eso una misma EPS puede quedar dentro o por encima de la referencia según el reloj. Ejemplo: Nueva EPS, contributivo, agosto de 2026, cirugía general: 12,4 días desde la solicitud y 9,1 desde la fecha deseada, frente a una referencia de 10.',
     relojesSura:
-      'En EPS Sura solo se usa el primer reloj: en su PDF el promedio desde la fecha deseada no coincide con sus propias sumas.',
+      'En EPS Sura solo se usa el primer reloj: en su PDF el promedio desde la fecha deseada no coincide con sus propias sumas. Salud Total publica una fila por clínica u hospital: la sala suma las consultas de primera vez del plan de beneficios (PBS) y calcula Σ días / Σ citas, sin promediar promedios.',
     // Referencia
     refKicker: 'Capítulo 2',
     refTitulo: 'Frente a la referencia',
@@ -113,16 +113,17 @@ export const T = {
     tenKicker: 'Capítulo 3',
     tenTitulo: 'Mes a mes',
     tenTexto:
-      'Días desde la solicitud, según cada EPS. EPS Sura publica desde enero de 2013 y Nueva EPS desde 2015 (contributivo) y 2016 (subsidiado). Los huecos son meses sin dato o que no superaron las validaciones.',
+      'Días desde la solicitud, según cada EPS. EPS Sura publica desde enero de 2013, Nueva EPS desde 2015 (contributivo) y 2016 (subsidiado), y Salud Total con su formato actual desde 2025. Los huecos son meses sin dato o que no superaron las validaciones.',
     especialidad: 'Especialidad',
     pandemia: 'Pandemia',
     ultimos: 'Periodo',
     rango: { todo: 'Todo', cinco: 'Últimos 5 años', uno: 'Último año' },
     // Departamentos
     depKicker: 'Capítulo 4',
-    depTitulo: 'Nueva EPS por departamento',
+    depTitulo: 'Por departamento',
+    epsLabel: 'EPS',
     depTexto:
-      'Nueva EPS publica la espera por departamento. Las diferencias pueden ser reales o venir de cómo se registra cada región: los valores muy por encima del promedio nacional se marcan para revisión, no se corrigen.',
+      'Nueva EPS publica la espera por departamento; en Salud Total la sala la agrega desde sus filas por clínica. Las diferencias pueden ser reales o venir de cómo se registra cada región: los valores muy por encima del promedio nacional se marcan para revisión, no se corrigen.',
     regimenLabel: 'Régimen',
     mes: 'Mes',
     nacional: 'Promedio nacional',
@@ -140,6 +141,7 @@ export const T = {
     mesesFaltan: 'Meses que la fuente no tiene',
     archivosFallidos: 'Archivos que no se pudieron leer',
     ninguno: 'ninguno',
+    formatoAntiguo: (n) => `${n} meses anteriores a 2025 usan otro formato y todavía no se leen`,
     simulacion:
       'Simulación para revisar el diseño: así se vería si la página de Nueva EPS no respondiera. Los datos de abajo siguen siendo los últimos validados.',
     errorFuente: 'La página índice no respondió o cambió de formato.',
@@ -149,7 +151,7 @@ export const T = {
     registros: 'registros',
     fuentes: 'Fuentes',
     fuentesTexto:
-      'Índice mensual de Nueva EPS y PDF acumulado de EPS Sura. Se publican solo cifras agregadas, con enlace a cada PDF original; los PDF no se vuelven a publicar.',
+      'Índices mensuales de Nueva EPS y Salud Total, y PDF acumulado de EPS Sura. Se publican solo cifras agregadas, con enlace a cada PDF original; los PDF no se vuelven a publicar.',
     metodo: 'Metodología y código del pipeline',
   },
   en: {
@@ -159,7 +161,7 @@ export const T = {
     kicker: 'Route D · Data · Second room',
     titulo: 'The insurers’ waiting room',
     subtitulo:
-      'Every month, Colombian health insurers (EPS) must publish how many days it takes them to assign a specialist appointment (Resolution 1552 of 2013). This is what Nueva EPS and EPS Sura report, month by month and by specialty.',
+      'Every month, Colombian health insurers (EPS) must publish how many days it takes them to assign a specialist appointment (Resolution 1552 of 2013). This is what Nueva EPS, Salud Total and EPS Sura report, month by month and by specialty.',
     frescura: (lista) => `This room is monthly and goes up to ${lista}. The hospitals room is half-yearly (latest: H2 2024).`,
     actualizado: 'Data last updated',
     cargando: 'Loading insurer data…',
@@ -194,7 +196,7 @@ export const T = {
     avisos: [
       'Data reported by each insurer under Resolution 1552 of 2013; it may contain errors or differ between insurers in definitions and coverage.',
       'This is not a recommendation for choosing an insurer, nor advice of any kind.',
-      'This room does not rank insurers: their networks, regions and ways of measuring differ. If you look at more than one, do it by specialty.',
+      'This room does not rank insurers (it covers 3 of the existing ones today): their networks, regions and ways of measuring differ. If you look at more than one, do it by specialty.',
       'Any value that fails validation is shown as "no data" with its reason. Nothing is silently corrected.',
     ],
     relojesKicker: 'Chapter 1',
@@ -208,7 +210,7 @@ export const T = {
     relojesEjemplo:
       'So the same insurer can be within or above the reference depending on the clock. Example: Nueva EPS, contributory, August 2026, general surgery: 12.4 days from the request and 9.1 from the desired date, against a reference of 10.',
     relojesSura:
-      "For EPS Sura only the first clock is used: in its PDF the desired-date average doesn't match its own sums.",
+      "For EPS Sura only the first clock is used: in its PDF the desired-date average doesn't match its own sums. Salud Total publishes one row per clinic or hospital: the room adds up first-time visits in the basic benefits plan (PBS) and computes Σ days / Σ appointments, never averaging averages.",
     refKicker: 'Chapter 2',
     refTitulo: 'Against the reference',
     refTexto:
@@ -226,15 +228,16 @@ export const T = {
     tenKicker: 'Chapter 3',
     tenTitulo: 'Month by month',
     tenTexto:
-      'Days from the request, as reported by each insurer. EPS Sura publishes from January 2013 and Nueva EPS from 2015 (contributory) and 2016 (subsidized). Gaps are months with no data or that failed validation.',
+      'Days from the request, as reported by each insurer. EPS Sura publishes from January 2013, Nueva EPS from 2015 (contributory) and 2016 (subsidized), and Salud Total in its current format from 2025. Gaps are months with no data or that failed validation.',
     especialidad: 'Specialty',
     pandemia: 'Pandemic',
     ultimos: 'Period',
     rango: { todo: 'All', cinco: 'Last 5 years', uno: 'Last year' },
     depKicker: 'Chapter 4',
-    depTitulo: 'Nueva EPS by department',
+    depTitulo: 'By department',
+    epsLabel: 'Insurer',
     depTexto:
-      'Nueva EPS publishes waits by department. Differences may be real or come from how each region records them: values far above the national average are flagged for review, not corrected.',
+      'Nueva EPS publishes waits by department; for Salud Total the room aggregates them from its per-clinic rows. Differences may be real or come from how each region records them: values far above the national average are flagged for review, not corrected.',
     regimenLabel: 'Scheme',
     mes: 'Month',
     nacional: 'National average',
@@ -251,6 +254,7 @@ export const T = {
     mesesFaltan: 'Months missing at the source',
     archivosFallidos: "Files that couldn't be read",
     ninguno: 'none',
+    formatoAntiguo: (n) => `${n} months before 2025 use another format and are not read yet`,
     simulacion:
       "Design-review simulation: this is how it would look if Nueva EPS's page didn't respond. The data below is still the latest validated.",
     errorFuente: 'The index page did not respond or changed format.',
@@ -260,7 +264,7 @@ export const T = {
     registros: 'records',
     fuentes: 'Sources',
     fuentesTexto:
-      "Nueva EPS's monthly index and EPS Sura's cumulative PDF. Only aggregate figures are published, linking to each original PDF; the PDFs are not republished.",
+      "Nueva EPS's and Salud Total's monthly indexes and EPS Sura's cumulative PDF. Only aggregate figures are published, linking to each original PDF; the PDFs are not republished.",
     metodo: 'Pipeline methodology and code',
   },
 };
@@ -295,6 +299,9 @@ export const BANDERA = {
     desired_unreliable_source: 'Espera desde la fecha deseada no confiable en la fuente',
     fractional_appointments: 'Número de citas con decimales en la fuente',
     context: 'Meses de confinamiento por la pandemia (2020)',
+    avg_outside_min_max: 'Mínimo o máximo imposible frente al promedio (revisar)',
+    partial_aggregate: 'Agregado sin las filas que no pasaron las validaciones',
+    no_valid_rows: 'Ninguna fila válida para agregar',
   },
   en: {
     negative_days: 'Negative days in the source',
@@ -324,5 +331,8 @@ export const BANDERA = {
     desired_unreliable_source: 'Desired-date wait is unreliable in the source',
     fractional_appointments: 'Appointment count with decimals in the source',
     context: 'Pandemic lockdown months (2020)',
+    avg_outside_min_max: 'Minimum or maximum impossible given the average (review)',
+    partial_aggregate: 'Aggregate excludes rows that failed validation',
+    no_valid_rows: 'No valid rows to aggregate',
   },
 };

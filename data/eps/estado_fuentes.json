@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-19T01:16:15Z",
+  "generated_at": "2026-10-19T01:49:55Z",
   "parser_version": "1.0.0",
   "eps": {
     "nueva_eps": {
       "name": "Nueva EPS",
       "index_url": "https://www.nuevaeps.com.co/oportunidad-citas",
-      "checked_at": "2026-10-19T01:15:53Z",
+      "checked_at": "2026-10-19T01:47:47Z",
       "responded": true,
       "error": null,
       "files": [
@@ -2165,13 +2165,1065 @@
           "error": "<HTTPError 404: 'Not Found'>"
         }
       ],
+      "unsupported_files": 0,
+      "ok": true,
+      "failing_since": null
+    },
+    "salud_total": {
+      "name": "Salud Total",
+      "index_url": "https://saludtotal.com.co/nuestros-tiempos-de-espera/",
+      "checked_at": "2026-10-19T01:48:10Z",
+      "responded": true,
+      "error": null,
+      "files": [
+        {
+          "period": "2024-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Octubre-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "ok",
+          "sha256": "f3d31aa92bfa0062deb7fe487881efc90b41fa7b0629ba420a9e0cc49eb30ef1,ffe2a29592cd632421d0f8d2ca706346b984f04b51d94ae9a19b5c404bd420e5",
+          "retrieved_at": "2026-10-19T01:29:27Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2024-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Diciembre-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "ok",
+          "sha256": "7d4b26ff9f5fa26c1b7a0eef039aa45bbd9cb5f8c6b7df9ba99592a4d92d4148,0b0795f84c4bb6866c72f0ec5279babd5819ec7fceb8d8d17128903dd34f1a04",
+          "retrieved_at": "2026-10-19T01:29:43Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/04/Resolucion-1552-de-2013-Marzo-de-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "153675591914048ab787c91229deb97bec6e649298a9c73d752fcfa1279646f6",
+          "retrieved_at": "2026-10-19T01:27:33Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/05/Resolucion-1552-de-2013-Abril-de-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "151862824cf70f5bd5c8697497d9bc973d569f6c0ed991d1757efab03b833407",
+          "retrieved_at": "2026-10-19T01:27:35Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/06/Resolucion-1552-de-2013-Mayo-de-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "72d2981bed7cc412aab9cc5fe7c26b9fca122e516851e74d53f78156f5515dd6",
+          "retrieved_at": "2026-10-19T01:27:40Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/07/Resolucion-1552-de-2013-Junio-de-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "71f788dc0662a84774b222a01967011d284d298b4d73120aa1fe8bd54315e7cc",
+          "retrieved_at": "2026-10-19T01:27:44Z",
+          "unreadable_records": 4
+        },
+        {
+          "period": "2025-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/08/Resolucion-1552-de-2013-Julio-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "a04cad42cbef233a20c0a888b54e08081fa32df72548791e6ba9aaef20bfa998",
+          "retrieved_at": "2026-10-19T01:27:47Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Agosto-de-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "6504447db44b3e3c71ba5a9fb9521a86e6d8d0f9f9946486200781c26fb5bf99",
+          "retrieved_at": "2026-10-19T01:27:51Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/10/Resolucion-1552-de-2013-Septiembre-del-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "aa4127d19014506f5c41afb2f913e0e7a0de87912f096f74a50757c530a975c9",
+          "retrieved_at": "2026-10-19T01:27:57Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/11/Resolucion-1552-de-2013_Octubre-del-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "c36b79ce220ec126566cf60b6853bd44efd5cfa5b41d3bc44e236ac3b4a3429f",
+          "retrieved_at": "2026-10-19T01:28:01Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/12/Resolucion-1552-de-2013-Noviembre-del-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "a539332cf5041a8313a5c523d1a425748f6705b756359809aca71915dba28dcb",
+          "retrieved_at": "2026-10-19T01:28:04Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2025-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/01/Citas-Red-Aliada-y-Externa-diciembre-2025.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "3e05b14c01e2979bd92aea22f61aa096eea3d37d4c0c76fa600f6e73469e4d72",
+          "retrieved_at": "2026-10-19T01:28:07Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/02/Resolucion1552-de-2013_Enero_2026.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "d27cca2a6ce9933710812a454c143c71aa6388b4338e1fe91621607fcb7314a1",
+          "retrieved_at": "2026-10-19T01:26:39Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/03/Resolucion-1552-de-2013-Febrero-del-2026-1.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "92879a220d3436f5905d57b91be0de6f0c4ec117ff43787f64016f1b254a2bec",
+          "retrieved_at": "2026-10-19T01:26:43Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/06/Citas-Red-Aliada-y-Externa-Abril-2026-1.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "7bacce9732b0ef1fd5392402e5db696a95b93150a6078b826d320a165c311b3f",
+          "retrieved_at": "2026-10-19T01:26:51Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/06/Resolucion-1552-de-2013_Mayo-del-2026-2.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "9d27c6d7b72370aa7c81b4da0d81ffcd7c50f2cfb70d1c2d2274a1f3d4954188",
+          "retrieved_at": "2026-10-19T01:26:56Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/07/Resolucion-1552-de-2013_Junio-del-2026.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "5aab181155720d78d1156f22b6ca2e581b67b26a7dec9dce681e845bbb7981eb",
+          "retrieved_at": "2026-10-19T01:26:59Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/08/Resolucion-1552-de-2013-Julio-del-2026-1.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "4c941bb087da665f75db43239aa13fadfc82f69c3e89546396f393865bb29960",
+          "retrieved_at": "2026-10-19T01:27:03Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/09/Resolucion_1552_de_2013_Agosto_2026.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "503582b77b29092a63ea76e340e07e1bd0d512d8893c8b4f1e3971e72eba95d2",
+          "retrieved_at": "2026-10-19T01:27:09Z",
+          "unreadable_records": 0
+        },
+        {
+          "period": "2026-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/10/Resolucion-1552-de-2013_Septiembre-del-2026-1.pdf",
+          "parts": 1,
+          "status": "ok",
+          "sha256": "0dc0e18f557cfb1939660d442d3f6434ca371affa65c91067113485be6be2300",
+          "retrieved_at": "2026-10-19T01:27:11Z",
+          "unreadable_records": 0
+        }
+      ],
+      "index_warnings": [],
+      "last_month": {
+        "contributivo": "2026-09",
+        "subsidiado": "2026-09"
+      },
+      "first_month": {
+        "contributivo": "2024-10",
+        "subsidiado": "2024-10"
+      },
+      "missing_months": {
+        "contributivo": [
+          "2024-11",
+          "2025-01",
+          "2025-02",
+          "2026-03"
+        ],
+        "subsidiado": [
+          "2024-11",
+          "2025-01",
+          "2025-02",
+          "2026-03"
+        ]
+      },
+      "files_total": 139,
+      "files_failed": [
+        {
+          "period": "2015-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-febrero-2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-marzo-2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-abril-2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-mayo-2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_junio_2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_julio_2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_agosto_2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_septiembre_2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_octubre_2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_noviembre_2015.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2015-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_diciembre_2015.pdf",
+          "parts": 8,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_enero_2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_febrero_2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_marzo_2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_abril_2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-mayo-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-junio-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-julio-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-agosto-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-septiembre-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-octubre-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-noviembre-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2016-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe-Asignacion-de-citas-diciembre-2016.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_enero_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_febrero_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_marzo_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_abril_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_mayo_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_junio_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_julio_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignacion_de_citas_agosto_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Informe_Asignaci%C3%B3n_de_citas_septiembre_2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Citas-especialidades-Octubre-2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/TiemposdeEsperaNoviembre2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2017-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasEspecialidadesDiciembre2017.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasEspecialidadesEnero2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasEspecialidadesFebrero2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Citas-especialidades-marzo-2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasEspecialidadesAbril2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasEspecialidadesMayo2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasespecialidadesJunio2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/CitasEspecialidadesJulio2018.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Citas-Especialidades-Agosto.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Citas-especialidades-septiembre.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Citas-especialidades.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citasNoviembre.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2018-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Citas-especialidades-diciembre.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Indicadores_resolucion-enero-2019.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Indicadores_resolucion_febrero-2019.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/marzo2019.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citas-abril.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citas-2-mayo.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citas-JUNIO-19.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/reporte-asignacion-de-citas-Julio.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citas-AGOSTO-2019.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citas-septiembre.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Reporte-Asignacion-de-citas-NOVIEMBRE-19.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Indicadores_resolucion_1552-noviembre-19.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2019-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/06/Indicadores_resolucion_1552-diciembre-19.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/09/Reporte-Asignacion-de-citas-enero-2020-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/08/Reporte-Asignacion-de-citas-9-febrero-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/09/Reporte-Asignacion-de-citas-MARZO-2020.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/09/Reporte-Asignacion-de-citas-14abril-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/08/Reporte-Asignacion-de-citas-mayo-2020-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/08/Reporte-Asignacion-de-citas-JUNIO-2020-1-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/08/Reporte-Asignacion-de-citas-JULIO-2020-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/09/Reporte-Asignacion-de-citas-AGOSTO-2020-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/10/Reporte-Asignacion-de-citas-SEPTIEMBRE-2020.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/11/Reporte-Asignacion-de-citas-OCTUBRE-2020.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2020/12/Indicadores_resolucion_1552-10-20.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2020-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/02/Indicadores_resolucion_1552-12-20-1.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/02/Reporte-Asignacion-de-citas-enero-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/03/FEBRERO-2021-reporte-citas-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/04/MARZO-2021-reporte-citas.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/05/Reporte-Asignacion-de-citas-ABRIL-2021.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/06/Reporte-Asignacion-de-citas-MAYO-2021.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/06/Reporte-Asignacion-de-citas-MAYO-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/06/Reporte-Asignacion-de-citas-MAYO-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/09/Reporte-Asignacion-de-citas-AGOSTO-2021.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/09/Reporte-Asignacion-de-citas-AGOSTO-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/09/Reporte-Asignacion-de-citas-AGOSTO-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/09/Reporte-Asignacion-de-citas-AGOSTO-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2021-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2021/09/Reporte-Asignacion-de-citas-AGOSTO-2021.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/02/Reporte-Asignacion-de-citas-ENERO-2022.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/03/Reporte-Asignacion-de-citas-FEBRERO-2022.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/03/Reporte-Asignacion-de-citas-FEBRERO-2022.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/06/Reporte-Asignacion-de-citas-ABRIL-2022-1-1.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/06/Reporte-Asignacion-de-citas-MAYO-2022-1.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/07/Reporte-Asignacion-de-citas-JUNIO-2022.pdf",
+          "parts": 3,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/09/Reporte-Asignacion-de-citas-JULIO-2022.pdf",
+          "parts": 5,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/10/Reporte-Asignacion-de-citas-SEPTIEMBRE-2022.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/12/Reporte-Asignacion-de-citas-OCTUBRE-2022-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2022/12/Reporte-Asignacion-de-citas-NOVIEMBRE-2022.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2022-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/02/Reporte-Asignacion-de-citas-DICIEMBRE-2022-1.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/02/Indicadores-Res.-1552_Enero.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/04/Indicadores_resolucion_1552-FEBRERO-002.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/04/Indicadores1552-MARZO.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/07/Citas-red-aliada-y-externa-Abril-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/07/Citas-red-aliada-y-externa-Mayo-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/07/Citas-red-aliada-y-externa-Junio-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/08/Resolucion-1552-Julio-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/09/Citas-red-aliadas-y-externa-Agosto-de-2023-Documento-JDR.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/10/Citas-red-aliadas-y-externa-Septiembre-de-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-10",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/11/Resolucion-1552-Octubre-de-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2023/12/Resolucion-1552-Noviembre-de-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2023-12",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2024/01/Resolucion-1552-de-2013-Diciembre-de-2023.pdf",
+          "parts": 1,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Enero-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Febrero-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Marzo-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-04",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Abril-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-05",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Mayo-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-06",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Junio-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-07",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Julio-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-08",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Agosto-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-09",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Septiembre-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "El encabezado no es el del formato por IPS (Departamento … Servicio)"
+        },
+        {
+          "period": "2024-11",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Noviembre-del-2024-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "corrupt_source_pdf",
+          "error": "https://saludtotal.com.co/wp-content/uploads/2025/09/Resolucion-1552-de-2013-Noviembre-del-2024-Red-Aliada.pdf: PdfStreamError('Stream has ended unexpectedly')"
+        },
+        {
+          "period": "2025-01",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/02/Resolucion-1552-de-2013-Enero-del-2025-Red-externa.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "Formato de red aliada sin régimen (ESPECIALIDAD, Sucursal, IPS…)"
+        },
+        {
+          "period": "2025-02",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2025/03/Resolucion-1552-de-2013-Febrero-del-2025-Red-Aliada.pdf",
+          "parts": 2,
+          "status": "unsupported_format",
+          "error": "Formato de red aliada sin régimen (ESPECIALIDAD, Sucursal, IPS…)"
+        },
+        {
+          "period": "2026-03",
+          "url": "https://saludtotal.com.co/wp-content/uploads/2026/04/Citas-Red-Aliada-y-Externa-Marzo-2026.pdf",
+          "parts": 1,
+          "status": "corrupt_source_pdf",
+          "error": "https://saludtotal.com.co/wp-content/uploads/2026/04/Citas-Red-Aliada-y-Externa-Marzo-2026.pdf: PdfStreamError('Stream has ended unexpectedly')"
+        }
+      ],
+      "unsupported_files": 117,
       "ok": true,
       "failing_since": null
     },
     "sura": {
       "name": "EPS Sura",
       "pdf_url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
-      "checked_at": "2026-10-19T01:16:10Z",
+      "checked_at": "2026-10-19T01:49:51Z",
       "responded": true,
       "error": null,
       "files": [
@@ -2179,7 +3231,7 @@
           "period": "acumulado",
           "url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
           "sha256": "d8176d98e2c06938b1e17f478bc22864503fde64e8ddaa33223ac1029fcedbf5",
-          "retrieved_at": "2026-10-19T01:16:14Z",
+          "retrieved_at": "2026-10-19T01:49:54Z",
           "status": "ok"
         }
       ],
@@ -2199,6 +3251,7 @@
       },
       "files_total": 1,
       "files_failed": [],
+      "unsupported_files": 0,
       "ok": true,
       "failing_since": null,
       "revisions_vs_previous": []
@@ -2206,22 +3259,25 @@
   },
   "flags_summary": {
     "avg_mismatch": 6516,
-    "avg_over_60": 1143,
+    "avg_outside_min_max": 6475,
+    "avg_over_60": 1279,
     "column_count": 670,
     "context": 1575,
     "desired_unreliable_source": 903,
+    "duplicate_row": 1663,
     "duplicate_row_conflict": 164,
     "fractional_appointments": 71,
-    "jump_vs_prev_month": 2906,
+    "jump_vs_prev_month": 3578,
     "national_sum_mismatch": 218,
-    "negative_days": 181,
-    "no_appointments": 74,
-    "regional_outlier": 2026,
-    "small_sample": 5068,
+    "negative_days": 274,
+    "no_appointments": 1022,
+    "partial_aggregate": 65,
+    "regional_outlier": 2153,
+    "small_sample": 22250,
     "total_row_mismatch": 290,
-    "unknown_department": 227,
-    "volume_jump": 6693,
-    "zero_appointments_nonzero_avg": 13
+    "unknown_department": 1071,
+    "volume_jump": 7751,
+    "zero_appointments_nonzero_avg": 19
   },
-  "records": 52422
+  "records": 84150
 }

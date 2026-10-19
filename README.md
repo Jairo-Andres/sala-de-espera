@@ -65,13 +65,14 @@ Toma capturas a 390 px y 1280 px (claro, oscuro, ES y EN) y pasa axe-core con la
 
 ## La sala de las EPS (`#eps`)
 
-Segunda sala: los días que **Nueva EPS** y **EPS Sura** reportan cada mes para asignar citas (Resolución 1552 de 2013), comparados con los estándares de referencia de la Circular Externa 038 de 2025. La interfaz solo lee `public/data/eps/sala-eps.json`; nunca descarga nada de las EPS en vivo.
+Segunda sala: los días que **Nueva EPS**, **Salud Total** y **EPS Sura** reportan cada mes para asignar citas (Resolución 1552 de 2013), comparados con los estándares de referencia de la Circular Externa 038 de 2025. La interfaz solo lee `public/data/eps/sala-eps.json`; nunca descarga nada de las EPS en vivo.
 
 ```
 página índice de Nueva EPS + PDF acumulado de Sura → pipeline/eps (Python) → data/eps (CSV por EPS y año + estado de fuentes) → public/data/eps/sala-eps.json → sala
 ```
 
 - **Pipeline:** `pip install -r pipeline/requirements.txt` (y Poppler para `pdftotext`), luego `python -m pipeline.eps.run`. Opciones: `--dry-run`, `--offline` (solo caché), `--incremental` (reutiliza los meses ya publicados de Nueva EPS).
+- **Salud Total:** publica una fila por clínica; la sala suma solo consultas de primera vez del PBS y calcula Σ días / Σ citas por departamento y a nivel nacional. Se lee desde octubre de 2024 (formato por IPS); los meses anteriores y los PDF de red aliada de enero y febrero de 2025 usan otro formato y quedan registrados como no soportados.
 - **Validación:** promedios recalculados desde las sumas y contrastados con el PDF (tolerancia 0,05 días o el redondeo de la fuente), días negativos, cero citas, filas incompletas o repetidas, departamentos y especialidades no reconocidos, meses fuera de secuencia, saltos mes a mes y contraste con el total nacional. Lo bloqueante se publica como "sin dato" con su motivo; nada se corrige en silencio.
 - **Pruebas:** `python -m pytest pipeline/eps/tests` (PDF reales como fixtures, que no se versionan: `python -m pipeline.eps.tests.bajar_fixtures`) y `npm test`.
 - **Automatización:** `.github/workflows/eps-datos.yml` corre los días 12 y 20 de cada mes. Es *dry-run* hasta que la variable del repositorio `EPS_PUBLICAR` sea `true`.
@@ -138,7 +139,7 @@ Import the repo in Vercel (Vite is detected: `npm run build`, output `dist`), op
 
 ### The insurers’ room (`#eps`)
 
-A second room with the monthly waiting days that **Nueva EPS** and **EPS Sura** report (Resolution 1552 of 2013), compared with the reference standards of External Circular 038 of 2025. A Python pipeline (`pipeline/eps`) discovers, downloads, parses and validates the PDFs; anything that fails a blocking rule is published as "no data" with its reason. Run it with `python -m pipeline.eps.run` (`--dry-run`, `--offline`, `--incremental`), test it with `python -m pytest pipeline/eps/tests`. The monthly GitHub Actions workflow stays in dry-run until the repository variable `EPS_PUBLICAR` is `true`. Only aggregate figures are published, linking to each original PDF.
+A second room with the monthly waiting days that **Nueva EPS**, **Salud Total** and **EPS Sura** report (Resolution 1552 of 2013), compared with the reference standards of External Circular 038 of 2025. A Python pipeline (`pipeline/eps`) discovers, downloads, parses and validates the PDFs; anything that fails a blocking rule is published as "no data" with its reason. Run it with `python -m pipeline.eps.run` (`--dry-run`, `--offline`, `--incremental`), test it with `python -m pytest pipeline/eps/tests`. The monthly GitHub Actions workflow stays in dry-run until the repository variable `EPS_PUBLICAR` is `true`. Only aggregate figures are published, linking to each original PDF.
 
 ### License
 

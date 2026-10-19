@@ -50,9 +50,14 @@ for (const ancho of [1440, 390]) {
   const { ctx, page } = await abrir({ ancho });
   await page.waitForSelector('#eps-departamentos select');
   const sel = page.locator('#eps-departamentos select');
-  await sel.nth(1).selectOption('obstetricia');
+  await sel.nth(2).selectOption('obstetricia');
   await page.waitForTimeout(200);
   await page.locator('#eps-departamentos').screenshot({ path: path.join(salida, `${ancho}-light-es-sin-dato-departamento.png`) });
+  // Salud Total por departamento (agregado desde sus filas por clínica).
+  await sel.nth(0).selectOption('salud_total');
+  await sel.nth(2).selectOption('medicina_general');
+  await page.waitForTimeout(200);
+  await page.locator('#eps-departamentos').screenshot({ path: path.join(salida, `${ancho}-light-es-salud-total-departamentos.png`) });
   await page.locator('#eps-tendencia select').selectOption('pediatria');
   await page.locator('#eps-tendencia details summary').click();
   const fila = page.locator('#eps-tendencia tr', { hasText: '2019-08' });

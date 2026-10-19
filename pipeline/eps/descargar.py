@@ -144,3 +144,33 @@ def enlaces_nueva_eps(html_indice: str, base: str = config.FUENTES["nueva_eps"][
             url = url.replace("http://", "https://", 1)
             enlaces.append(EnlaceMensual(regimen, anio, config.MESES.index(texto) + 1, url))
     return enlaces, avisos
+
+
+# --- Salud Total: acordeón por año, rótulo "Mes:" y uno o dos PDF por mes ---------------
+
+_TOKEN_ST = re.compile(
+    r"Tiempos de espera\s+(?P<anio>20\d\d)"
+    r"|<p>\s*(?P<mes>Enero|Febrero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre)\s*:?\s*</p>"
+    r"|<a[^>]+href=\"(?P<href>[^\"]+\.pdf)\"",
+    re.I,
+)
+
+
+def enlaces_salud_total(html_indice: str):
+    """Devuelve (enlaces, avisos). Un mes puede tener varias partes (red aliada y red externa)."""
+    anio = mes = None
+    vistos, enlaces, avisos = set(), [], []
+    for m in _TOKEN_ST.finditer(html_indice):
+        if m.group("anio"):
+            anio, mes = int(m.group("anio")), None
+        elif m.group("mes"):
+            mes = config.MESES.index(m.group("mes").upper()) + 1
+        elif m.group("href") and anio and mes:
+            url = m.group("href").strip().replace("http://", "https://", 1)
+            if (anio, mes, url) in vistos:
+                continue  # el mismo enlace partido en dos anclas
+            vistos.add((anio, mes, url))
+            enlaces.append(EnlaceMensual(None, anio, mes, url))
+    if not enlaces:
+        avisos.append("No se encontró ningún enlace mensual en la página de Salud Total")
+    return enlaces, avisos

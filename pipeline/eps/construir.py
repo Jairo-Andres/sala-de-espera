@@ -110,3 +110,82 @@ def desde_sura(res: ResultadoSura, fuente):
             regs.append(r)
         # Bloque con menos de 7 especialidades: lo registra el estado de fuentes.
     return regs
+
+
+def desde_salud_total(res, year, month, fuente):
+    """Registros por IPS (solo PBS y las especialidades de la sala) y agregados departamental y
+    nacional por régimen. El agregado usa solo filas que pasaron las reglas bloqueantes y dice qué
+    parte de las citas quedó fuera."""
+    from . import validar
+
+    banderas_archivo = []
+    if res.periodos_en_texto and (year, month) not in res.periodos_en_texto:
+        banderas_archivo.append(
+            "period_mismatch:" + ",".join(f"{y}-{m:02d}" for y, m in sorted(res.periodos_en_texto))
+        )
+    ips, vistos = [], {}
+    for f in res.filas:
+        if f.specialty is None or f.producto != "PBS" or f.regimen not in ("contributivo", "subsidiado"):
+            continue  # otras especialidades, el plan complementario (PAC) y filas sin régimen ("-") no entran
+        r = _base("salud_total", f.regimen, year, month, fuente)
+        r.update(specialty=f.specialty, geo_level="ips", department=f.department, city=f.city,
+                 ips_nit=f.ips_nit, ips_name=f.ips_name)
+        r.update({k: v for k, v in f.valores.items() if k in CAMPOS})
+        r["_decimales"] = f.decimales
+        r["quality_flags"] += banderas_archivo
+        if f.department is None:
+            r["quality_flags"].append(f"unknown_department:{f.lugar_raw}")
+        # La misma IPS y servicio puede aparecer en varias filas con valores distintos (sedes o redes
+        # distintas): se suman. Solo una fila idéntica en todo se trata como duplicada y se usa una vez.
+        clave = (f.ips_nit, f.regimen, f.cups, f.department, f.city, tuple(f.valores.values()))
+        if clave in vistos:
+            validar._agregar(vistos[clave], "duplicate_row")
+            continue
+        vistos[clave] = r
+        validar.calcular(r)
+        validar.validar_registro(r)
+        # Un promedio por debajo del mínimo o por encima del máximo de la misma fila es imposible. Como el
+        # promedio sí cuadra con sus sumas (regla avg_mismatch), lo dudoso es el mínimo/máximo: advertencia.
+        prom, mn, mx = f.valores["avg_request_reported"], f.valores["min_days"], f.valores["max_days"]
+        if None not in (mn, mx):
+            mn, mx = min(mn, mx), max(mn, mx)  # algunas filas traen mínimo y máximo invertidos
+        if r["avg_request_calc"] is not None and None not in (prom, mn, mx) and (prom < mn - 0.005 or prom > mx + 0.005):
+            validar._agregar(r, f"avg_outside_min_max:{mn:g}-{mx:g}")
+        # Un máximo mayor que la suma de todos los días tampoco es posible (p. ej. máximo 77 con suma 0).
+        suma = f.valores["sum_days_request"]
+        if mx is not None and suma is not None and mx > suma + 0.5:
+            validar._agregar(r, f"avg_outside_min_max:max {mx:g} > suma {suma:g}")
+        r.pop("_decimales", None)
+        r["_validado"] = True
+        ips.append(r)
+
+    # Agregados: Σ días / Σ citas sobre las filas válidas.
+    from collections import defaultdict
+
+    grupos = defaultdict(list)
+    for r in ips:
+        grupos[(r["regimen"], r["specialty"], "national", None)].append(r)
+        if r["department"]:
+            grupos[(r["regimen"], r["specialty"], "department", r["department"])].append(r)
+    agregados = []
+    for (regimen, esp, nivel, dep), regs in grupos.items():
+        validas = [r for r in regs if r["avg_request_calc"] is not None]
+        total = sum(r["appointments_total"] or 0 for r in regs)
+        n = sum(r["appointments_total"] for r in validas)
+        a = _base("salud_total", regimen, year, month, fuente)
+        a.update(specialty=esp, geo_level=nivel, department=dep, appointments_total=n,
+                 sum_days_request=sum(r["sum_days_request"] for r in validas),
+                 sum_days_desired=sum(r["sum_days_desired"] for r in validas if r["avg_desired_calc"] is not None),
+                 specialist_hours=None)
+        a["quality_flags"] += banderas_archivo
+        validar.calcular(a)
+        if total and n < total:
+            excluidas = (total - n) / total * 100
+            validar._agregar(a, f"partial_aggregate:{excluidas:.1f}")
+        if n and n < config.UMBRAL_MUESTRA_PEQUENA:
+            validar._agregar(a, "small_sample")
+        if a["avg_request_calc"] is None and total:
+            validar._agregar(a, "no_valid_rows")
+        a["_validado"] = True
+        agregados.append(a)
+    return ips + agregados

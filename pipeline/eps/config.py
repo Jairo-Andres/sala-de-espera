@@ -14,6 +14,8 @@ USER_AGENT = (
     "linkedin.com/in/jairo-andres31-analyst)"
 )
 PAUSA_SEGUNDOS = 4.0  # entre peticiones al mismo sitio
+# Salud Total cambió a un PDF por IPS en 2025; los años anteriores usan otros formatos (fase posterior).
+SALUD_TOTAL_FORMATO_DESDE = 2025
 REINTENTOS = 3
 
 FUENTES = {
@@ -21,6 +23,10 @@ FUENTES = {
         "nombre": "Nueva EPS",
         "indice": "https://www.nuevaeps.com.co/oportunidad-citas",
         "base": "https://www.nuevaeps.com.co",
+    },
+    "salud_total": {
+        "nombre": "Salud Total",
+        "indice": "https://saludtotal.com.co/nuestros-tiempos-de-espera/",
     },
     "sura": {
         "nombre": "EPS Sura",
@@ -81,6 +87,8 @@ DEPARTAMENTOS = {
     "narino": "narino",
     "nario": "narino",  # "NARIÑO" con la Ñ perdida en la extracción de texto
     "norte de santander": "norte_de_santander",
+    "nte. santander": "norte_de_santander",
+    "nte santander": "norte_de_santander",
     "putumayo": "putumayo",
     "quindio": "quindio",
     "risaralda": "risaralda",

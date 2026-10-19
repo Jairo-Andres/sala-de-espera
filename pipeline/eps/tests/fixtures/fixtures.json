@@ -13,6 +13,10 @@
       "url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
       "sha256": "d8176d98e2c06938b1e17f478bc22864503fde64e8ddaa33223ac1029fcedbf5",
       "se_sobrescribe": true
+    },
+    "salud_total_2026_09.pdf": {
+      "url": "https://saludtotal.com.co/wp-content/uploads/2026/10/Resolucion-1552-de-2013_Septiembre-del-2026-1.pdf",
+      "sha256": "0dc0e18f557cfb1939660d442d3f6434ca371affa65c91067113485be6be2300"
     }
   }
 }

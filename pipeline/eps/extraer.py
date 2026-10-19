@@ -37,7 +37,13 @@ def motor() -> str:
 
 
 def lineas_pdf(contenido: bytes) -> list[str]:
-    crudo = _con_pdftotext(contenido) if motor() == "pdftotext" else _con_pypdf(contenido)
+    if motor() == "pdftotext":
+        try:
+            crudo = _con_pdftotext(contenido)
+        except subprocess.CalledProcessError:
+            crudo = _con_pypdf(contenido)  # algunos PDF de Salud Total hacen fallar a Poppler
+    else:
+        crudo = _con_pypdf(contenido)
     return [" ".join(l.split()) for l in crudo.replace("\f", "\n").split("\n") if l.strip()]
 
 

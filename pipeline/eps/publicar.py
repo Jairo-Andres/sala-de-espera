@@ -82,7 +82,9 @@ def sala(registros, estado):
             "last_month": e.get("last_month"),
             "missing_months": e.get("missing_months"),
             "files_total": e.get("files_total"),
-            "files_failed": [{k: f.get(k) for k in ("regimen", "period", "status", "url")} for f in e["files_failed"]],
+            "files_failed": [{k: f.get(k) for k in ("regimen", "period", "status", "url")} for f in e["files_failed"]
+                             if f["status"] != "unsupported_format"],
+            "unsupported_files": e.get("unsupported_files", 0),
             "source": e.get("index_url") or e.get("pdf_url"),
             "notes": e.get("parser_notes", []),
         }
