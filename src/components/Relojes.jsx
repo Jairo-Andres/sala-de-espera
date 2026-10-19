@@ -75,26 +75,28 @@ export default function Relojes({ registros, unidades }) {
     : `One value covers ${MESES_POR[g]} ${MESES_POR[g] === 1 ? 'month' : 'months'} of the year`);
 
   return (
-    <Capitulo id="capitulo-2" kicker={t.c2Kicker} titulo={t.c2Titulo} texto={t.c2Texto} className="bg-superficie">
-      <ul ref={refLista} className="grid gap-3 md:grid-cols-2">
+    <Capitulo id="capitulo-2" kicker={t.c2Kicker} titulo={t.c2Titulo} texto={t.c2Texto} >
+      <ul ref={refLista} className="v-pubs">
         {grupos.map(({ us, gran, def, citas, estado, tipo }) => (
-          <li key={us[0].nombre} className="ja-card ja-card--raised !grid-cols-[auto_minmax(0,1fr)] items-start !gap-4">
-            <RelojAnual meses={MESES_POR[gran[0]]} titulo={tituloReloj(gran[0])} visto={visto} />
-            <div className="min-w-0">
-              <p className="font-display text-lg font-black leading-tight">{nombreGrupo(us)}</p>
-              <p className="text-sm text-texto-suave">{tipoGrupo(tipo, us.length)}</p>
-              <dl className="mt-3 grid gap-x-3 gap-y-2 text-sm sm:grid-cols-[auto_minmax(0,1fr)]">
-                <dt className="ja-label">{t.colPeriodo}</dt>
-                <dd>{gran.map((g) => t.gran[g]).join(' + ')}</dd>
-                <dt className="ja-label">{t.colDefinicion}</dt>
-                <dd>
-                  {def.map((d) => t.def[d]).join(' + ')}
-                  <span className="text-texto-suave"> ({t.estadoDef[estado ?? 'asumida']})</span>
-                </dd>
-                <dt className="ja-label">{t.colCitas}</dt>
-                <dd>{citas ? t.si : t.no}</dd>
-              </dl>
+          <li key={us[0].nombre} className="v-card">
+            <div className="flex items-start gap-3">
+              <RelojAnual meses={MESES_POR[gran[0]]} titulo={tituloReloj(gran[0])} visto={visto} />
+              <div className="min-w-0">
+                <h3>{nombreGrupo(us)}</h3>
+                <p className="v-fine">{tipoGrupo(tipo, us.length)}</p>
+              </div>
             </div>
+            <dl>
+              <div><dt>{t.colPeriodo}</dt><dd>{gran.map((g) => t.gran[g]).join(' + ')}</dd></div>
+              <div>
+                <dt>{t.colDefinicion}</dt>
+                <dd>
+                  {def.map((d) => t.def[d]).join(' + ')}{' '}
+                  <span className={`v-chip ${(estado ?? 'asumida') === 'asumida' ? 'v-chip--warn' : 'v-chip--neutral'}`}>{t.estadoDef[estado ?? 'asumida']}</span>
+                </dd>
+              </div>
+              <div><dt>{t.colCitas}</dt><dd>{citas ? t.si : t.no}</dd></div>
+            </dl>
           </li>
         ))}
       </ul>

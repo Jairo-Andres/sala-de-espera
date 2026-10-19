@@ -83,6 +83,7 @@ export const T = {
     c1Texto:
       'Hospitales, redes y subredes públicas que publican el indicador de oportunidad de citas (Resolución 1552 de 2013) en datos abiertos y que la API pudo unificar. No es una muestra representativa del país.',
     registros: 'registros',
+    c1Rango: 'Cada barra va del menor al mayor promedio entre sus especialidades, en su último dato.',
     desde: 'desde',
     hasta: 'hasta',
     tipo: { hospital: 'Hospital', red: 'Red', subred: 'Subred', ips: 'IPS' },
@@ -218,6 +219,7 @@ export const T = {
     c1Texto:
       'Public hospitals, networks and sub-networks that publish the appointment-timeliness indicator (Resolution 1552 of 2013) as open data and that the API could unify. This is not a representative sample of the country.',
     registros: 'records',
+    c1Rango: 'Each bar goes from the lowest to the highest average across its specialties, in its latest value.',
     desde: 'from',
     hasta: 'to',
     tipo: { hospital: 'Hospital', red: 'Network', subred: 'Sub-network', ips: 'Provider (IPS)' },

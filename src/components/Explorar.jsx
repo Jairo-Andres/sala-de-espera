@@ -8,7 +8,7 @@ import { Barras, Lineas, MapaMensual, TablaDatos, colorSerie } from './Graficos.
 const TABS = ['evolucion', 'especialidad', 'mes'];
 const MAX_SERIES = 6;
 
-function Nota() {
+export function Nota() {
   const { t } = useLang();
   return (
     <aside className="mt-10 rounded-lg border-l-ruta border-l-ruta-d bg-superficie p-5" aria-labelledby="nota-titulo">
@@ -179,7 +179,6 @@ export default function Explorar({ registros, unidades }) {
         {tab === 'especialidad' && <PorEspecialidad registros={registros} unidades={unidades} />}
         {tab === 'mes' && <PorMes registros={registros} unidades={unidades} />}
       </div>
-      <Nota />
     </Capitulo>
   );
 }

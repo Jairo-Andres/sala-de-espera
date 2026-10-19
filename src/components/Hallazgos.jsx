@@ -5,14 +5,27 @@ import Capitulo from './Capitulo.jsx';
 
 const sinEse = (n) => n.replace(/^E\.S\.E\.\s*/, '');
 
-function Tarjeta({ grande, etiqueta, children }) {
+function Tarjeta({ grande, etiqueta, children, viz, pie }) {
   return (
-    <li className="ja-card ja-card--raised !gap-2 border-t-ruta border-t-ruta-d">
-      <p className="font-display text-4xl font-black leading-none ja-num">{grande}</p>
-      <p className="ja-label !text-texto">{etiqueta}</p>
-      <div className="grid gap-2 text-base">{children}</div>
+    <li className="v-card v-stat">
+      <b>{grande}</b>
+      <span className="v-k">{etiqueta}</span>
+      <div className="grid gap-2">{children}</div>
+      {viz && <div className="v-mini">{viz}</div>}
+      {pie && <p className="v-fine">{pie}</p>}
     </li>
   );
+}
+
+function Barras({ filas }) {
+  const max = Math.max(...filas.map((f) => f.v), 0.0001);
+  return filas.map((f) => (
+    <div key={f.k} className="v-r" aria-hidden="true">
+      <span>{f.k}</span>
+      <div className="v-trk"><i style={{ width: `${Math.max(2, (f.v / max) * 100)}%` }} /></div>
+      <em>{f.t}</em>
+    </div>
+  ));
 }
 
 export default function Hallazgos({ registros, unidades }) {
@@ -34,35 +47,51 @@ export default function Hallazgos({ registros, unidades }) {
 
   return (
     <Capitulo id="hallazgos" kicker={t.hKicker} titulo={t.hTitulo} texto={t.hTexto}>
-      <ul className="grid gap-4 md:grid-cols-2">
+      <ul className="v-g4">
         {brecha && (
-          <Tarjeta grande={`${Math.round(brecha.razon)}×`} etiqueta={t.hBrechaEtiqueta}>
+          <Tarjeta
+            grande={`${Math.round(brecha.razon)}×`}
+            etiqueta={t.hBrechaEtiqueta}
+            pie={t.hMetodo}
+            viz={<Barras filas={[{ k: esp(brecha.alta.especialidad), v: brecha.alta.valor, t: d(brecha.alta.valor) }, { k: esp(brecha.baja.especialidad), v: brecha.baja.valor, t: d(brecha.baja.valor) }]} />}
+          >
             <p>{t.hBrecha(nombre(brecha.hospital), brecha.anio, minus(brecha.alta.especialidad), d(brecha.alta.valor), minus(brecha.baja.especialidad), d(brecha.baja.valor))}</p>
-            <p className="text-sm text-texto-suave">{t.hMetodo}</p>
           </Tarjeta>
         )}
         {aumento && (
-          <Tarjeta grande={`+${d(aumento.delta)}`} etiqueta={t.hAumentoEtiqueta}>
+          <Tarjeta
+            grande={`+${d(aumento.delta)}`}
+            etiqueta={t.hAumentoEtiqueta}
+            pie={t.hMetodo}
+            viz={<Barras filas={[{ k: String(aumento.ini.anio), v: aumento.ini.valor, t: d(aumento.ini.valor) }, { k: String(aumento.fin.anio), v: aumento.fin.valor, t: d(aumento.fin.valor) }]} />}
+          >
             <p>{t.hAumento(nombre(aumento.hospital), minus(aumento.especialidad), d(aumento.ini.valor), aumento.ini.anio, d(aumento.fin.valor), aumento.fin.anio)}</p>
-            <p className="text-sm text-texto-suave">{t.hMetodo}</p>
           </Tarjeta>
         )}
         {norma.total > 0 && (
-          <Tarjeta grande={`${norma.debajo}/${norma.total}`} etiqueta={t.hNormaEtiqueta}>
+          <Tarjeta
+            grande={`${norma.debajo}/${norma.total}`}
+            etiqueta={t.hNormaEtiqueta}
+            pie={t.hNormaNota}
+            viz={(
+              <div className="v-dots" role="img" aria-label={`${norma.debajo}/${norma.total} ${t.hNormaEtiqueta}`}>
+                {[...norma.registros].sort((a, b) => a.dias_espera - b.dias_espera).map((r) => <i key={`${r.hospital}${r.especialidad}`} className={r.dias_espera <= 3 ? 'v-g' : 'v-b'} />)}
+              </div>
+            )}
+          >
             <p>{t.hNorma}</p>
             {encima.length > 0 && (
               <p className="font-bold">
                 {t.hNormaEncima(encima.map((r) => `${corto(r.hospital)}, ${minus(r.especialidad)} (${d(r.dias_espera)} ${t.dias}, ${formatoPeriodo(r.periodo, r.granularidad, lang)})`).join('; '))}
               </p>
             )}
-            <p className="text-sm text-texto-suave">{t.hNormaNota}</p>
           </Tarjeta>
         )}
-        <Tarjeta grande={n} etiqueta={t.hVacioEtiqueta}>
+        <Tarjeta grande={n} etiqueta={t.hVacioEtiqueta} viz={<div className="v-dots" role="img" aria-label={`${n}`}>{Array.from({ length: n }, (_, k) => <i key={k} />)}</div>}>
           <p>{t.hVacio}</p>
         </Tarjeta>
       </ul>
-      <a href="#explorar" className="ja-btn ja-btn--secondary mt-6">{t.verGraficos} <span aria-hidden="true">↓</span></a>
+      <button type="button" className="v-btn mt-6" onClick={() => document.getElementById('explorar')?.scrollIntoView({ block: 'start' })}>{t.verGraficos} <span aria-hidden="true">↓</span></button>
     </Capitulo>
   );
 }

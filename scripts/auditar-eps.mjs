@@ -13,6 +13,7 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 await mkdir(salida, { recursive: true });
 const browser = await chromium.launch();
 const resumen = [];
+const erroresJs = [];
 
 async function abrir({ ancho, lang = 'es', esquema = 'light', query = '', hash = '#eps' }) {
   const ctx = await browser.newContext({
@@ -20,6 +21,7 @@ async function abrir({ ancho, lang = 'es', esquema = 'light', query = '', hash =
     locale: lang === 'es' ? 'es-CO' : 'en-US', reducedMotion: 'reduce',
   });
   const page = await ctx.newPage();
+  page.on('pageerror', (e) => erroresJs.push(String(e)));
   await page.addInitScript((l) => localStorage.setItem('sala-lang', l), lang);
   await page.goto(`${URL_BASE}?lang=${lang}${query}${hash}`);
   return { ctx, page };
@@ -94,4 +96,5 @@ await writeFile(path.join(salida, 'axe.json'), JSON.stringify(resumen, null, 2))
 await browser.close();
 const total = resumen.reduce((s, r) => s + r.incumplimientos, 0);
 console.log(`axe: ${total} incumplimientos en ${resumen.length} vistas`);
+console.log(`errores de JavaScript: ${erroresJs.length}`, [...new Set(erroresJs)].slice(0, 5));
 for (const r of resumen.filter((x) => x.incumplimientos)) console.log(r.vista, JSON.stringify(r.detalle));

@@ -3,10 +3,7 @@ import { cargarTodo } from './lib/api.js';
 import { LangContext, traductor } from './lib/i18n.js';
 import { construirTurnos, indexarUnidades } from './lib/datos.js';
 import Cabecera from './components/Cabecera.jsx';
-import Cargando from './components/Cargando.jsx';
-import Turnero from './components/Turnero.jsx';
-import SalaIso from './components/SalaIso.jsx';
-import Pildora from './components/Pildora.jsx';
+import PortadaHosp from './v2/PortadaHosp.jsx';
 import Hallazgos from './components/Hallazgos.jsx';
 import Unidades from './components/Unidades.jsx';
 import Relojes from './components/Relojes.jsx';
@@ -67,7 +64,6 @@ export default function App() {
 
   const turnos = useMemo(() => (datos ? construirTurnos(datos.registros) : []), [datos]);
   const [iTurno, setITurno] = useState(0);
-  const turno = turnos[iTurno];
 
   const reintentar = useCallback(() => setIntento((i) => i + 1), []);
   const ctx = useMemo(() => traductor(lang), [lang]);
@@ -75,35 +71,13 @@ export default function App() {
 
   return (
     <LangContext.Provider value={ctx}>
-      <a href="#contenido" className="ja-btn ja-btn--primary sr-only-focusable fixed left-4 top-4 z-50">{t.saltar}</a>
+      <a href="#contenido" className="v-btn v-btn--primary sr-only-focusable fixed left-4 top-4 z-[80]" onClick={(e) => { e.preventDefault(); document.getElementById('contenido')?.focus(); }}>{t.saltar}</a>
       <Cabecera sala={sala} onIdioma={() => setLang(lang === 'es' ? 'en' : 'es')} />
       {sala === 'eps' ? (
-        <main id="contenido"><SalaEps lang={lang} /></main>
+        <main id="contenido" tabIndex={-1}><SalaEps lang={lang} /></main>
       ) : (
-      <main id="contenido">
-        <section id="portada" className="ja-topo border-b border-borde" aria-labelledby="titulo">
-          <div className="mx-auto grid max-w-contenido gap-10 px-4 py-10 sm:px-6 md:py-16 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <div className="grid gap-8">
-              <div>
-                <p className="ja-label flex items-center gap-2"><span className="ja-bullet ja-bullet--d" aria-hidden="true">D</span>{t.ruta}</p>
-                <h1 id="titulo" className="mt-4 text-display">{t.titulo}</h1>
-                <p className="mt-5 max-w-xl text-md text-texto-suave">{t.subtitulo}</p>
-                {datos && (
-                  <a href="#hallazgos" className="ja-btn ja-btn--secondary mt-7">{t.bajar} <span aria-hidden="true">↓</span></a>
-                )}
-              </div>
-              {turno && <div className="hidden lg:block"><SalaIso turno={turno} unidades={datos.unidades} /></div>}
-            </div>
-            <div className="grid gap-8">
-              {datos ? (
-                <Turnero turnos={turnos} i={iTurno} setI={setITurno} unidades={datos.unidades} />
-              ) : (
-                <Cargando etapa={etapa} error={error} onReintentar={reintentar} />
-              )}
-              {turno && <div className="lg:hidden"><SalaIso turno={turno} unidades={datos.unidades} /></div>}
-            </div>
-          </div>
-        </section>
+      <main id="contenido" tabIndex={-1}>
+        <PortadaHosp datos={datos} turnos={turnos} iTurno={iTurno} setITurno={setITurno} etapa={etapa} error={error} onReintentar={reintentar} />
         {datos && (
           <>
             <Hallazgos registros={datos.registros} unidades={datos.unidades} />
@@ -112,16 +86,19 @@ export default function App() {
             <Fila registros={datos.registros} unidades={datos.unidades} />
             <Explorar registros={datos.registros} unidades={datos.unidades} />
             <Clicsalud />
+            <section id="antes" className="v-block" aria-label={t.notaTitulo}>
+              <div className="v-wrap">
+                <details className="v-callout" open>
+                  <summary>{t.notaTitulo}</summary>
+                  <ul>{t.nota.map((n) => <li key={n}>{n}</li>)}</ul>
+                </details>
+              </div>
+            </section>
           </>
         )}
       </main>
       )}
-      {sala === 'eps' ? <Pie /> : (
-        <>
-          <Pie estado={datos?.estado} unidades={datos?.unidades} />
-          <Pildora turno={turno} total={turnos.length} objetivo="portada" />
-        </>
-      )}
+      {sala === 'eps' ? <Pie /> : <Pie estado={datos?.estado} unidades={datos?.unidades} />}
     </LangContext.Provider>
   );
 }
