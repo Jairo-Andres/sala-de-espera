@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-20T18:00:17Z",
+  "generated_at": "2026-11-12T20:46:43Z",
   "parser_version": "1.0.0",
   "eps": {
     "nueva_eps": {
       "name": "Nueva EPS",
       "index_url": "https://www.nuevaeps.com.co/oportunidad-citas",
-      "checked_at": "2026-10-20T17:52:03Z",
+      "checked_at": "2026-11-12T20:38:28Z",
       "responded": false,
-      "error": "No se pudo leer la página índice: BloqueadoPorRobots('https://www.nuevaeps.com.co/oportunidad-citas')",
+      "error": "No se pudo leer la página índice: <HTTPError 403: 'Forbidden'>",
       "files": [],
       "last_month": {},
       "first_month": {},
@@ -21,7 +21,7 @@
     "salud_total": {
       "name": "Salud Total",
       "index_url": "https://saludtotal.com.co/nuestros-tiempos-de-espera/",
-      "checked_at": "2026-10-20T17:52:03Z",
+      "checked_at": "2026-11-12T20:38:28Z",
       "responded": true,
       "error": null,
       "files": [
@@ -1012,15 +1012,15 @@
     "sura": {
       "name": "EPS Sura",
       "pdf_url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
-      "checked_at": "2026-10-20T18:00:13Z",
+      "checked_at": "2026-11-12T20:46:39Z",
       "responded": true,
       "error": null,
       "files": [
         {
           "period": "acumulado",
           "url": "https://www.epssura.com/files/indicador-oportunidad.pdf",
-          "sha256": "d8176d98e2c06938b1e17f478bc22864503fde64e8ddaa33223ac1029fcedbf5",
-          "retrieved_at": "2026-10-20T18:00:17Z",
+          "sha256": "3c4b6233c014dbc00b88e013022e815df55eaba3fd1e60898ed30839579094af",
+          "retrieved_at": "2026-11-12T20:46:43Z",
           "status": "ok"
         }
       ],
@@ -1030,7 +1030,7 @@
         "Bloque 'MAYO' repetido de forma idéntica en el PDF; se usa una sola vez"
       ],
       "last_month": {
-        "unico": "2026-09"
+        "unico": "2026-10"
       },
       "first_month": {
         "unico": "2013-01"
@@ -1051,7 +1051,7 @@
     "avg_outside_min_max": 6475,
     "avg_over_60": 136,
     "context": 28,
-    "desired_unreliable_source": 903,
+    "desired_unreliable_source": 910,
     "duplicate_row": 1663,
     "jump_vs_prev_month": 685,
     "negative_days": 93,
@@ -1063,5 +1063,5 @@
     "volume_jump": 1129,
     "zero_appointments_nonzero_avg": 6
   },
-  "records": 32883
+  "records": 32890
 }
