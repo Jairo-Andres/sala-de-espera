@@ -160,7 +160,15 @@ export const T = {
     ninguno: 'ninguno',
     simulacion:
       'Simulación para revisar el diseño: así se vería si la página de Nueva EPS no respondiera. Los datos de abajo siguen siendo los últimos validados.',
-    errorFuente: 'La página índice no respondió o cambió de formato.',
+    errorFuente: (desde) => `La página de la EPS no respondió o cambió de formato${desde ? ` desde el ${desde}` : ''}.`,
+    errorCodigo: {
+      blocked: (desde) => `El sitio de la EPS no respondió a la revisión automática${desde ? ` desde el ${desde}` : ''}.`,
+      unreachable: (desde) => `El sitio de la EPS no estuvo disponible en la revisión automática${desde ? ` desde el ${desde}` : ''}.`,
+      moved: (desde) => `La página donde la EPS publica sus datos cambió de lugar${desde ? ` (desde el ${desde})` : ''}.`,
+      robots: (desde) => `El sitio de la EPS ya no permite la revisión automática${desde ? ` (desde el ${desde})` : ''}.`,
+    },
+    ultimoDatoBueno: 'Se muestra el último dato publicado.',
+    sinDatoPrevio: 'No hay datos anteriores para mostrar.',
     banderasTitulo: 'Banderas de calidad en toda la historia',
     banderasTexto: 'Bloqueante: el valor se publica como "sin dato". Advertencia: se publica con aviso. Nota: contexto.',
     severidad: { bloqueante: 'Bloqueante', advertencia: 'Advertencia', nota: 'Nota' },
@@ -289,7 +297,15 @@ export const T = {
     ninguno: 'none',
     simulacion:
       "Design-review simulation: this is how it would look if Nueva EPS's page didn't respond. The data below is still the latest validated.",
-    errorFuente: 'The index page did not respond or changed format.',
+    errorFuente: (since) => `The insurer's page did not respond or changed format${since ? ` since ${since}` : ''}.`,
+    errorCodigo: {
+      blocked: (since) => `The insurer's website did not respond to the automated check${since ? ` since ${since}` : ''}.`,
+      unreachable: (since) => `The insurer's website was unavailable during the automated check${since ? ` since ${since}` : ''}.`,
+      moved: (since) => `The page where the insurer publishes its data has moved${since ? ` (since ${since})` : ''}.`,
+      robots: (since) => `The insurer's website no longer allows automated checks${since ? ` (since ${since})` : ''}.`,
+    },
+    ultimoDatoBueno: 'The last published data is shown.',
+    sinDatoPrevio: 'There is no earlier data to show.',
     banderasTitulo: 'Quality flags across the whole history',
     banderasTexto: 'Blocking: the value is published as "no data". Warning: published with a notice. Note: context.',
     severidad: { bloqueante: 'Blocking', advertencia: 'Warning', nota: 'Note' },

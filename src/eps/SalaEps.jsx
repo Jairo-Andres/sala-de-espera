@@ -154,9 +154,16 @@ function Calidad({ datos, tx }) {
               {s.name}
             </h3>
             <p><span className={`ja-status ${s.ok ? 'ja-status--good' : 'ja-status--bad'}`}>{s.ok ? t.fuenteOk : t.fuenteFalla}</span></p>
-            {!s.ok && <p>{s.error === 'SIMULACION' ? t.errorFuente : s.error} {s.failing_since && <>· {t.fallaDesde} {fecha(s.failing_since)}</>}</p>}
+            {!s.ok && (
+              <p>
+                {(t.errorCodigo[s.error_code] ?? t.errorFuente)(s.failing_since ? fecha(s.failing_since) : null)}
+                {' '}{s.stale ? t.ultimoDatoBueno : t.sinDatoPrevio}
+              </p>
+            )}
             <p className="text-texto-suave">{t.revisado}: {fecha(s.checked_at)}</p>
-            <p>{t.cubre}: {Object.entries(s.first_month ?? {}).map(([r, ym]) => `${r === 'unico' ? '' : `${t.regimenCorto[r]}: `}${ym} → ${s.last_month[r]}`).join(' · ')}</p>
+            {Object.keys(s.first_month ?? {}).length > 0 && (
+              <p>{t.cubre}: {Object.entries(s.first_month).map(([r, ym]) => `${r === 'unico' ? '' : `${t.regimenCorto[r]}: `}${ym} → ${s.last_month[r]}`).join(' · ')}</p>
+            )}
             <p>{t.mesesFaltan}: {[...new Set(Object.values(s.missing_months ?? {}).flat())].sort().join(', ') || t.ninguno}</p>
             {s.unsupported_files > 0 && <p>{t.formatoOtro(s.unsupported_files)}</p>}
             <p>{t.archivosFallidos}: {s.files_failed.length ? s.files_failed.map((f) => <span key={f.url}><a href={f.url} target="_blank" rel="noreferrer">{f.period}</a> ({t.estadoArchivo[f.status] ?? f.status}) </span>) : t.ninguno}</p>

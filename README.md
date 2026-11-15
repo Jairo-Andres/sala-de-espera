@@ -93,6 +93,8 @@ página índice de Nueva EPS + PDF acumulado de Sura → pipeline/eps (Python) �
 |---|---|---|
 | El workflow falla con "cambió de formato" | Una EPS cambió las columnas del PDF | Revisa `data/eps/estado_fuentes.json` y ajusta el parser; la sala sigue con lo último validado |
 | "Falló la última revisión" en Salud de las fuentes | La página no respondió o bloqueó el acceso | Espera al reintento del día 20; si sigue, revisa la URL en `pipeline/eps/config.py` |
+| Nueva EPS dice "no respondió a la revisión automática" | Cloudflare de Nueva EPS responde 403 a las IP de GitHub Actions (desde oct. 2026); desde un equipo normal responde 200 | La sala conserva el último dato bueno. Una vez al mes corre `python -m pipeline.eps.run --incremental` en tu equipo y sube los cambios de `data/eps` y `public/data/eps`. No se usan proxies ni cabeceras falsas |
+| Falta contributivo de enero de 2022 en Nueva EPS | El PDF de la EPS responde 404 | No hay arreglo de nuestro lado; queda como "sin dato" |
 | Aparece un mes con "sin dato" | No pasó una regla bloqueante | Es intencional; el motivo está en la bandera del registro |
 
 ## Licencia
@@ -156,6 +158,8 @@ Import the repo in Vercel (Vite is detected: `npm run build`, output `dist`), op
 ### The insurers’ room (`#eps`)
 
 A second room with the monthly waiting days that **Nueva EPS**, **Salud Total** and **EPS Sura** report (Resolution 1552 of 2013), compared with the reference standards of External Circular 038 of 2025. A Python pipeline (`pipeline/eps`) discovers, downloads, parses and validates the PDFs; anything that fails a blocking rule is published as "no data" with its reason. Run it with `python -m pipeline.eps.run` (`--dry-run`, `--offline`, `--incremental`), test it with `python -m pytest pipeline/eps/tests`. The monthly GitHub Actions workflow stays in dry-run until the repository variable `EPS_PUBLICAR` is `true`. Only aggregate figures are published, linking to each original PDF.
+
+If Nueva EPS shows "did not respond to the automated check": its Cloudflare returns 403 to GitHub Actions IPs (since Oct 2026) while a regular computer gets 200. The room keeps the last good data; once a month run `python -m pipeline.eps.run --incremental` locally and push `data/eps` and `public/data/eps`. No proxies or spoofed headers are used. The January 2022 contributivo PDF returns 404 at the source and stays as "no data".
 
 ### License
 

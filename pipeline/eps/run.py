@@ -15,6 +15,7 @@ import csv
 import json
 import sys
 import tempfile
+import urllib.error
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -91,6 +92,28 @@ def _leer_un_csv(ruta: Path):
 
 # --- Fuentes --------------------------------------------------------------------------
 
+def codigo_error_indice(e: Exception) -> str:
+    """Código corto y estable para la interfaz (el texto técnico queda solo en estado_fuentes.json)."""
+    if isinstance(e, descargar.BloqueadoPorRobots):
+        return "robots"
+    if isinstance(e, urllib.error.HTTPError) and e.code in (401, 403, 429):
+        return "blocked"  # el sitio rechaza la revisión automática (p. ej. un WAF que filtra servidores en la nube)
+    if isinstance(e, urllib.error.HTTPError) and e.code in (404, 410):
+        return "moved"
+    return "unreachable"
+
+
+def conservar_previos(estado: dict, previos_por_url: dict, e: Exception) -> list:
+    """Si la página índice no responde, se conservan los registros ya publicados de esa EPS en vez de
+    borrarlos (antes, un 403 dejaba la sala sin la EPS). La fuente queda marcada como no al día."""
+    estado["error"] = f"No se pudo leer la página índice: {e!r}"
+    estado["error_code"] = codigo_error_indice(e)
+    regs = [r for lista in previos_por_url.values() for r in lista]
+    for r in regs:
+        r["_reusado"] = True
+    estado["stale"] = bool(regs)
+    return regs
+
 def procesar_nueva_eps(offline: bool, previos_por_url: dict, incremental: bool):
     estado = {"name": config.FUENTES["nueva_eps"]["nombre"], "index_url": config.FUENTES["nueva_eps"]["indice"],
               "checked_at": ahora(), "responded": False, "error": None, "files": []}
@@ -104,8 +127,7 @@ def procesar_nueva_eps(offline: bool, previos_por_url: dict, incremental: bool):
             cache_indice.write_text(html, encoding="utf-8")
         estado["responded"] = True
     except Exception as e:  # noqa: BLE001 - se registra y la interfaz sigue con lo publicado
-        estado["error"] = f"No se pudo leer la página índice: {e!r}"
-        return [], estado, False
+        return conservar_previos(estado, previos_por_url, e), estado, False
 
     enlaces, avisos = descargar.enlaces_nueva_eps(html)
     estado["index_warnings"] = avisos
@@ -175,8 +197,7 @@ def procesar_salud_total(offline: bool, previos_por_url: dict, incremental: bool
             cache_indice.write_text(html, encoding="utf-8")
         estado["responded"] = True
     except Exception as e:  # noqa: BLE001
-        estado["error"] = f"No se pudo leer la página índice: {e!r}"
-        return [], estado, False
+        return conservar_previos(estado, previos_por_url, e), estado, False
     enlaces, avisos = descargar.enlaces_salud_total(html)
     estado["index_warnings"] = avisos
     por_mes = defaultdict(list)

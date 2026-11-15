@@ -76,7 +76,8 @@ export function simularFuenteCaida(datos) {
     ...fuentes.nueva_eps,
     ok: false,
     responded: false,
-    error: 'SIMULACION',
+    error_code: 'blocked',
+    stale: true,
     failing_since: fuentes.nueva_eps.checked_at,
   };
   return { ...datos, quality: { ...datos.quality, sources: fuentes }, simulacion: true };

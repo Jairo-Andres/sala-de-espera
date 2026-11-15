@@ -242,5 +242,36 @@ class ParserSura(unittest.TestCase):
             parser_sura.parsear(roto)
 
 
+
+
+class TestIndiceCaido(unittest.TestCase):
+    """Un índice que no responde no debe borrar los datos ya publicados de esa EPS (pasó el 20-oct-2026)."""
+
+    def _http(self, codigo):
+        import io
+        import urllib.error
+        return urllib.error.HTTPError("https://x", codigo, "err", {}, io.BytesIO(b""))
+
+    def test_conserva_registros_previos_y_marca_codigo(self):
+        from pipeline.eps import run
+        previos = {"u1": [{"year": 2026, "month": 9}], "u2": [{"year": 2026, "month": 8}]}
+        estado = {"error": None}
+        regs = run.conservar_previos(estado, previos, self._http(403))
+        self.assertEqual(len(regs), 2)
+        self.assertTrue(all(r["_reusado"] for r in regs))
+        self.assertEqual(estado["error_code"], "blocked")
+        self.assertTrue(estado["stale"])
+        self.assertIn("403", estado["error"])
+
+    def test_codigos(self):
+        from pipeline.eps import run
+        self.assertEqual(run.codigo_error_indice(self._http(404)), "moved")
+        self.assertEqual(run.codigo_error_indice(TimeoutError()), "unreachable")
+        self.assertEqual(run.codigo_error_indice(descargar.BloqueadoPorRobots("u")), "robots")
+        estado = {"error": None}
+        self.assertEqual(run.conservar_previos(estado, {}, TimeoutError()), [])
+        self.assertFalse(estado["stale"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -76,7 +76,9 @@ def sala(registros, estado):
             "ok": e["ok"],
             "responded": e["responded"],
             "checked_at": e["checked_at"],
-            "error": e["error"],
+            # Solo el código: el texto técnico (p. ej. HTTPError 403) queda en data/eps/estado_fuentes.json.
+            "error_code": e.get("error_code") or ("format" if e["error"] else None),
+            "stale": bool(e.get("stale")),
             "failing_since": e["failing_since"],
             "first_month": e.get("first_month"),
             "last_month": e.get("last_month"),
