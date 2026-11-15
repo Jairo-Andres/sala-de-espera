@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useLang } from '../lib/i18n.js';
-import { formatoDias, formatoPeriodo, frenteANorma, mayorAumento, mayorBrecha } from '../lib/datos.js';
+import { ESPECIALIDADES_NORMA, PLAZO_NORMA, formatoDias, formatoPeriodo, mayorAumento, mayorBrecha } from '../lib/datos.js';
+import { normaDesdeRanking } from '../relevancia/datos.js';
 import Capitulo from './Capitulo.jsx';
 
 const sinEse = (n) => n.replace(/^E\.S\.E\.\s*/, '');
@@ -28,11 +29,12 @@ function Barras({ filas }) {
   ));
 }
 
-export default function Hallazgos({ registros, unidades }) {
+export default function Hallazgos({ registros, unidades, ranking }) {
   const { t, lang, esp } = useLang();
   const brecha = useMemo(() => mayorBrecha(registros), [registros]);
   const aumento = useMemo(() => mayorAumento(registros), [registros]);
-  const norma = useMemo(() => frenteANorma(registros), [registros]);
+  // El último dato de cada unidad ya viene resuelto por /ranking (antes se calculaba en el navegador).
+  const norma = useMemo(() => normaDesdeRanking(ranking?.grupos ?? [], ESPECIALIDADES_NORMA, PLAZO_NORMA), [ranking]);
   const n = new Set(registros.map((r) => r.hospital)).size;
   const nombre = (h) => {
     const u = unidades.get(h);

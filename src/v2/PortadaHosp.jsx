@@ -7,11 +7,13 @@ import { Sala3D } from './Sala3D.jsx';
 import TurneroV2 from './TurneroV2.jsx';
 import Estimador from './Estimador.jsx';
 import { V2 } from './textos.js';
+import TuCiudad from '../relevancia/TuCiudad.jsx';
+import Viejo from '../relevancia/Viejo.jsx';
 
 const irA = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' });
 
 /** Portada v2 de la sala de hospitales: texto, sala 3D, turnero inclinado y franja de cifras. */
-export default function PortadaHosp({ datos, turnos, iTurno, setITurno, etapa, error, onReintentar }) {
+export default function PortadaHosp({ datos, turnos, iTurno, setITurno, etapa, error, onReintentar, desde }) {
   const { t, lang, esp } = useLang();
   const v = V2[lang];
   const reduce = useReducedMotion();
@@ -26,7 +28,12 @@ export default function PortadaHosp({ datos, turnos, iTurno, setITurno, etapa, e
       unidad: r.dias_espera === 1 ? t.dia : t.dias,
       periodo: formatoPeriodo(r.periodo, r.granularidad, lang),
       nota: <span>{u?.nombre ?? r.hospital}</span>,
-      chip: u?.estadoDefinicion === 'asumida' ? <span className="v-chip v-chip--warn">△ {t.asumidaMarca}</span> : null,
+      chip: (
+        <>
+          {u?.estadoDefinicion === 'asumida' && <span className="v-chip v-chip--warn">△ {t.asumidaMarca}</span>}
+          <Viejo periodo={r.periodo} />
+        </>
+      ),
       fuente: u?.fuente_url ? { url: u.fuente_url, texto: t.verFuente, sr: u.corto } : null,
     };
   }), [turnos, datos, lang, t, esp]);
@@ -84,6 +91,7 @@ export default function PortadaHosp({ datos, turnos, iTurno, setITurno, etapa, e
           )}
         </section>
       </div>
+      {datos && <TuCiudad desde={desde} />}
       {datos && <Estimador opciones={opciones} t={v} lang={lang} />}
     </>
   );

@@ -1,5 +1,6 @@
 import { useLang } from '../lib/i18n.js';
 import { API_URL } from '../lib/api.js';
+import { PillEtl } from '../relevancia/AvisoEtl.jsx';
 
 export default function Pie({ estado, unidades }) {
   const { t, lang } = useLang();
@@ -25,6 +26,7 @@ export default function Pie({ estado, unidades }) {
         <div className="grid content-start gap-4 text-sm">
           <p>
             <a href={`${API_URL}/docs`} target="_blank" rel="noreferrer" className="font-bold">{t.api}</a>
+            {estado && <span className="mt-2 block"><PillEtl estado={estado} /></span>}
             {carga && (
               <span className="mt-1 block font-mono text-texto-suave">
                 {t.ultimaCarga}: {new Date(carga).toLocaleDateString(lang === 'es' ? 'es-CO' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' })}

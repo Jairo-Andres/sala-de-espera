@@ -13,13 +13,19 @@ datos.gov.co y portal de Bogotá → ETL (pandas) → API FastAPI (Render) → e
 
 ## Qué muestra
 
+Arriba hay un **selector de periodo** (Desde 2023, por defecto; Desde 2020; Todo) que se pasa a la API como `desde_anio` y filtra toda la sala salvo el Archivo Clicsalud. Los datos con más de un año llevan la marca **"Dato de AAAA"**. Si la última carga del ETL tiene fuentes caídas o más de 8 días, aparece un aviso; en el pie, el estado de la carga ("Al día", fecha y fuentes ok).
+
+1. **Tu ciudad:** promedio por especialidad en la ciudad elegida (Bogotá por defecto), con `/resumen`. Dice si es ponderado por citas o promedio simple (Bogotá no publica citas).
+1. **Quién espera más:** con `/ranking`, un bloque por especialidad, definición y periodo (nunca un ranking único), con el periodo de cada dato. Las series con una sola unidad van aparte, en una tabla.
 1. **Hallazgos ("Lo que sí dicen los datos"):** 4 tarjetas calculadas en vivo que solo comparan una unidad consigo misma o con la norma: la mayor brecha entre especialidades del mismo hospital, el mayor aumento de una misma serie, cuántos datos de medicina general y odontología están dentro del plazo de 3 días hábiles de la Resolución 1552 de 2013 y cuántas unidades publican. Promedios anuales ponderados por citas, solo años completos.
 1. **Turnero:** cada turno es un dato real (el último promedio publicado por una unidad para una especialidad), con su periodo y enlace a la fuente.
 2. **Capítulo 1:** las unidades incluidas (hospitales, red y subredes), su periodo cubierto y su fuente.
 3. **Capítulo 2, "Cada reloj marca distinto":** cómo mide cada unidad (mes, trimestre o semestre; desde la solicitud o desde la fecha deseada; si la definición es explícita o asumida).
 4. **Capítulo 3, "La fila":** una silla por cada día de espera, último dato de cada unidad para la especialidad elegida.
 5. **Explora:** evolución en el tiempo, comparación por especialidad y mapa por mes, cada uno con su tabla.
-6. **Archivo Clicsalud (2016–2021):** resumen por departamento de lo que reportaron las IPS (promedio ponderado por citas y mediana), separado del resto porque es otra fuente y es histórica.
+6. **Archivo Clicsalud (2016–2021):** por departamento y ciudad (listas que vienen de la API), lo que reportaron las IPS en cada trimestre o semestre: promedio ponderado por citas, citas, número de IPS y mediana entre IPS, en una sola llamada a `/resumen?agrupar_por=periodo`. Lleva el sello "Histórico 2016–2021" según el campo `historico` de la API.
+
+Llamadas a la API al cargar: `/estado`, `/hospitales?tipo=hospital,red,subred`, `/oportunidad?tipo=hospital,red,subred&desde_anio=…` (solo el periodo elegido) y `/ranking`. Tu ciudad y el Archivo piden `/resumen` por su cuenta. Requiere la versión de la API que acepta `tipo` con varios valores y `mediana_unidades` (commits 0b3bbb6 y 9198087 del repo de la API): **despliega primero la API**.
 
 Diseño "La sala de espera" con la identidad visual común del portafolio ("Rutas + Cota", ruta **D** Datos). Mobile-first, bilingüe (ES/EN), modo claro y oscuro según el sistema, y respeta `prefers-reduced-motion`.
 
@@ -60,7 +66,9 @@ Toma capturas a 390 px y 1280 px (claro, oscuro, ES y EN) y pasa axe-core con la
 | "Cargando datos…" tarda hasta un minuto | Render duerme la API tras ~15 min sin uso | Es normal. Antes de una demo, abre la API un minuto antes |
 | "No pudimos traer los datos" | La API no despertó a tiempo, o Supabase pausó la base | Pulsa *Reintentar*. Si sigue, revisa `/health` de la API y su README |
 | Error de CORS en la consola | La API dejó de enviar `Access-Control-Allow-Origin` | Revisa la configuración de CORS en la API |
-| El archivo Clicsalud no muestra un departamento | El nombre cambió en la API | Actualiza la lista `DEPARTAMENTOS` en `src/components/Clicsalud.jsx` |
+| El archivo Clicsalud no muestra departamentos o ciudades | `/resumen` no respondió | Revisa `/resumen?agrupar_por=departamento&tipo=ips` en la API |
+| Todo falla con HTTP 422 | La API desplegada es anterior a `tipo` con varios valores | Despliega la última versión de la API en Render |
+| Aviso amarillo de datos viejos o fuentes caídas | El ETL semanal falló o Supabase se pausó | Sigue "Qué revisar si algo se cae" en el README de la API |
 | Las fuentes tipográficas se ven distintas | Google Fonts bloqueado | El sitio usa la fuente de respaldo; no afecta los datos |
 
 ## La sala de las EPS (`#eps`)
@@ -102,13 +110,19 @@ How many days does a patient wait for a medical appointment in Colombia? Some pu
 
 ### What it shows
 
+At the top, a **period selector** (Since 2023, the default; Since 2020; All) is sent to the API as `desde_anio` and filters the whole room except the Clicsalud archive. Values more than a year old carry a **"Data from YYYY"** tag. If the last ETL run had failing sources or is older than 8 days, a warning appears; the footer shows the load status ("Up to date", date and sources ok).
+
+1. **Your city:** average per specialty in the chosen city (Bogotá by default), from `/resumen`. It says whether it is weighted by appointments or a simple average (Bogotá does not publish appointment counts).
+1. **Who waits longest:** from `/ranking`, one block per specialty, definition and period length (never a single ranking), with the period of each value. Series with a single unit are listed separately in a table.
 1. **Findings ("What the data does show"):** 4 live cards that only compare a unit with itself or with the regulation: the largest gap between specialties in the same hospital, the largest increase in one series, how many general medicine and dentistry values are within the 3-business-day limit of Resolution 1552 of 2013, and how many units publish. Yearly averages weighted by appointments, complete years only.
 1. **Queue display:** every ticket is real data (the latest average a unit published for a specialty), with its period and a link to the source.
 2. **Chapter 1:** the units included (hospitals, a network and sub-networks), their period and source.
 3. **Chapter 2, "Every clock ticks differently":** how each unit measures (month, quarter or half-year; from the request or from the desired date; explicit or assumed definition).
 4. **Chapter 3, "The queue":** one chair per day of waiting, latest value per unit for the chosen specialty.
 5. **Explore:** trend over time, comparison by specialty and a month-by-month map, each with its data table.
-6. **Clicsalud archive (2016–2021):** per-department summary of what providers reported (appointment-weighted average and median), kept apart because it is a different, historical source.
+6. **Clicsalud archive (2016–2021):** by department and city (lists come from the API), what providers reported each quarter or half-year: appointment-weighted average, appointments, number of providers and median across providers, in a single call to `/resumen?agrupar_por=periodo`. It carries the "Historical 2016–2021" seal based on the API's `historico` field.
+
+Requires the API version that accepts several comma-separated `tipo` values and returns `mediana_unidades`: **deploy the API first**.
 
 Shares the portfolio's visual identity ("Rutas + Cota", route **D** Data). Mobile-first, bilingual (ES/EN), light and dark mode, and respects `prefers-reduced-motion`.
 
@@ -135,7 +149,9 @@ Import the repo in Vercel (Vite is detected: `npm run build`, output `dist`), op
 | "Loading data…" takes up to a minute | Render sleeps the API after ~15 idle minutes | Expected. Open the API a minute before a demo |
 | "We couldn't load the data" | The API didn't wake up in time, or Supabase paused the database | Press *Try again*; then check the API's `/health` and README |
 | CORS error in the console | The API stopped sending `Access-Control-Allow-Origin` | Check the API's CORS settings |
-| A department doesn't load in the Clicsalud archive | Its name changed in the API | Update `DEPARTAMENTOS` in `src/components/Clicsalud.jsx` |
+| The Clicsalud archive shows no departments or cities | `/resumen` did not respond | Check `/resumen?agrupar_por=departamento&tipo=ips` on the API |
+| Everything fails with HTTP 422 | The deployed API predates multi-value `tipo` | Deploy the latest API version on Render |
+| Yellow warning about stale data or failing sources | The weekly ETL failed or Supabase paused | Follow "What to check if something goes down" in the API README |
 
 ### The insurers’ room (`#eps`)
 

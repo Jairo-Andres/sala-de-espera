@@ -1,17 +1,17 @@
 // Cliente de la API de datos abiertos. Render (plan gratis) duerme el servicio tras
 // ~15 min sin uso, así que la primera petición puede tardar hasta un minuto.
 
+import { TIPOS_PROPIOS } from '../relevancia/datos.js';
+
 export const API_URL = (import.meta.env.VITE_API_URL || 'https://datos-abiertos-citas-api.onrender.com').replace(/\/$/, '');
 
-const TIPOS_PROPIOS = ['hospital', 'red', 'subred'];
-
-async function getJson(ruta, { timeout = 70000, signal } = {}) {
+export async function getJson(path, { timeout = 70000, signal } = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeout);
   signal?.addEventListener('abort', () => ctrl.abort());
   try {
-    const res = await fetch(`${API_URL}${ruta}`, { signal: ctrl.signal });
-    if (!res.ok) throw new Error(`HTTP ${res.status} en ${ruta}`);
+    const res = await fetch(`${API_URL}${path}`, { signal: ctrl.signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status} en ${path}`);
     return await res.json();
   } finally {
     clearTimeout(t);
@@ -31,11 +31,24 @@ export async function oportunidadCompleta(params, opts) {
   }
 }
 
+/** Arma una ruta con parámetros, omitiendo los vacíos. */
+export function ruta(base, params = {}) {
+  const q = new URLSearchParams();
+  for (const [k, v] of Object.entries(params)) if (v !== null && v !== undefined && v !== '') q.set(k, v);
+  const txt = q.toString();
+  return txt ? `${base}?${txt}` : base;
+}
+
+export const resumen = (params, opts) => getJson(ruta('/resumen', params), opts);
+export const ranking = (params, opts) => getJson(ruta('/ranking', params), opts);
+
 /**
- * Carga inicial en tres etapas para el componente "Cargando datos":
- * 0 despertar el servidor, 1 unidades, 2 registros de espera.
+ * Carga inicial en etapas para el componente "Cargando datos":
+ * 0 despertar el servidor, 1 unidades, 2 registros de espera y ranking.
+ * Solo baja los registros del periodo elegido (desde_anio) y en una sola serie de páginas
+ * (tipo=hospital,red,subred); lo que se puede agregar en la API viene de /resumen y /ranking.
  */
-export async function cargarTodo(onEtapa, signal) {
+export async function cargarTodo(onEtapa, signal, desde = null) {
   onEtapa(0);
   let estado = null;
   for (let intento = 0; ; intento++) {
@@ -47,13 +60,12 @@ export async function cargarTodo(onEtapa, signal) {
     }
   }
   onEtapa(1);
-  const hospitales = (
-    await Promise.all(TIPOS_PROPIOS.map((tipo) => getJson(`/hospitales?tipo=${tipo}&limit=1000`, { signal })))
-  ).flat();
+  const hospitales = await getJson(ruta('/hospitales', { tipo: TIPOS_PROPIOS, limit: 1000 }), { signal });
   onEtapa(2);
-  const registros = (
-    await Promise.all(TIPOS_PROPIOS.map((tipo) => oportunidadCompleta({ tipo }, { signal })))
-  ).flat();
+  const [registros, rk] = await Promise.all([
+    oportunidadCompleta({ tipo: TIPOS_PROPIOS, ...(desde ? { desde_anio: desde } : {}) }, { signal }),
+    ranking({ tipo: TIPOS_PROPIOS, desde_anio: desde ?? 2000, limit: 100 }, { signal }),
+  ]);
   onEtapa(3);
-  return { estado, hospitales, registros };
+  return { estado, hospitales, registros, ranking: rk };
 }

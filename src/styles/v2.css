@@ -261,3 +261,24 @@ details.v-tbl-d summary { cursor: pointer; font-weight: 700; min-height: 2.75rem
   .v-digits i.v-flip, .v-prog.v-run i { animation: none !important; }
   .v-turn, .v-tilt, .v-bt i { transition: none !important; }
 }
+
+/* ---- Relevancia (2026-11-15): periodo global, aviso del ETL, Quién espera más, Tu ciudad, Archivo ---- */
+.v-periodo { padding-block: .9rem .25rem; display: grid; gap: .35rem; }
+.v-periodo-fila { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+.v-periodo .v-tabs { margin: 0; }
+.v-tabs button[aria-pressed="true"] { background: var(--amber); border-color: var(--amber); color: var(--on-amber); }
+.v-tabs button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.v-aviso { display: flex; gap: .6rem; align-items: flex-start; margin-block: .75rem 0; padding: .8rem 1rem; border-radius: 10px; background: var(--warn-bg); color: var(--warn); border: 1px solid currentColor; font-weight: 700; font-size: .92rem; }
+.v-sello { display: inline-flex; align-items: center; padding: .2rem .7rem; border: 2px dashed var(--bad); border-radius: 6px; color: var(--bad); background: var(--bad-bg); font: 700 .78rem var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.v-rank { list-style: none; padding: 0; margin: 0; }
+.v-rank .v-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: .4rem; }
+.v-rank .v-ax { grid-column: 1 / -1; order: 3; }
+.v-rank .v-nm .v-chip { margin-top: .3rem; }
+.v-rank .v-ax i { height: .5rem; }
+.v-ciudad-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 1.25rem; }
+.v-ciudad-top .v-sh { margin-bottom: 0; }
+.v-ciudad-campo { width: min(100%, 18rem); }
+.v-ciudad-lista { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); }
+.v-ciudad-lista .v-stat b small { font: 700 1rem var(--font-body); color: var(--fg); }
+.v-ciudad-lista .v-stat { gap: .4rem; }
+.v-facts--archivo { margin-block: 1rem; }

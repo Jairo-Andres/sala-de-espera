@@ -12,6 +12,18 @@ import Explorar from './components/Explorar.jsx';
 import Clicsalud from './components/Clicsalud.jsx';
 import Pie from './components/Pie.jsx';
 import SalaEps from './eps/SalaEps.jsx';
+import Periodo from './relevancia/Periodo.jsx';
+import AvisoEtl from './relevancia/AvisoEtl.jsx';
+import Ranking from './relevancia/Ranking.jsx';
+import { PERIODOS, PERIODO_DEFECTO, desdeDe } from './relevancia/datos.js';
+
+function periodoInicial() {
+  try {
+    const g = localStorage.getItem('sala-periodo');
+    if (PERIODOS.some((p) => p.id === g)) return g;
+  } catch { /* almacenamiento bloqueado */ }
+  return PERIODO_DEFECTO;
+}
 
 const salaDeHash = () => (window.location.hash.startsWith('#eps') ? 'eps' : 'hospitales');
 
@@ -43,6 +55,13 @@ export default function App() {
   const [error, setError] = useState(null);
   const [datos, setDatos] = useState(null);
   const [intento, setIntento] = useState(0);
+  const [periodo, setPeriodo] = useState(periodoInicial);
+  const [recargando, setRecargando] = useState(false);
+  const desde = desdeDe(periodo);
+  const cambiarPeriodo = useCallback((id) => {
+    setPeriodo(id);
+    try { localStorage.setItem('sala-periodo', id); } catch { /* sin almacenamiento */ }
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -56,11 +75,14 @@ export default function App() {
     const ctrl = new AbortController();
     setError(null);
     setEtapa(0);
-    cargarTodo(setEtapa, ctrl.signal)
+    setRecargando(true);
+    // Al cambiar de periodo se conservan los datos anteriores hasta que lleguen los nuevos.
+    cargarTodo(setEtapa, ctrl.signal, desde)
       .then((d) => setDatos({ ...d, unidades: indexarUnidades(d.hospitales) }))
-      .catch((e) => { if (!ctrl.signal.aborted) setError(e); });
+      .catch((e) => { if (!ctrl.signal.aborted) setError(e); })
+      .finally(() => { if (!ctrl.signal.aborted) setRecargando(false); });
     return () => ctrl.abort();
-  }, [intento]);
+  }, [intento, desde]);
 
   const turnos = useMemo(() => (datos ? construirTurnos(datos.registros) : []), [datos]);
   const [iTurno, setITurno] = useState(0);
@@ -77,10 +99,13 @@ export default function App() {
         <main id="contenido" tabIndex={-1}><SalaEps lang={lang} /></main>
       ) : (
       <main id="contenido" tabIndex={-1}>
-        <PortadaHosp datos={datos} turnos={turnos} iTurno={iTurno} setITurno={setITurno} etapa={etapa} error={error} onReintentar={reintentar} />
+        <Periodo valor={periodo} onCambio={cambiarPeriodo} cargando={recargando && !!datos} />
+        <AvisoEtl estado={datos?.estado} />
+        <PortadaHosp datos={datos} turnos={turnos} iTurno={iTurno} setITurno={setITurno} etapa={etapa} error={error} onReintentar={reintentar} desde={desde} />
         {datos && (
           <>
-            <Hallazgos registros={datos.registros} unidades={datos.unidades} />
+            <Hallazgos registros={datos.registros} unidades={datos.unidades} ranking={datos.ranking} />
+            <Ranking ranking={datos.ranking} unidades={datos.unidades} />
             <Unidades registros={datos.registros} unidades={datos.unidades} />
             <Relojes registros={datos.registros} unidades={datos.unidades} />
             <Fila registros={datos.registros} unidades={datos.unidades} />
